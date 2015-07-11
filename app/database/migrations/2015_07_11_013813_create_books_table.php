@@ -26,7 +26,7 @@ class CreateBooksTable extends Migration {
             $table->string('book_type', 255);           // regular, supplementary
             $table->string('status', 50);
 
-            $table->foreign('institute_id')->references('id')->on('institutes');
+            $table->foreign('course_id')->references('id')->on('courses');
 
             $table->timestamps();
 		});

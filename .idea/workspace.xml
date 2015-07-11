@@ -12,8 +12,13 @@
     <file path="/2015_07_11_013813_create_books_table.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436580533167" ignored="false" />
     <file path="/2015_07_11_014036_create_users_table.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436579875947" ignored="false" />
     <file path="/2015_07_11_014834_create_user_addresses_table.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436579491364" ignored="false" />
-    <file path="/2015_07_11_014521_create_orders_table.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436581107592" ignored="false" />
-    <file path="/2015_07_11_014557_create_order_items_table.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436582622722" ignored="false" />
+    <file path="/2015_07_11_014521_create_orders_table.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436590793456" ignored="false" />
+    <file path="/2015_07_11_014557_create_order_items_table.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436590882037" ignored="false" />
+    <file path="/2015_07_11_014641_create_couriers_table.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436590901908" ignored="false" />
+    <file path="/2015_07_11_014902_create_software_users_table.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436590482452" ignored="false" />
+    <file path="/UserController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436595822308" ignored="false" />
+    <file path="/OrderController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436597121873" ignored="false" />
+    <file path="/CartController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436596507796" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,10 +38,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="2015_07_11_014036_create_users_table.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_07_11_014036_create_users_table.php">
+      <file leaf-file-name="InstituteController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/InstituteController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="0" selection-start="315" selection-end="315" vertical-scroll-proportion="0.26271185">
+            <state line="49" column="1" selection-start="493" selection-end="493" vertical-scroll-proportion="-23.333334">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/UserController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="268" column="0" selection-start="7245" selection-end="7245" vertical-scroll-proportion="-15.566667">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrderController.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/OrderController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="109" column="36" selection-start="3011" selection-end="3011" vertical-scroll-proportion="0.7711864">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CartController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/CartController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="29" column="0" selection-start="698" selection-end="698" vertical-scroll-proportion="-7.233333">
               <folding />
             </state>
           </provider>
@@ -55,13 +87,19 @@
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/app/routes.php" />
         <option value="$PROJECT_DIR$/app/controllers/InstituteController.php" />
-        <option value="$PROJECT_DIR$/app/database/migrations/2015_07_11_014834_create_user_addresses_table.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2015_07_11_013731_create_courses_table.php" />
-        <option value="$PROJECT_DIR$/app/database/migrations/2015_07_11_013813_create_books_table.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2015_07_11_014036_create_users_table.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2015_07_11_013406_create_institute_table.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2015_07_11_014834_create_user_addresses_table.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2015_07_11_014902_create_software_users_table.php" />
+        <option value="$PROJECT_DIR$/app/config/database.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2015_07_11_013813_create_books_table.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2015_07_11_014521_create_orders_table.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2015_07_11_014557_create_order_items_table.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2015_07_11_014641_create_couriers_table.php" />
+        <option value="$PROJECT_DIR$/app/controllers/UserController.php" />
+        <option value="$PROJECT_DIR$/app/controllers/CartController.php" />
+        <option value="$PROJECT_DIR$/app/controllers/OrderController.php" />
       </list>
     </option>
   </component>
@@ -144,28 +182,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="course" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="course" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="migrations" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -308,24 +324,7 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/composer.lock">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="24" selection-start="957" selection-end="957" vertical-scroll-proportion="-1.3933649" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="25" selection-start="24" selection-end="24" vertical-scroll-proportion="0.025392987" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
@@ -339,65 +338,102 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/InstituteController.php">
+    <entry file="file://$PROJECT_DIR$/app/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="37" selection-start="477" selection-end="477" vertical-scroll-proportion="-20.533333">
+        <state line="59" column="32" selection-start="1820" selection-end="1820" vertical-scroll-proportion="-11.9">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_07_11_013406_create_institute_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="0" selection-start="738" selection-end="738" vertical-scroll-proportion="0.43835616">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_07_11_014521_create_orders_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="35" selection-start="994" selection-end="994" vertical-scroll-proportion="0.5677966">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_07_11_014641_create_couriers_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_07_11_014834_create_user_addresses_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="0" selection-start="663" selection-end="663" vertical-scroll-proportion="0.70610213">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_07_11_014557_create_order_items_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="40" selection-start="472" selection-end="472" vertical-scroll-proportion="0.5084746">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_07_11_013813_create_books_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="43" selection-start="668" selection-end="668" vertical-scroll-proportion="0.6101695">
+        <state line="24" column="31" selection-start="617" selection-end="617" vertical-scroll-proportion="-6.8333335">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_07_11_013731_create_courses_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="37" selection-start="318" selection-end="318" vertical-scroll-proportion="0.38135594">
+        <state line="16" column="37" selection-start="318" selection-end="318" vertical-scroll-proportion="-10.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_07_11_013813_create_books_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="71" selection-start="821" selection-end="821" vertical-scroll-proportion="-10.333333">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_07_11_014036_create_users_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="315" selection-end="315" vertical-scroll-proportion="0.26271185">
+        <state line="30" column="0" selection-start="738" selection-end="738" vertical-scroll-proportion="-13.633333">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_07_11_014521_create_orders_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="51" selection-start="356" selection-end="369" vertical-scroll-proportion="-1.2666667">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_07_11_014834_create_user_addresses_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="44" selection-start="471" selection-end="471" vertical-scroll-proportion="-2.6333334">
+          <folding>
+            <element signature="e#7#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_07_11_014557_create_order_items_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="22" selection-start="241" selection-end="241" vertical-scroll-proportion="0.33050847">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_07_11_014902_create_software_users_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="9" selection-start="293" selection-end="293" vertical-scroll-proportion="0.09564164">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_07_11_014641_create_couriers_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="39" selection-start="361" selection-end="361" vertical-scroll-proportion="0.43220338">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/InstituteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="1" selection-start="493" selection-end="493" vertical-scroll-proportion="-23.333334">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="268" column="0" selection-start="7245" selection-end="7245" vertical-scroll-proportion="-15.566667">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/CartController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="0" selection-start="698" selection-end="698" vertical-scroll-proportion="-7.233333">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/OrderController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="109" column="36" selection-start="3011" selection-end="3011" vertical-scroll-proportion="0.7711864">
           <folding />
         </state>
       </provider>

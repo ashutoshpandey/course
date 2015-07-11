@@ -22,6 +22,7 @@ class CreateInstituteTable extends Migration {
             $table->string('city', 255);
             $table->string('state', 255);
             $table->string('country', 255);
+            $table->string('zip', 20);
             $table->string('land_mark', 1000);
             $table->string('contact_number_1', 20);
             $table->string('contact_number_2', 20);

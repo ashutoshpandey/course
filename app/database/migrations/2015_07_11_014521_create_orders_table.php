@@ -16,7 +16,8 @@ class CreateOrdersTable extends Migration {
 		{
             $table->increments('id');
 
-            $table->string('user_id', 255);
+            $table->integer('user_id')->unsigned();
+
             $table->float('amount');
             $table->string('promo', 255);
             $table->float('discount');
@@ -27,6 +28,7 @@ class CreateOrdersTable extends Migration {
             $table->string('shipping_city', 255);
             $table->string('shipping_state', 255);
             $table->string('shipping_country', 255);
+            $table->string('shipping_zip', 20);
             $table->string('shipping_land_mark', 1000);
             $table->string('shipping_contact_number_1', 20);
             $table->string('shipping_contact_number_2', 20);
@@ -36,6 +38,7 @@ class CreateOrdersTable extends Migration {
             $table->string('billing_city', 255);
             $table->string('billing_state', 255);
             $table->string('billing_country', 255);
+            $table->string('billing_zip', 20);
             $table->string('billing_land_mark', 1000);
             $table->string('billing_contact_number_1', 20);
             $table->string('billing_contact_number_2', 20);
