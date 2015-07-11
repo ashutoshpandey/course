@@ -2,18 +2,26 @@
 
 class InstituteController extends BaseController
 {
-
-    public function showWelcome()
+    function __construct()
     {
+        View::share('root', URL::to('/'));
     }
 
     public function add()
     {
+        $adminId = Session::get('admin_id');
+        if(!isset($adminId))
+            return Redirect::to('/');
+
         return View::make('institutes.add');
     }
 
     public function save()
     {
+        $adminId = Session::get('admin_id');
+        if(!isset($adminId))
+            return json_encode(array('message'=>'not logged'));
+
         $institute = new Institute();
 
         $institute->status = 'active';
@@ -26,6 +34,10 @@ class InstituteController extends BaseController
 
     public function edit()
     {
+        $adminId = Session::get('admin_id');
+        if(!isset($adminId))
+            return Redirect::to('/');
+
         if(isset($id)){
 
             $course = Course::find($id);
@@ -43,7 +55,11 @@ class InstituteController extends BaseController
             return Redirect::to('/');
     }
 
-    public function remove($id){
+    public function remove($id)
+    {
+        $adminId = Session::get('admin_id');
+        if(!isset($adminId))
+            return json_encode(array('message'=>'not logged'));
 
         if(isset($id)){
 
@@ -64,6 +80,10 @@ class InstituteController extends BaseController
 
     public function update()
     {
+        $adminId = Session::get('admin_id');
+        if(!isset($adminId))
+            return json_encode(array('message'=>'not logged'));
+
         $id = Session::get('institute_id');
 
         if(isset($id)){

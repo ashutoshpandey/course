@@ -1,9 +1,13 @@
 <?php
 
-class CartController extends BaseController {
+class CartController extends BaseController
+{
+    function __construct(){
+        View::share('root', URL::to('/'));
+    }
 
-    public function addToCart(){
-
+    public function addToCart()
+    {
         $cart = Session::get('cart');
         if(!isset($cart))
             $cart = array();
@@ -20,8 +24,8 @@ class CartController extends BaseController {
         return json_encode(array('cart' => $cart->toArray(), 'message' => 'found'));
     }
 
-    public function removeFromCart($id){
-
+    public function removeFromCart($id)
+    {
         $newCart = array();
 
         $cart = Session::get('cart');
@@ -41,8 +45,8 @@ class CartController extends BaseController {
         return json_encode(array('cart' => $newCart->toArray(), 'message' => 'found'));
     }
 
-    public function getCart(){
-
+    public function getCart()
+    {
         $cart = Session::get('cart');
 
         if(isset($cart))
