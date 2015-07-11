@@ -25,5 +25,5 @@ Route::get('/update-institute', 'InstituteController@update');
 Route::get('/get-institute/{id}', 'InstituteController@getInstitute');
 Route::get('/list-institutes/{page}/{city?}/{country?}', 'InstituteController@listInstitutes');
 
-Route::get('/get-classes/{id}', 'InstituteController@getClasses');
-Route::get('/get-class-books/{id}', 'InstituteController@getClassBooks');
+Route::get('/get-courses/{id}', 'InstituteController@getCourses');
+Route::get('/get-course-books/{id}', 'InstituteController@getCourseBooks');

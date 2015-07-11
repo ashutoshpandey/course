@@ -51,6 +51,98 @@ class OrderController extends BaseController {
             return json_encode(array('message'=>'invalid'));
     }
 
+    function getUserOrdersById($userId, $startDate=null, $endDate=null){
+
+        if(isset($userId)){
+
+            if(isset($startDate) && isset($endDate)){
+
+                $startDate = date('Y-m-d', strtotime($startDate));
+                $endDate = date('Y-m-d', strtotime($endDate));
+
+                $orders = Order::where('user_id', '=', $userId)
+                    ->where('start_date', '>=', $startDate)
+                    ->where('end_date', '<=', $endDate)->get();
+            }
+            else if(isset($startDate)){
+
+                $startDate = date('Y-m-d', strtotime($startDate));
+
+                $orders = Order::where('user_id', '=', $userId)
+                    ->where('start_date', '>=', $startDate)->get();
+            }
+            else
+                $orders = Order::where('user_id', '=', $userId)->get();
+
+            if(isset($orders))
+                return json_encode(array('message'=>'found', 'orders' => $orders->toArray()));
+            else
+                return json_encode(array('message'=>'empty'));
+        }
+        else
+            return json_encode(array('message'=>'invalid'));
+    }
+
+    function getOrders($status, $startDate=null, $endDate=null){
+
+        $userId = Session::get('user_id');
+
+        if(isset($userId)){
+
+            if(isset($startDate) && isset($endDate)){
+
+                $startDate = date('Y-m-d', strtotime($startDate));
+                $endDate = date('Y-m-d', strtotime($endDate));
+
+                $orders = Order::where('status', '=', $status)
+                    ->where('start_date', '>=', $startDate)
+                    ->where('end_date', '<=', $endDate)->get();
+            }
+            else if(isset($startDate)){
+
+                $startDate = date('Y-m-d', strtotime($startDate));
+
+                $orders = Order::where('status', '=', $status)
+                    ->where('start_date', '>=', $startDate)->get();
+            }
+            else
+                $orders = Order::where('status', '=', $status)->get();
+
+            if(isset($orders))
+                return json_encode(array('message'=>'found', 'orders' => $orders->toArray()));
+            else
+                return json_encode(array('message'=>'empty'));
+        }
+        else
+            return json_encode(array('message'=>'invalid'));
+    }
+
+    function getOrder($id){
+
+        if(!isset($id))
+            return json_encode(array('message'=>'invalid'));
+
+        $order = Order::find($id);
+
+        if(isset($order))
+            return json_encode(array('message'=>'found', 'order' => $order));
+        else
+            return json_encode(array('message'=>'invalid'));
+    }
+
+    function getOrderItems($orderId){
+
+        if(!isset($orderId))
+            return json_encode(array('message'=>'invalid'));
+
+        $orderItems = OrderItem::where('order_id', '=', $orderId)->get();
+
+        if(isset($orderItems))
+            return json_encode(array('message'=>'found', 'order' => $orderItems->toArray()));
+        else
+            return json_encode(array('message'=>'invalid'));
+    }
+
     function cancelOrder($id){
 
         $userId = Session::get('user_id');
