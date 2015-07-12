@@ -1,10 +1,13 @@
 $(function(){
-    $("input[name='btn-add']").click(saveCourse);
+    $("input[name='btn-create']").click(createCourse);
+
+    $('a[href="#tab-edit"]').hide();
+    $('#tab-edit').hide();
 
     listCourses(1);
 });
 
-function saveCourse(){
+function createCourse(){
 
     if(isCourseFormValid()){
 

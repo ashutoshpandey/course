@@ -1,0 +1,66 @@
+/************ tabs ****************/
+.tab-container ul.tabs{
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.tab-container p, h3 {
+    margin-bottom:15px;
+}
+
+.tab-container div {
+    padding:10px;
+    background:#fff;
+}
+
+.tab-container .tabs li {
+    list-style:none;
+    display:inline;
+}
+
+.tab-container .tabs a {
+    padding:5px 10px;
+    display:inline-block;
+    background:#666;
+    color:#fff;
+    text-decoration:none;
+}
+
+.tab-container .tabs a.active {
+    background:#fff;
+    color:#000;
+}
+
+/************* admin forms *****************/
+.form-row{
+    padding: 0 !important;
+}
+.form-row .form-label{
+    float: left;
+    width: 150px;
+}
+.form-row .form-data{
+    float: left;
+    width: 650px;
+}
+
+.form-row select, input[type='text'], input[type='password']{
+    border: solid 1px #ababab;
+    padding: 3px;
+    width: 100%;
+}
+.form-row textarea{
+    border: solid 1px #ababab;
+    padding: 3px;
+    width: 100%;
+    min-height: 150px;
+}
+
+.half{
+    width: 45% !important;
+    margin-right: 20px;
+}
+
+.message{
+    color: red;
+}

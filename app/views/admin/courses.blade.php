@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>AdminLTE 2 | Dashboard</title>
+    <title>Administration | Courses</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
@@ -80,77 +80,7 @@
         <i class="fa fa-flag-o"></i>
         <span class="label label-danger">9</span>
     </a>
-    <ul class="dropdown-menu">
-        <li class="header">You have 9 tasks</li>
-        <li>
-            <!-- inner menu: contains the actual data -->
-            <ul class="menu">
-                <li><!-- Task item -->
-                    <a href="#">
-                        <h3>
-                            Design some buttons
-                            <small class="pull-right">20%</small>
-                        </h3>
-                        <div class="progress xs">
-                            <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar"
-                                 aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                <span class="sr-only">20% Complete</span>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <!-- end task item -->
-                <li><!-- Task item -->
-                    <a href="#">
-                        <h3>
-                            Create a nice theme
-                            <small class="pull-right">40%</small>
-                        </h3>
-                        <div class="progress xs">
-                            <div class="progress-bar progress-bar-green" style="width: 40%" role="progressbar"
-                                 aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                <span class="sr-only">40% Complete</span>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <!-- end task item -->
-                <li><!-- Task item -->
-                    <a href="#">
-                        <h3>
-                            Some task I need to do
-                            <small class="pull-right">60%</small>
-                        </h3>
-                        <div class="progress xs">
-                            <div class="progress-bar progress-bar-red" style="width: 60%" role="progressbar"
-                                 aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                <span class="sr-only">60% Complete</span>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <!-- end task item -->
-                <li><!-- Task item -->
-                    <a href="#">
-                        <h3>
-                            Make beautiful transitions
-                            <small class="pull-right">80%</small>
-                        </h3>
-                        <div class="progress xs">
-                            <div class="progress-bar progress-bar-yellow" style="width: 80%" role="progressbar"
-                                 aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                <span class="sr-only">80% Complete</span>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <!-- end task item -->
-            </ul>
-        </li>
-        <li class="footer">
-            <a href="#">View all tasks</a>
-        </li>
-    </ul>
+
 </li>
 <!-- User Account: style can be found in dropdown.less -->
 <li class="dropdown user user-menu">
@@ -184,6 +114,96 @@
 
     <!-- Main content -->
     <section class="content">
+
+        <div class='tab-container'>
+            <ul class='tabs'>
+                <li><a href='#tab-list'>List</a></li>
+                <li><a href='#tab-create'>Create</a></li>
+                <li><a href='#tab-edit'>Edit</a></li>
+            </ul>
+            <div id='tab-list'>
+                <div id='institute-list'></div>
+            </div>
+            <div id='tab-create'>
+                <div id='form-container'>
+                    <form id='form-create-institute'>
+                        <div class='form-row'>
+                            <div class='form-label'>Name</div>
+                            <div class='form-data'>
+                                <input type='text' name='name'/>
+                            </div>
+                            <div class='form-label'>Establish Date</div>
+                            <div class='form-data'>
+                                <input type='text' name='name'/>
+                            </div>
+                            <div class='clear'></div>
+                        </div>
+                        <div class='form-row'>
+                            <div class='form-label'>Address</div>
+                            <div class='form-data'>
+                                <textarea name='name'></textarea>
+                            </div>
+                            <div class='form-label'>City</div>
+                            <div class='form-data'>
+                                <input type='text' name='name'/>
+                            </div>
+                            <div class='clear'></div>
+                        </div>
+                        <div class='form-row'>
+                            <div class='form-label'>State</div>
+                            <div class='form-data'>
+                                <input type='text' name='name'/>
+                            </div>
+                            <div class='form-label'>Country</div>
+                            <div class='form-data'>
+                                <input type='text' name='name'/>
+                            </div>
+                            <div class='clear'></div>
+                        </div>
+                        <div class='form-row'>
+                            <div class='form-label'>Zip</div>
+                            <div class='form-data'>
+                                <input type='text' name='name'/>
+                            </div>
+                            <div class='form-label'>Landmark</div>
+                            <div class='form-data'>
+                                <input type='text' name='name'/>
+                            </div>
+                            <div class='clear'></div>
+                        </div>
+                        <div class='form-row'>
+                            <div class='form-label'>Contact number 1</div>
+                            <div class='form-data'>
+                                <input type='text' name='name'/>
+                            </div>
+                            <div class='form-label'>Contact number 2</div>
+                            <div class='form-data'>
+                                <input type='text' name='name'/>
+                            </div>
+                            <div class='clear'></div>
+                        </div>
+                        <div class='form-row'>
+                            <div class='form-label'>Latitude / Longitude</div>
+                            <div class='form-data'>
+                                <input type='text' name='name' class='half'/><input type='text' name='name' class='half'/>
+                            </div>
+                            <div class='clear'></div>
+                        </div>
+                        <div class='form-row'>
+                            <div class='form-label'>&nbsp;</div>
+                            <div class='form-data'>
+                                <input type='button' name='btn-create' value="Create Institute" class='half'/> <span class='message'></span>
+                            </div>
+                            <div class='clear'></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div id='tab-edit'>
+                <div id='form-container'></div>
+            </div>
+        </div>
+
     </section><!-- /.content -->
 
 </div><!-- /.content-wrapper -->

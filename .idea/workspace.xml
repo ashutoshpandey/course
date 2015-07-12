@@ -2,23 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/AuthenticationController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/AdminController.php" afterPath="$PROJECT_DIR$/app/controllers/AdminController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/CartController.php" afterPath="$PROJECT_DIR$/app/controllers/CartController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/HomeController.php" afterPath="$PROJECT_DIR$/app/controllers/HomeController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/site/admin/admin.css" />
+      <change type="DELETED" beforePath="C:\xampp1.8\htdocs\course\public\css\site\admin.css" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/InstituteController.php" afterPath="$PROJECT_DIR$/app/controllers/InstituteController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/OrderController.php" afterPath="$PROJECT_DIR$/app/controllers/OrderController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/UserController.php" afterPath="$PROJECT_DIR$/app/controllers/UserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/admin-section.blade.php" afterPath="$PROJECT_DIR$/app/views/admin/admin-section.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/books.blade.php" afterPath="$PROJECT_DIR$/app/views/admin/books.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/bootstrap.css" afterPath="$PROJECT_DIR$/public/css/bootstrap.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/includes/admin/common_css.blade.php" afterPath="$PROJECT_DIR$/app/views/includes/admin/common_css.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/includes/admin/common_js_top.blade.php" afterPath="$PROJECT_DIR$/app/views/includes/admin/common_js_top.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/courses.blade.php" afterPath="$PROJECT_DIR$/app/views/admin/courses.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/site/admin/courses.js" afterPath="$PROJECT_DIR$/public/js/site/admin/courses.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/institutes.blade.php" afterPath="$PROJECT_DIR$/app/views/admin/institutes.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/site/admin/institutes.js" afterPath="$PROJECT_DIR$/public/js/site/admin/institutes.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="course.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/a.dummy" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1409846631865" ignored="false" />
-    <file path="/routes.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436576371766" ignored="false" />
-    <file path="/InstituteController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436605888100" ignored="false" />
+    <file path="/routes.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436669243526" ignored="false" />
+    <file path="/InstituteController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436669786222" ignored="false" />
     <file path="/2015_07_11_013731_create_courses_table.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436578728782" ignored="false" />
     <file path="/2015_07_11_013406_create_institute_table.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436581164915" ignored="false" />
     <file path="/2015_07_11_013813_create_books_table.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436580533167" ignored="false" />
@@ -34,30 +37,32 @@
     <file path="/AdminController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436635491948" ignored="false" />
     <file path="/CourseController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436616213931" ignored="false" />
     <file path="/BookController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436605810173" ignored="false" />
-    <file path="/Dummy.txt" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436616304599" ignored="false" />
+    <file path="/Dummy.txt" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436665096480" ignored="false" />
     <file path="/AuthenticationController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436617304878" ignored="false" />
     <file path="/2015_07_11_013407_create_admins_table.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436617404854" ignored="false" />
     <file path="/2015_07_11_013408_create_software_users_table.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436617451715" ignored="false" />
     <file path="/admin.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436623579329" ignored="false" />
     <file path="/common.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436623280299" ignored="false" />
-    <file path="/admin-section.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436631204556" ignored="false" />
-    <file path="/common_css.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436624400546" ignored="false" />
+    <file path="/admin-section.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436673457328" ignored="false" />
+    <file path="/common_css.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436667308219" ignored="false" />
     <file path="/AdminLTE.css" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436627958234" ignored="false" />
     <file path="/admin-menu.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436629222347" ignored="false" />
     <file path="/common.css" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436625687305" ignored="false" />
-    <file path="/institutes.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436631683632" ignored="false" />
-    <file path="/books.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436631711657" ignored="false" />
-    <file path="/courses.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436631704163" ignored="false" />
+    <file path="/institutes.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436673424929" ignored="false" />
+    <file path="/books.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436673445897" ignored="false" />
+    <file path="/courses.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436673437840" ignored="false" />
     <file path="/orders.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436631356082" ignored="false" />
     <file path="/books.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436635415381" ignored="false" />
-    <file path="/courses.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436635406943" ignored="false" />
-    <file path="/institutes.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436635373550" ignored="false" />
-    <file path="/common_js_top.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436633586457" ignored="false" />
+    <file path="/courses.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436668882560" ignored="false" />
+    <file path="/institutes.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436675997503" ignored="false" />
+    <file path="/common_js_top.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436674880598" ignored="false" />
     <file path="/Institute.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436634811834" ignored="false" />
     <file path="/Course.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436634847866" ignored="false" />
     <file path="/Book.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436634864664" ignored="false" />
     <file path="/SoftwareUser.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436634883416" ignored="false" />
     <file path="/Admin.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436634907623" ignored="false" />
+    <file path="/admin.css" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436675276532" ignored="false" />
+    <file path="/common_js_bottom.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436674709422" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,62 +81,7 @@
     <favorites_list name="course" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="AdminController.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="0" selection-start="759" selection-end="759" vertical-scroll-proportion="0.33978236">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="books.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/site/admin/books.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="68" selection-start="782" selection-end="782" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="courses.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/site/admin/courses.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="75" selection-start="810" selection-end="810" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="institutes.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/site/admin/institutes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="26" selection-start="686" selection-end="686" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/routes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="70" selection-start="767" selection-end="767" vertical-scroll-proportion="-10.5">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="laravel.log" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/storage/logs/laravel.log">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="0" selection-start="1666" selection-end="1666" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -149,22 +99,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/admin/books.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/admin/institutes.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/admin/orders.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/includes/admin/common_js_top.blade.php" />
-        <option value="$PROJECT_DIR$/public/js/site/common.js" />
-        <option value="$PROJECT_DIR$/app/storage/logs/laravel.log" />
-        <option value="$PROJECT_DIR$/app/models/Institute.php" />
-        <option value="$PROJECT_DIR$/app/models/Course.php" />
-        <option value="$PROJECT_DIR$/app/models/Book.php" />
-        <option value="$PROJECT_DIR$/app/models/SoftwareUser.php" />
-        <option value="$PROJECT_DIR$/app/models/Admin.php" />
-        <option value="$PROJECT_DIR$/public/js/site/admin/institutes.js" />
+        <option value="$PROJECT_DIR$/public/css/site/admin.css" />
         <option value="$PROJECT_DIR$/public/js/site/admin/courses.js" />
-        <option value="$PROJECT_DIR$/public/js/site/admin/books.js" />
         <option value="$PROJECT_DIR$/app/routes.php" />
-        <option value="$PROJECT_DIR$/app/controllers/AdminController.php" />
+        <option value="$PROJECT_DIR$/app/controllers/InstituteController.php" />
+        <option value="$PROJECT_DIR$/app/views/admin/courses.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/admin/books.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/admin/admin-section.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/admin/institutes.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/includes/common_css.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/includes/admin/common_css.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/includes/common_js_bottom.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/includes/common_js_top.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/includes/admin/common_js_top.blade.php" />
+        <option value="$PROJECT_DIR$/public/css/site/admin/admin.css" />
+        <option value="$PROJECT_DIR$/app/storage/logs/laravel.log" />
+        <option value="$PROJECT_DIR$/public/js/site/admin/institutes.js" />
       </list>
     </option>
   </component>
@@ -224,6 +174,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -273,14 +224,6 @@
               <option name="myItemId" value="public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="site" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -296,47 +239,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="site" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="course" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="course" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="course" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="course" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
+              <option name="myItemId" value="fonts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -520,7 +423,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -529,18 +431,19 @@
     <property name="options.lastSelected" value="preferences.pluginManager" />
     <property name="last_opened_file_path" value="C:/cakephp-cakephp-4b9e390" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp1.8\htdocs\course\app\models" />
-      <recent name="C:\xampp1.8\htdocs\course\app\views\admin" />
-      <recent name="C:\xampp1.8\htdocs\course\app\views\includes\admin" />
+      <recent name="C:\xampp1.8\htdocs\course\public" />
       <recent name="C:\xampp1.8\htdocs\course\public\js" />
       <recent name="C:\xampp1.8\htdocs\course\public\css" />
+      <recent name="C:\xampp1.8\htdocs\course\app\models" />
+      <recent name="C:\xampp1.8\htdocs\course\app\views\admin" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp1.8\htdocs\course\public\css\site\admin" />
       <recent name="C:\xampp1.8\htdocs\course\public\js\site\admin" />
       <recent name="C:\xampp1.8\htdocs\course\public\js\site" />
       <recent name="C:\xampp1.8\htdocs\course\public\css\site" />
@@ -584,15 +487,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299435" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2596154" sideWeight="0.6700565" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2628205" sideWeight="0.6700565" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -601,6 +502,8 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299435" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -668,114 +571,150 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/includes/admin/common_js_top.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="44" selection-start="99" selection-end="99" vertical-scroll-proportion="-0.7">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_07_11_014834_create_user_addresses_table.php">
+    <entry file="file://$PROJECT_DIR$/public/js/moderniz.2.8.1.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/includes/admin/common_js_bottom.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="66" selection-start="651" selection-end="651" vertical-scroll-proportion="-9.8">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_07_11_014902_create_software_users_table.php">
+    <entry file="file://$PROJECT_DIR$/public/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/User.php">
+    <entry file="file://$PROJECT_DIR$/public/css/jquery.bootgrid.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Institute.php">
+    <entry file="file://$PROJECT_DIR$/public/js/jquery.bootgrid.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="1" selection-start="78" selection-end="78" vertical-scroll-proportion="-4.2">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Course.php">
+    <entry file="file://$PROJECT_DIR$/app/views/includes/admin/common_css.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="31" selection-start="67" selection-end="67" vertical-scroll-proportion="-2.8">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Book.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="29" selection-start="63" selection-end="63" vertical-scroll-proportion="0.10157195">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/SoftwareUser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="38" selection-start="80" selection-end="80" vertical-scroll-proportion="0.10157195">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="30" selection-start="65" selection-end="65" vertical-scroll-proportion="0.10157195">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/storage/logs/laravel.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="1666" selection-end="1666" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/site/admin/institutes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="26" selection-start="686" selection-end="686" vertical-scroll-proportion="0.0">
+        <state line="1" column="57" selection-start="109" selection-end="109" vertical-scroll-proportion="-0.7">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/site/admin/courses.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="75" selection-start="810" selection-end="810" vertical-scroll-proportion="0.0">
+        <state line="14" column="0" selection-start="266" selection-end="266" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/site/admin/books.js">
+    <entry file="file://$PROJECT_DIR$/app/views/includes/admin/common_js_bottom.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="68" selection-start="782" selection-end="782" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.php">
+    <entry file="file://$PROJECT_DIR$/app/views/includes/common_js_bottom.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="70" selection-start="767" selection-end="767" vertical-scroll-proportion="-10.5">
+        <state line="14" column="0" selection-start="585" selection-end="585" vertical-scroll-proportion="0.36567163">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.php">
+    <entry file="file://$PROJECT_DIR$/app/views/includes/common_js_top.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="0" selection-start="759" selection-end="759" vertical-scroll-proportion="0.33978236">
+        <state line="1" column="0" selection-start="55" selection-end="55" vertical-scroll-proportion="0.026119404">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/includes/common_css.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="52" selection-end="52" vertical-scroll-proportion="-0.7">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/includes/admin/common_js_top.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="60" selection-start="171" selection-end="171" vertical-scroll-proportion="-1.4">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/institutes.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="76" column="41" selection-start="2429" selection-end="2429" vertical-scroll-proportion="-9.1">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/site/admin/admin.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="0" selection-start="206" selection-end="206" vertical-scroll-proportion="0.294049">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/site/admin/institutes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="23" selection-start="398" selection-end="398" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1436676055356" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436676055356" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436676055356" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436676055356" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436676055356" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436676055356" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436676055356" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436676055356" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436676055356" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436676055356" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436676055356" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436676055356" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436676055356" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436676055356" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436676055356" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436676055356" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436676055356" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436676055356" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436676055356" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436676055356" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436676055356" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436676055356" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436676055356" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436676055356" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436676055356" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436676055356" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436676055356" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436676055356" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436676055356" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436676055356" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436676055356" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436676055356" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436676055356" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436676055356" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436676055356" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/storage/logs/laravel.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/InstituteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="91" selection-start="693" selection-end="693" vertical-scroll-proportion="0.490172">
           <folding />
         </state>
       </provider>

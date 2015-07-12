@@ -18,11 +18,24 @@ class InstituteController extends BaseController
 
     public function save()
     {
-        $adminId = Session::get('admin_id');
-        if(!isset($adminId))
-            return json_encode(array('message'=>'not logged'));
+//        $adminId = Session::get('admin_id');
+//        if(!isset($adminId))
+//            return json_encode(array('message'=>'not logged'));
 
         $institute = new Institute();
+
+        $institute->name = Input::get('name');
+        $institute->establish_date = date('Y-m-d', strtotime(Input::get('establish_date')));
+        $institute->address = Input::get('address');
+        $institute->city = Input::get('city');
+        $institute->state = Input::get('state');
+        $institute->country = Input::get('country');
+        $institute->land_mark = Input::get('land_mark');
+        $institute->zip = Input::get('zip');
+        $institute->latitude = Input::get('latitude');
+        $institute->longitude = Input::get('longitude');
+        $institute->contact_number_1 = Input::get('contact_number_1');
+        $institute->contact_number_2 = Input::get('contact_number_2');
 
         $institute->status = 'active';
         $institute->created_at = date('Y-m-d h:i:s');

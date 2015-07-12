@@ -17,7 +17,7 @@ Route::get('/', function()
 });
 
 Route::get('/add-institute', 'InstituteController@add');
-Route::get('/save-institute', 'InstituteController@save');
+Route::post('/save-institute', 'InstituteController@save');
 
 Route::get('/edit-institute', 'InstituteController@edit');
 Route::get('/update-institute', 'InstituteController@update');
