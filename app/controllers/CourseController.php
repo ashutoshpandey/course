@@ -22,7 +22,15 @@ class CourseController extends BaseController
         if(!isset($adminId))
             return json_encode(array('message'=>'not logged'));
 
+        $instituteId = Session::get('institute_id');
+        if(!isset($courseId))
+            return json_encode(array('message' => 'invalid'));
+
         $course = new Course();
+
+        $course->institute_id = $instituteId;
+        $course->name = Input::get('name');
+        $course->description = Input::get('description');
 
         $course->status = 'active';
         $course->created_at = date('Y-m-d h:i:s');
@@ -67,7 +75,8 @@ class CourseController extends BaseController
 
             if(isset($course)){
 
-                $course->remove();
+                $course->status = 'removed';
+                $course->save();
 
                 return json_encode(array('message'=>'done'));
             }
@@ -91,6 +100,9 @@ class CourseController extends BaseController
 
             if(isset($course)){
 
+                $course->name = Input::get('name');
+                $course->description = Input::get('description');
+
                 $course->save();
 
                 return json_encode(array('message'=>'done'));
@@ -104,6 +116,7 @@ class CourseController extends BaseController
 
     public function getCourse($id)
     {
+
         if(isset($id)){
 
             $course = Course::find($id);

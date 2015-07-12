@@ -13,26 +13,143 @@ class AdminController extends BaseController
     }
 
     public function adminSection(){
+//        $adminId = Session::get('admin_id');
+//        if(!isset($adminId))
+//            return Redirect::to('/');
+
         return View::make('admin.admin-section');
     }
 
     public function institutes(){
+//        $adminId = Session::get('admin_id');
+//        if(!isset($adminId))
+//            return Redirect::to('/');
+
         return View::make('admin.institutes');
     }
 
+    public function viewInstitute($id){
+//        $adminId = Session::get('admin_id');
+//        if(!isset($adminId))
+//            return Redirect::to('/');
+
+        if(isset($id)){
+
+            $institute = Institute::find($id);
+
+            if(isset($institute)){
+
+                Session::put('institute_id', $id);
+
+                return View::make('admin.view-institute')->with('institute', $institute);
+            }
+            else
+                return Redirect::to('/');
+        }
+        else
+            return Redirect::to('/');
+    }
+
     public function courses($id){
-        return View::make('admin.courses')->with('id', $id);
+//        $adminId = Session::get('admin_id');
+//        if(!isset($adminId))
+//            return Redirect::to('/');
+
+        if(isset($id)){
+
+            $institute = Institute::find($id);
+
+            if(isset($institute)){
+
+                Session::put('institute_id', $id);
+
+                return View::make('admin.courses')->with('institute', $institute);
+            }
+            else
+                return Redirect::to('/');
+        }
+        else
+            return Redirect::to('/');
+    }
+
+    public function viewCourse($id){
+//        $adminId = Session::get('admin_id');
+//        if(!isset($adminId))
+//            return Redirect::to('/');
+
+        if(isset($id)){
+
+            $course = Course::find($id);
+
+            if(isset($course)){
+
+                Session::put('course_id', $id);
+
+                return View::make('admin.view-course')->with('course', $course);
+            }
+            else
+                return Redirect::to('/');
+        }
+        else
+            return Redirect::to('/');
     }
 
     public function books($id){
-        return View::make('admin.books')->with('id', $id);
+//        $adminId = Session::get('admin_id');
+//        if(!isset($adminId))
+//            return Redirect::to('/');
+
+        if(isset($id)){
+
+            $course = Course::find($id);
+
+            if(isset($course)){
+
+                Session::put('course_id', $id);
+
+                return View::make('admin.books')->with('course', $course);
+            }
+            else
+                return Redirect::to('/');
+        }
+        else
+            return Redirect::to('/');
+    }
+
+    public function viewBook($id){
+//        $adminId = Session::get('admin_id');
+//        if(!isset($adminId))
+//            return Redirect::to('/');
+
+        if(isset($id)){
+
+            $book = Book::find($id);
+
+            if(isset($book)){
+
+                Session::put('book_id', $id);
+
+                return View::make('admin.view-book')->with('book', $book);
+            }
+            else
+                return Redirect::to('/');
+        }
+        else
+            return Redirect::to('/');
     }
 
     public function orders(){
+//        $adminId = Session::get('admin_id');
+//        if(!isset($adminId))
+//            return Redirect::to('/');
+
         return View::make('admin.orders');
     }
 
     public function listInstitutes($status, $page){
+//        $adminId = Session::get('admin_id');
+//        if(!isset($adminId))
+//            return json_encode(array('message'=>'not logged'));
 
         if(isset($status)){
 
@@ -50,6 +167,9 @@ class AdminController extends BaseController
     }
 
     public function listOrders($status, $page){
+//        $adminId = Session::get('admin_id');
+//        if(!isset($adminId))
+//            return json_encode(array('message'=>'not logged'));
 
         if(isset($status)){
 
@@ -66,11 +186,16 @@ class AdminController extends BaseController
             return json_encode(array('message'=>'invalid'));
     }
 
-    public function listCourses($id, $status, $page){
+    public function listCourses($status, $page){
+//        $adminId = Session::get('admin_id');
+//        if(!isset($adminId))
+//            return json_encode(array('message'=>'not logged'));
 
-        if(isset($id)){
+        $institute_id = Session::get('institute_id');
 
-            $courses = Course::where('institute_id','=', $id)->where('status', '=', $status)->get();
+        if(isset($institute_id)){
+
+            $courses = Course::where('institute_id','=', $institute_id)->where('status', '=', $status)->get();
 
             if(isset($courses) && count($courses)>0){
 
@@ -83,11 +208,16 @@ class AdminController extends BaseController
             return json_encode(array('message'=>'invalid'));
     }
 
-    public function listBooks($id, $status, $page){
+    public function listBooks($status, $page){
+//        $adminId = Session::get('admin_id');
+//        if(!isset($adminId))
+//            return json_encode(array('message'=>'not logged'));
 
-        if(isset($id)){
+        $course_id = Session::get('course_id');
 
-            $books = Book::where('course_id','=', $id)->where('status','=',$status)->get();
+        if(isset($course_id)){
+
+            $books = Book::where('course_id','=', $course_id)->where('status','=',$status)->get();
 
             if(isset($books) && count($books)>0){
 

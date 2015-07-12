@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Administration | Courses</title>
+    <title>Admin | Login</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
@@ -16,56 +16,40 @@
 <body class="skin-blue sidebar-mini">
 <div class="wrapper">
 
-    @include('includes.admin.header')
-
-    @include('includes.admin.menu')
-
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
-            <h1 style="text-transform: capitalize">
-                Manage {{$institute->name}} courses
+            <h1>
+                Administrator Authentication
             </h1>
-            <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li class="active">Dashboard</li>
-            </ol>
         </section>
 
         <!-- Main content -->
         <section class="content">
 
             <div class='tab-container'>
-                <ul class='tabs'>
-                    <li><a href='#tab-list'>List</a></li>
-                    <li><a href='#tab-create'>Create</a></li>
-                </ul>
-                <div id='tab-list'>
-                    <div id='course-list'></div>
-                </div>
                 <div id='tab-create'>
                     <div id='form-container'>
-                        <form id='form-create-course'>
+                        <form id='form-admin-login'>
                             <div class='form-row'>
-                                <div class='form-label'>Name</div>
+                                <div class='form-label'>Username</div>
                                 <div class='form-data'>
-                                    <input type='text' name='name'/>
+                                    <input type='text' name='username'/>
                                 </div>
                                 <div class='clear'></div>
                             </div>
                             <div class='form-row'>
-                                <div class='form-label'>Description</div>
+                                <div class='form-label'>Password</div>
                                 <div class='form-data'>
-                                    <textarea name='description'></textarea>
+                                    <input type='password' name='password'/>
                                 </div>
                                 <div class='clear'></div>
                             </div>
                             <div class='form-row'>
                                 <div class='form-label'>&nbsp;</div>
                                 <div class='form-data'>
-                                    <input type='button' name='btn-create' value="Create Course" class='half'/> <span
-                                        class='message'></span>
+                                    <input type='button' name='btn-login' value="Login" class='half'/> <span class='message'></span>
                                 </div>
                                 <div class='clear'></div>
                             </div>
@@ -74,13 +58,13 @@
                 </div>
             </div>
 
-        </section>
-        <!-- /.content -->
+        </section><!-- /.content -->
 
-    </div>
-    <!-- /.content-wrapper -->
+    </div><!-- /.content-wrapper -->
 
-    @include('includes/common_js_bottom')
-    {{HTML::script(asset("/public/js/site/admin/courses.js"))}}
+</div><!-- ./wrapper -->
+
+@include('includes/common_js_bottom')
+{{HTML::script(asset("/public/js/site/admin/login.js"))}}
 </body>
 </html>

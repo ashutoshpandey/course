@@ -2,6 +2,15 @@
 
 class AuthenticationController extends BaseController
 {
+    function __construct()
+    {
+        View::share('root', URL::to('/'));
+    }
+
+    public function adminLogin(){
+        return View::make('admin.login');
+    }
+
     public function isValidUser()
     {
         $email = Input::get('email');
@@ -11,13 +20,13 @@ class AuthenticationController extends BaseController
             ->where('password','=',$password)->first();
 
         if(is_null($user))
-            return 'invalid';
+            return json_encode(array('message'=>'wrong'));
         else{
-            Session::put('userId', $user->id);
-            Session::put('userType', $user->user_type);
+            Session::put('user_id', $user->id);
+            Session::put('user_type', $user->user_type);
             Session::put('name', $user->name);
 
-            return 'correct';
+            return json_encode(array('message'=>'correct'));
         }
     }
     
@@ -30,13 +39,13 @@ class AuthenticationController extends BaseController
             ->where('password','=',$password)->first();
 
         if(is_null($admin))
-            return 'invalid';
+            return json_encode(array('message'=>'wrong'));
         else
         {
-            Session::put('adminId', $admin->id);
+            Session::put('admin_id', $admin->id);
             Session::put('name', $admin->name);
 
-            return 'correct';
+            return json_encode(array('message'=>'correct'));
         }
     }
 
@@ -49,13 +58,13 @@ class AuthenticationController extends BaseController
             ->where('password','=',$password)->first();
 
         if(is_null($user))
-            return 'invalid';
+            return json_encode(array('message'=>'wrong'));
         else
         {
             Session::put('softwareUserId', $user->id);
             Session::put('name', $user->name);
 
-            return 'correct';
+            return json_encode(array('message'=>'correct'));
         }
     }
 

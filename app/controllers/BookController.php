@@ -22,7 +22,20 @@ class BookController extends BaseController
         if(!isset($adminId))
             return json_encode(array('message' => 'not logged'));
 
+        $courseId = Session::get('course_id');
+        if(!isset($courseId))
+            return json_encode(array('message' => 'invalid'));
+
         $book = new Book();
+
+        $book->course_id = $courseId;
+        $book->name = Input::get('name');
+        $book->publish_date = date('Y-m-d', strtotime(Input::get('publish_date')));
+        $book->subject = Input::get('subject');
+        $book->author = Input::get('author');
+        $book->price = Input::get('price');
+        $book->discounted_price = Input::get('discounted_price');
+        $book->book_type = Input::get('book_type');
 
         $book->status = 'active';
         $book->created_at = date('Y-m-d h:i:s');
@@ -67,7 +80,8 @@ class BookController extends BaseController
 
             if(isset($book)){
 
-                $book->remove();
+                $book->status = 'removed';
+                $book->save();
 
                 return json_encode(array('message'=>'done'));
             }
@@ -90,6 +104,14 @@ class BookController extends BaseController
             $book = Book::find($id);
 
             if(isset($book)){
+
+                $book->name = Input::get('name');
+                $book->publish_date = date('Y-m-d', strtotime(Input::get('publish_date')));
+                $book->subject = Input::get('subject');
+                $book->author = Input::get('author');
+                $book->price = Input::get('price');
+                $book->discounted_price = Input::get('discounted_price');
+                $book->book_type = Input::get('book_type');
 
                 $book->save();
 

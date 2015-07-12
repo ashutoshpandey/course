@@ -64,9 +64,9 @@ function showGrid(data){
             <thead> \
                 <tr> \
                     <th data-column-id="id" data-type="numeric">ID</th> \
-                    <th>Name</th> \
-                    <th>Location</th> \
-                    <th data-column-id="link">Action</th> \
+                    <th data-column-id="name">Name</th> \
+                    <th data-column-id="city">Location</th> \
+                    <th data-formatter="link">Action</th> \
                 </tr> \
             </thead> \
             <tbody>';
@@ -79,15 +79,47 @@ function showGrid(data){
                     <td>' + institute.id + '</td> \
                     <td>' + institute.name + '</td> \
                     <td>' + institute.city + ' / ' + institute.state + '</td> \
-                    <td><a href="' + root + '/admin-view-institute/' + institute.id + '">View</a></td> \
+                    <td></td> \
                 </tr>';
             }
 
             str = str + '</tbody> \
         </table>';
-    }
 
     $('#institute-list').html(str);
 
-    $("#grid-basic").bootgrid();
+    $("#grid-basic").bootgrid({
+        formatters: {
+            'link': function(column, row)
+            {
+                var str = '<a target="_blank" href="' + root + '/admin-view-institute/' + row.id + '">View</a>';
+                str = str + '&nbsp;&nbsp; <a class="remove" href="#" rel="' + row.id + '">Remove</a>';
+                str = str + '&nbsp;&nbsp; <a href="' + root + '/admin-courses/' + row.id + '">Courses</a>';
+
+                return str;
+            }
+        }
+    }).on("loaded.rs.jquery.bootgrid", function()
+        {
+            $(".remove").click(function(){
+                var id = $(this).attr("rel");
+
+                if(!confirm("Are you sure to remove this course?"))
+                    return;
+
+                $.getJSON(root + '/remove-institute/' + id,
+                    function(result){
+                        if(result.message.indexOf('done')>-1)
+                            listInstitutes(1);
+                        else if(result.message.indexOf('not logged')>-1)
+                            window.location.replace(root);
+                        else
+                            alert("Server returned error : " + result);
+                    }
+                );
+            });
+        });
+    }
+    else
+        $('#institute-list').html('No institutes found');
 }
