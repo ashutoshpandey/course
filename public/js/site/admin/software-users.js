@@ -11,10 +11,10 @@ function createSoftwareUser(){
 
     if(isSoftwareUserFormValid()){
 
-        var data = $("#form-create-softwareUser").serialize();
+        var data = $("#form-create-software-user").serialize();
 
         $.ajax({
-            url: root + '/save-softwareUser',
+            url: root + '/save-software-user',
             type: 'post',
             data: data,
             dataType: 'json',
@@ -28,7 +28,7 @@ function createSoftwareUser(){
                 else if(result.message.indexOf('done')>-1){
                     $('.message').html('SoftwareUser created successfully');
 
-                    $('#form-container').find('input[type="text"], textarea').val('');
+                    $('#form-container').find('input[type="text"],input[type="password"],input[type="email"], textarea').val('');
 
                     listSoftwareUsers(1);
                 }
@@ -45,7 +45,7 @@ function listSoftwareUsers(page){
     var status = 'active';
 
     $.getJSON(
-        root + '/admin-list-softwareUsers/' + status + '/' + page,
+        root + '/admin-list-software-users/' + status + '/' + page,
         function(result){
 
             if(result.message.indexOf('not logged')>-1)
@@ -58,7 +58,7 @@ function listSoftwareUsers(page){
 }
 function showGrid(data){
 
-    if(data!=undefined && data.softwareUsers!=undefined && data.softwareUsers.length>0){
+    if(data!=undefined && data.software_users!=undefined && data.software_users.length>0){
 
         var str = '';
 
@@ -67,6 +67,7 @@ function showGrid(data){
                 <tr> \
                     <th data-column-id="id" data-type="numeric">ID</th> \
                     <th data-column-id="name">Name</th> \
+                    <th data-column-id="username">Username</th> \
                     <th data-column-id="email">Email</th> \
                     <th data-column-id="contact">Contact</th> \
                     <th data-formatter="link">Action</th> \
@@ -74,15 +75,16 @@ function showGrid(data){
             </thead> \
             <tbody>';
 
-            for(var i =0;i<data.softwareUsers.length;i++){
+            for(var i =0;i<data.software_users.length;i++){
 
-                var softwareUser = data.softwareUsers[i];
+                var softwareUser = data.software_users[i];
 
                 str = str + '<tr> \
                     <td>' + softwareUser.id + '</td> \
                     <td>' + softwareUser.name + '</td> \
+                    <td>' + softwareUser.username + '</td> \
                     <td>' + softwareUser.email + '</td> \
-                    <td>' + softwareUser.contact_number_1 + '</td> \
+                    <td>' + softwareUser.contact_number + '</td> \
                     <td></td> \
                 </tr>';
             }
@@ -90,15 +92,14 @@ function showGrid(data){
             str = str + '</tbody> \
         </table>';
 
-    $('#softwareUser-list').html(str);
+    $('#software-user-list').html(str);
 
     $("#grid-basic").bootgrid({
         formatters: {
             'link': function(column, row)
             {
-                var str = '<a target="_blank" href="' + root + '/admin-view-softwareUser/' + row.id + '">View</a>';
+                var str = '<a target="_blank" href="' + root + '/admin-view-software-user/' + row.id + '">View</a>';
                 str = str + '&nbsp;&nbsp; <a class="remove" href="#" rel="' + row.id + '">Remove</a>';
-                str = str + '&nbsp;&nbsp; <a href="' + root + '/admin-courses/' + row.id + '">Courses</a>';
 
                 return str;
             }
@@ -108,10 +109,10 @@ function showGrid(data){
             $(".remove").click(function(){
                 var id = $(this).attr("rel");
 
-                if(!confirm("Are you sure to remove this softwareUser?"))
+                if(!confirm("Are you sure to remove this software user?"))
                     return;
 
-                $.getJSON(root + '/remove-softwareUser/' + id,
+                $.getJSON(root + '/remove-software-user/' + id,
                     function(result){
                         if(result.message.indexOf('done')>-1)
                             listSoftwareUsers(1);

@@ -28,7 +28,7 @@ function createInstitute(){
                 else if(result.message.indexOf('done')>-1){
                     $('.message').html('Institute created successfully');
 
-                    $('#form-container').find('input[type="text"], textarea').val('');
+                    $('#form-container').find('input[type="text"],input[type="password"],input[type="email"], textarea').val('');
 
                     listInstitutes(1);
                 }

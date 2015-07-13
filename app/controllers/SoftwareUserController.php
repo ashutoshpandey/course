@@ -22,20 +22,15 @@ class SoftwareUserController extends BaseController
         if(!isset($adminId))
             return json_encode(array('message' => 'not logged'));
 
-        $courseId = Session::get('course_id');
-        if(!isset($courseId))
-            return json_encode(array('message' => 'invalid'));
-
         $softwareUser = new SoftwareUser();
 
-        $softwareUser->course_id = $courseId;
         $softwareUser->name = Input::get('name');
-        $softwareUser->publish_date = date('Y-m-d', strtotime(Input::get('publish_date')));
-        $softwareUser->subject = Input::get('subject');
-        $softwareUser->author = Input::get('author');
-        $softwareUser->price = Input::get('price');
-        $softwareUser->discounted_price = Input::get('discounted_price');
-        $softwareUser->softwareUser_type = Input::get('softwareUser_type');
+        $softwareUser->username = Input::get('username');
+        $softwareUser->password = Input::get('password');
+        $softwareUser->user_type = Input::get('user_type');
+        $softwareUser->contact_number = Input::get('contact_number');
+        $softwareUser->gender = Input::get('gender');
+        $softwareUser->email = Input::get('email');
 
         $softwareUser->status = 'active';
         $softwareUser->created_at = date('Y-m-d h:i:s');
@@ -98,7 +93,7 @@ class SoftwareUserController extends BaseController
         if(!isset($adminId))
             return json_encode(array('message' => 'not logged'));
 
-        $id = Session::get('softwareUser_id');
+        $id = Session::get('software_user_id');
 
         if(isset($id)){
             $softwareUser = SoftwareUser::find($id);
@@ -106,12 +101,12 @@ class SoftwareUserController extends BaseController
             if(isset($softwareUser)){
 
                 $softwareUser->name = Input::get('name');
-                $softwareUser->publish_date = date('Y-m-d', strtotime(Input::get('publish_date')));
-                $softwareUser->subject = Input::get('subject');
-                $softwareUser->author = Input::get('author');
-                $softwareUser->price = Input::get('price');
-                $softwareUser->discounted_price = Input::get('discounted_price');
-                $softwareUser->softwareUser_type = Input::get('softwareUser_type');
+                $softwareUser->username = Input::get('username');
+                $softwareUser->password = Input::get('password');
+                $softwareUser->user_type = Input::get('user_type');
+                $softwareUser->contact_number = Input::get('contact_number');
+                $softwareUser->gender = Input::get('gender');
+                $softwareUser->email = Input::get('email');
 
                 $softwareUser->save();
 
@@ -132,7 +127,7 @@ class SoftwareUserController extends BaseController
 
             if(isset($softwareUser)){
 
-                return json_encode(array('message'=>'found', 'softwareUser' => $softwareUser));
+                return json_encode(array('message'=>'found', 'software_user' => $softwareUser));
             }
             else
                 return json_encode(array('message'=>'empty'));
@@ -149,7 +144,7 @@ class SoftwareUserController extends BaseController
 
             if(isset($softwareUsers)){
 
-                return json_encode(array('message'=>'found', 'softwareUsers' => $softwareUsers->toArray()));
+                return json_encode(array('message'=>'found', 'software_users' => $softwareUsers->toArray()));
             }
             else
                 return json_encode(array('message'=>'empty'));
@@ -166,7 +161,7 @@ class SoftwareUserController extends BaseController
 
             if(isset($softwareUsers)){
 
-                return json_encode(array('message'=>'found', 'softwareUsers' => $softwareUsers->toArray()));
+                return json_encode(array('message'=>'found', 'software_users' => $softwareUsers->toArray()));
             }
             else
                 return json_encode(array('message'=>'empty'));

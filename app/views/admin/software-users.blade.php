@@ -42,15 +42,16 @@
     <li><a href='#tab-create'>Create</a></li>
 </ul>
 <div id='tab-list'>
-    <div id='courier-list'></div>
+    <div id='software-user-list'></div>
 </div>
 <div id='tab-create'>
 <div id='form-container'>
-<form id='form-create-courier'>
+<form id='form-create-software-user'>
+
 <div class='form-row'>
     <div class='form-label'>Username</div>
     <div class='form-data'>
-        <input type='text' name='name'/>
+        <input type='text' name='username'/>
     </div>
     <div class='form-label'>User type</div>
     <div class='form-data'>
@@ -62,7 +63,20 @@
     </div>
     <div class='clear'></div>
 </div>
-<div class='form-row'>
+    <div class='form-row'>
+        <div class='form-label'>Name</div>
+        <div class='form-data'>
+            <input type='text' name='name'/>
+        </div>
+        <div class='form-label'>Gender</div>
+        <div class='form-data'>
+            <label><input type='radio' name='gender' value='male' checked="checked"/> Male</label>
+            <label><input type='radio' name='gender' value='female'/> Female</label>
+        </div>
+        <div class='clear'></div>
+    </div>
+
+    <div class='form-row'>
 <div class='form-label'>Password</div>
 <div class='form-data'>
     <input type='password' name='password'/>
@@ -73,6 +87,17 @@
 </div>
 <div class='clear'></div>
 </div>
+    <div class='form-row'>
+        <div class='form-label'>Email</div>
+        <div class='form-data'>
+            <input type='email' name='email'/>
+        </div>
+        <div class='form-label'>Contact number</div>
+        <div class='form-data'>
+            <input type='text' name='contact_number'/>
+        </div>
+        <div class='clear'></div>
+    </div>
 <div class='form-row'>
     <div class='form-label'>&nbsp;</div>
     <div class='form-data'>

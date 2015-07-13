@@ -23,6 +23,10 @@ function createBook(){
                 if(result.message.indexOf('not logged')>-1)
                     window.location.replace(root);
                 else{
+                    $('.message').html('Book created successfully');
+
+                    $('#form-container').find('input[type="text"], textarea').val('');
+
                     listBooks(1);
                 }
             }

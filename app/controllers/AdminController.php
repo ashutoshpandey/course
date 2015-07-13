@@ -289,6 +289,7 @@ class AdminController extends BaseController
     }
 
     public function softwareUsers(){
+
         $adminId = Session::get('admin_id');
         if(!isset($adminId))
             return Redirect::to('/');
@@ -307,7 +308,21 @@ class AdminController extends BaseController
 
             if(isset($softwareUser)){
 
-                return View::make('admin.view-software-user')->with('softwareUser', $softwareUser);
+                Session::put('software_user_id', $id);
+
+                if($softwareUser->gender=='male'){
+                    $male_checked = 'checked="checked"';
+                    $female_checked = '';
+                }
+                else{
+                    $female_checked = 'checked="checked"';
+                    $male_checked = '';
+                }
+
+                return View::make('admin.view-software-user')
+                                ->with('softwareUser', $softwareUser)
+                                ->with('male_checked', $male_checked)
+                                ->with('female_checked', $female_checked);
             }
             else
                 return Redirect::to('/');

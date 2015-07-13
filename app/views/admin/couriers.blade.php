@@ -353,7 +353,7 @@
 <div class='form-row'>
     <div class='form-label'>Email</div>
     <div class='form-data'>
-        <input type='text' name='email' class='half'/>
+        <input type='email' name='email' class='half'/>
     </div>
     <div class='clear'></div>
 </div>

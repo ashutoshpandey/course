@@ -44,7 +44,7 @@
     width: 650px;
 }
 
-.form-row select, input[type='text'], input[type='password']{
+.form-row select, input[type='text'], input[type='password'], input[type='email']{
     border: solid 1px #ababab;
     padding: 3px;
     width: 100%;
