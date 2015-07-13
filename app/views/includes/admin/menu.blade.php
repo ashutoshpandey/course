@@ -26,8 +26,14 @@
                 </a>
             </li>
             <li class="software-users">
-                <a href="#">
+                <a href="{{$root}}/admin-software-users">
                     <i class="fa fa-edit"></i> <span>Software users</span>
+                </a>
+            </li>
+            <li class="couriers">
+                <a href="{{$root}}/admin-couriers">
+                    <i class="fa fa-laptop"></i>
+                    <span>Couriers</span>
                 </a>
             </li>
             <li class="logout">

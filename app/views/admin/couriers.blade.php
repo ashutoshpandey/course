@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Administration | Institutes</title>
+    <title>Administration | Couriers</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
@@ -42,19 +42,19 @@
     <li><a href='#tab-create'>Create</a></li>
 </ul>
 <div id='tab-list'>
-    <div id='institute-list'></div>
+    <div id='courier-list'></div>
 </div>
 <div id='tab-create'>
 <div id='form-container'>
-<form id='form-create-institute'>
+<form id='form-create-courier'>
 <div class='form-row'>
     <div class='form-label'>Name</div>
     <div class='form-data'>
         <input type='text' name='name'/>
     </div>
-    <div class='form-label'>Establish Date</div>
+    <div class='form-label'>Contact person</div>
     <div class='form-data'>
-        <input type='date' name='establish_date'/>
+        <input type='text' name='contact_person'/>
     </div>
     <div class='clear'></div>
 </div>
@@ -351,16 +351,16 @@
     <div class='clear'></div>
 </div>
 <div class='form-row'>
-    <div class='form-label'>Latitude / Longitude</div>
+    <div class='form-label'>Email</div>
     <div class='form-data'>
-        <input type='text' name='latitude' class='half'/><input type='text' name='longitude' class='half'/>
+        <input type='text' name='email' class='half'/>
     </div>
     <div class='clear'></div>
 </div>
 <div class='form-row'>
     <div class='form-label'>&nbsp;</div>
     <div class='form-data'>
-        <input type='button' name='btn-create' value="Create Institute" class='half'/> <span class='message'></span>
+        <input type='button' name='btn-create' value="Create Courier" class='half'/> <span class='message'></span>
     </div>
     <div class='clear'></div>
 </div>
@@ -379,10 +379,10 @@
 <!-- ./wrapper -->
 
 @include('includes/common_js_bottom')
-{{HTML::script(asset("/public/js/site/admin/institutes.js"))}}
+{{HTML::script(asset("/public/js/site/admin/couriers.js"))}}
 <script type="text/javascript">
     $(function () {
-        $(".institutes").addClass('active');
+        $(".couriers").addClass('active');
     });
 </script>
 </body>

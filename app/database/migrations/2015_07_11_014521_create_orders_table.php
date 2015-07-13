@@ -43,9 +43,13 @@ class CreateOrdersTable extends Migration {
             $table->string('billing_contact_number_1', 20);
             $table->string('billing_contact_number_2', 20);
 
+            $table->integer('courier_id')->unsigned();
+            $table->string('docket_number', 255);
+
             $table->string('status', 50);
 
             $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('courier_id')->references('id')->on('couriers');
 
             $table->timestamps();
 		});

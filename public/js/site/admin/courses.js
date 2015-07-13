@@ -22,7 +22,11 @@ function createCourse(){
 
                 if(result.message.indexOf('not logged')>-1)
                     window.location.replace(root);
-                else{
+                else if(result.message.indexOf('done')>-1){
+                    $('#form-container').find('input[type="text"], textarea').val('');
+
+                    $('.message').html('Course created successfully');
+
                     listCourses(1);
                 }
             }

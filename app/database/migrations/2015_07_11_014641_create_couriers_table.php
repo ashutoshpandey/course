@@ -23,6 +23,7 @@ class CreateCouriersTable extends Migration {
             $table->string('state', 255);
             $table->string('country', 255);
             $table->string('zip', 20);
+            $table->string('land_mark', 255);
             $table->string('contact_number_1', 50);
             $table->string('contact_number_2', 50);
             $table->string('email', 255);

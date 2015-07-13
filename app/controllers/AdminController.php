@@ -13,25 +13,27 @@ class AdminController extends BaseController
     }
 
     public function adminSection(){
-//        $adminId = Session::get('admin_id');
-//        if(!isset($adminId))
-//            return Redirect::to('/');
+
+        $adminId = Session::get('admin_id');
+        if(!isset($adminId))
+            return Redirect::to('/');
 
         return View::make('admin.admin-section');
     }
 
     public function institutes(){
-//        $adminId = Session::get('admin_id');
-//        if(!isset($adminId))
-//            return Redirect::to('/');
+        $adminId = Session::get('admin_id');
+        if(!isset($adminId))
+            return Redirect::to('/');
 
         return View::make('admin.institutes');
     }
 
     public function viewInstitute($id){
-//        $adminId = Session::get('admin_id');
-//        if(!isset($adminId))
-//            return Redirect::to('/');
+
+        $adminId = Session::get('admin_id');
+        if(!isset($adminId))
+            return Redirect::to('/');
 
         if(isset($id)){
 
@@ -51,9 +53,10 @@ class AdminController extends BaseController
     }
 
     public function courses($id){
-//        $adminId = Session::get('admin_id');
-//        if(!isset($adminId))
-//            return Redirect::to('/');
+
+        $adminId = Session::get('admin_id');
+        if(!isset($adminId))
+            return Redirect::to('/');
 
         if(isset($id)){
 
@@ -73,19 +76,20 @@ class AdminController extends BaseController
     }
 
     public function viewCourse($id){
-//        $adminId = Session::get('admin_id');
-//        if(!isset($adminId))
-//            return Redirect::to('/');
+
+        $adminId = Session::get('admin_id');
+        if(!isset($adminId))
+            return Redirect::to('/');
 
         if(isset($id)){
 
-            $course = Course::find($id);
+            $institute = Institute::find($id);
 
-            if(isset($course)){
+            if(isset($institute)){
 
-                Session::put('course_id', $id);
+                Session::put('institute_id', $id);
 
-                return View::make('admin.view-course')->with('course', $course);
+                return View::make('admin.view-course')->with('institute', $institute);
             }
             else
                 return Redirect::to('/');
@@ -95,9 +99,10 @@ class AdminController extends BaseController
     }
 
     public function books($id){
-//        $adminId = Session::get('admin_id');
-//        if(!isset($adminId))
-//            return Redirect::to('/');
+
+        $adminId = Session::get('admin_id');
+        if(!isset($adminId))
+            return Redirect::to('/');
 
         if(isset($id)){
 
@@ -117,9 +122,10 @@ class AdminController extends BaseController
     }
 
     public function viewBook($id){
-//        $adminId = Session::get('admin_id');
-//        if(!isset($adminId))
-//            return Redirect::to('/');
+
+        $adminId = Session::get('admin_id');
+        if(!isset($adminId))
+            return Redirect::to('/');
 
         if(isset($id)){
 
@@ -139,17 +145,19 @@ class AdminController extends BaseController
     }
 
     public function orders(){
-//        $adminId = Session::get('admin_id');
-//        if(!isset($adminId))
-//            return Redirect::to('/');
+
+        $adminId = Session::get('admin_id');
+        if(!isset($adminId))
+            return Redirect::to('/');
 
         return View::make('admin.orders');
     }
 
     public function listInstitutes($status, $page){
-//        $adminId = Session::get('admin_id');
-//        if(!isset($adminId))
-//            return json_encode(array('message'=>'not logged'));
+
+        $adminId = Session::get('admin_id');
+        if(!isset($adminId))
+            return json_encode(array('message'=>'not logged'));
 
         if(isset($status)){
 
@@ -167,9 +175,10 @@ class AdminController extends BaseController
     }
 
     public function listOrders($status, $page){
-//        $adminId = Session::get('admin_id');
-//        if(!isset($adminId))
-//            return json_encode(array('message'=>'not logged'));
+
+        $adminId = Session::get('admin_id');
+        if(!isset($adminId))
+            return json_encode(array('message'=>'not logged'));
 
         if(isset($status)){
 
@@ -187,9 +196,10 @@ class AdminController extends BaseController
     }
 
     public function listCourses($status, $page){
-//        $adminId = Session::get('admin_id');
-//        if(!isset($adminId))
-//            return json_encode(array('message'=>'not logged'));
+
+        $adminId = Session::get('admin_id');
+        if(!isset($adminId))
+            return json_encode(array('message'=>'not logged'));
 
         $institute_id = Session::get('institute_id');
 
@@ -209,9 +219,10 @@ class AdminController extends BaseController
     }
 
     public function listBooks($status, $page){
-//        $adminId = Session::get('admin_id');
-//        if(!isset($adminId))
-//            return json_encode(array('message'=>'not logged'));
+
+        $adminId = Session::get('admin_id');
+        if(!isset($adminId))
+            return json_encode(array('message'=>'not logged'));
 
         $course_id = Session::get('course_id');
 
@@ -228,5 +239,96 @@ class AdminController extends BaseController
         }
         else
             return json_encode(array('message'=>'invalid'));
+    }
+
+    public function couriers(){
+        $adminId = Session::get('admin_id');
+        if(!isset($adminId))
+            return Redirect::to('/');
+
+        return View::make('admin.couriers');
+    }
+
+    public function viewCourier($id){
+
+        $adminId = Session::get('admin_id');
+        if(!isset($adminId))
+            return Redirect::to('/');
+
+        if(isset($id)){
+
+            $courier = Courier::find($id);
+
+            if(isset($courier)){
+
+                Session::put('courier_id', $id);
+
+                return View::make('admin.view-courier')->with('courier', $courier);
+            }
+            else
+                return Redirect::to('/');
+        }
+        else
+            return Redirect::to('/');
+    }
+
+    public function listCouriers($status, $page){
+
+        $adminId = Session::get('admin_id');
+        if(!isset($adminId))
+            return json_encode(array('message'=>'not logged'));
+
+        $couriers = Courier::where('status','=',$status)->get();
+
+        if(isset($couriers) && count($couriers)>0){
+
+            return json_encode(array('message'=>'found', 'couriers' => $couriers->toArray()));
+        }
+        else
+            return json_encode(array('message'=>'empty'));
+    }
+
+    public function softwareUsers(){
+        $adminId = Session::get('admin_id');
+        if(!isset($adminId))
+            return Redirect::to('/');
+
+        return View::make('admin.software-users');
+    }
+
+    public function viewSoftwareUser($id){
+
+        $adminId = Session::get('admin_id');
+        if(!isset($adminId))
+            return Redirect::to('/');
+
+        if(isset($id)){
+            $softwareUser = SoftwareUser::find($id);
+
+            if(isset($softwareUser)){
+
+                return View::make('admin.view-software-user')->with('softwareUser', $softwareUser);
+            }
+            else
+                return Redirect::to('/');
+        }
+        else
+            return Redirect::to('/');
+    }
+
+    public function listSoftwareUsers($status, $page){
+
+        $adminId = Session::get('admin_id');
+        if(!isset($adminId))
+            return json_encode(array('message'=>'not logged'));
+
+        $softwareUsers = SoftwareUser::where('status','=',$status)->get();
+
+        if(isset($softwareUsers) && count($softwareUsers)>0){
+
+            return json_encode(array('message'=>'found', 'software_users' => $softwareUsers->toArray()));
+        }
+        else
+            return json_encode(array('message'=>'empty'));
     }
 }

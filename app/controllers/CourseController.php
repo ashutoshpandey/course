@@ -23,7 +23,7 @@ class CourseController extends BaseController
             return json_encode(array('message'=>'not logged'));
 
         $instituteId = Session::get('institute_id');
-        if(!isset($courseId))
+        if(!isset($instituteId))
             return json_encode(array('message' => 'invalid'));
 
         $course = new Course();
