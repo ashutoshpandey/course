@@ -11,6 +11,16 @@
 |
 */
 
+Route::get('/', 'StaticController@home');
+Route::get('/contact-us', 'StaticController@contactUs');
+Route::get('/about-us', 'StaticController@aboutUs');
+Route::get('/terms-and-conditions', 'StaticController@termsAndConditions');
+Route::get('/privacy-policy', 'StaticController@privacyPolicy');
+
+Route::get('/institute', 'SearchController@home');
+Route::get('/course', 'SearchController@home');
+Route::get('/book', 'SearchController@home');
+
 Route::get('/admin-login', 'AuthenticationController@adminLogin');
 
 Route::post('/is-valid-admin', 'AuthenticationController@isValidAdmin');

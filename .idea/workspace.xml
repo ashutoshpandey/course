@@ -2,18 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/AdminController.php" afterPath="$PROJECT_DIR$/app/controllers/AdminController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/SoftwareUserController.php" afterPath="$PROJECT_DIR$/app/controllers/SoftwareUserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/site/admin/admin.css" afterPath="$PROJECT_DIR$/public/css/site/admin/admin.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/site/admin/books.js" afterPath="$PROJECT_DIR$/public/js/site/admin/books.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/couriers.blade.php" afterPath="$PROJECT_DIR$/app/views/admin/couriers.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/site/admin/institutes.js" afterPath="$PROJECT_DIR$/public/js/site/admin/institutes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/software-users.blade.php" afterPath="$PROJECT_DIR$/app/views/admin/software-users.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/site/admin/software-users.js" afterPath="$PROJECT_DIR$/public/js/site/admin/software-users.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/StaticController.php" />
+      <change type="DELETED" beforePath="C:\xampp1.8\htdocs\course\app\controllers\HomeController.php" afterPath="" />
+      <change type="MOVED" beforePath="C:\xampp1.8\htdocs\course\app\views\hello.php" afterPath="$PROJECT_DIR$/app/views/static/home.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/includes/common_css.blade.php" afterPath="$PROJECT_DIR$/app/views/includes/common_css.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/includes/common_js_bottom.blade.php" afterPath="$PROJECT_DIR$/app/views/includes/common_js_bottom.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/includes/common_js_top.blade.php" afterPath="$PROJECT_DIR$/app/views/includes/common_js_top.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/includes/header.blade.php" afterPath="$PROJECT_DIR$/app/views/includes/header.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="course.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/a.dummy" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1409846631865" ignored="false" />
+    <file path="/a.dummy" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436838430235" ignored="false" />
     <file path="/routes.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436723276530" ignored="false" />
     <file path="/InstituteController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436720024113" ignored="false" />
     <file path="/2015_07_11_013731_create_courses_table.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436578728782" ignored="false" />
@@ -31,7 +32,7 @@
     <file path="/AdminController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436758909393" ignored="false" />
     <file path="/CourseController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436751047218" ignored="false" />
     <file path="/BookController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436721324325" ignored="false" />
-    <file path="/Dummy.txt" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436749288991" ignored="false" />
+    <file path="/Dummy.txt" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436836482649" ignored="false" />
     <file path="/AuthenticationController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436723089292" ignored="false" />
     <file path="/2015_07_11_013407_create_admins_table.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436722996092" ignored="false" />
     <file path="/2015_07_11_013408_create_software_users_table.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436617451715" ignored="false" />
@@ -49,7 +50,7 @@
     <file path="/books.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436758748246" ignored="false" />
     <file path="/courses.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436719000529" ignored="false" />
     <file path="/institutes.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436754964048" ignored="false" />
-    <file path="/common_js_top.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436674880598" ignored="false" />
+    <file path="/common_js_top.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436842789698" ignored="false" />
     <file path="/Institute.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436634811834" ignored="false" />
     <file path="/Course.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436634847866" ignored="false" />
     <file path="/Book.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436634864664" ignored="false" />
@@ -63,7 +64,7 @@
     <file path="/view-book.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436721867500" ignored="false" />
     <file path="/view-course.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436717492363" ignored="false" />
     <file path="/menu.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436756703721" ignored="false" />
-    <file path="/login.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436722708158" ignored="false" />
+    <file path="/login.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436846144212" ignored="false" />
     <file path="/login.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436722814926" ignored="false" />
     <file path="/Order.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436723443953" ignored="false" />
     <file path="/OrderItem.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436723413016" ignored="false" />
@@ -77,6 +78,15 @@
     <file path="/SoftwareUserController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436757882548" ignored="false" />
     <file path="/software-users.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436758258597" ignored="false" />
     <file path="/view-software-user.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436758822922" ignored="false" />
+    <file path="/HomeController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436836735628" ignored="false" />
+    <file path="/StaticController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436838438320" ignored="false" />
+    <file path="/SearchController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436838588152" ignored="false" />
+    <file path="/home.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436842746932" ignored="false" />
+    <file path="/footer.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436842600252" ignored="false" />
+    <file path="/about-us.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436842839177" ignored="false" />
+    <file path="/contact-us.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436842852403" ignored="false" />
+    <file path="/register.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436842945297" ignored="false" />
+    <file path="/terms-and-conditions.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436843585237" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,22 +123,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/public/js/site/admin/view-courier.js" />
-        <option value="$PROJECT_DIR$/app/controllers/CourierController.php" />
-        <option value="$PROJECT_DIR$/app/views/admin/view-courier.blade.php" />
-        <option value="$PROJECT_DIR$/public/js/site/admin/couriers.js" />
-        <option value="$PROJECT_DIR$/app/routes.php" />
-        <option value="$PROJECT_DIR$/app/views/includes/admin/menu.blade.php" />
-        <option value="$PROJECT_DIR$/public/css/site/admin/admin.css" />
-        <option value="$PROJECT_DIR$/app/views/admin/software-users.blade.php" />
-        <option value="$PROJECT_DIR$/public/js/site/admin/view-software-user.js" />
-        <option value="$PROJECT_DIR$/app/controllers/SoftwareUserController.php" />
-        <option value="$PROJECT_DIR$/app/views/admin/couriers.blade.php" />
-        <option value="$PROJECT_DIR$/public/js/site/admin/books.js" />
-        <option value="$PROJECT_DIR$/public/js/site/admin/institutes.js" />
-        <option value="$PROJECT_DIR$/app/views/admin/view-software-user.blade.php" />
-        <option value="$PROJECT_DIR$/app/controllers/AdminController.php" />
-        <option value="$PROJECT_DIR$/public/js/site/admin/software-users.js" />
+        <option value="$PROJECT_DIR$/app/views/includes/footer.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/static/home.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/includes/common_css.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/includes/common_js_top.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/static/about-us.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/static/contact-us.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/static/register.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/static/terms-and-conditions.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/includes/header.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/course/institutes.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/course/institute.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/course/course.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/course/book.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/checkout/payment.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/checkout/login.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/checkout/address.blade.php" />
       </list>
     </option>
   </component>
@@ -188,6 +198,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -259,32 +270,6 @@
               <option name="myItemId" value="public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="site" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="course" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="course" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -323,32 +308,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="site" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="course" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="course" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="site" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -397,26 +356,8 @@
               <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="course" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="course" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="includes" />
+              <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -441,8 +382,22 @@
               <option name="myItemId" value="includes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
+              <option name="myItemId" value="course" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="course" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -464,7 +419,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
+              <option name="myItemId" value="course" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="course" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="course" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="checkout" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -518,35 +495,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="migrations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="course" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="course" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -555,18 +509,19 @@
     <property name="options.lastSelected" value="preferences.pluginManager" />
     <property name="last_opened_file_path" value="C:/cakephp-cakephp-4b9e390" />
     <property name="FullScreen" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp1.8\htdocs\course\public\js\site\admin" />
-      <recent name="C:\xampp1.8\htdocs\course\app\views\admin" />
+      <recent name="C:\xampp1.8\htdocs\course\app\views\includes" />
+      <recent name="C:\xampp1.8\htdocs\course\app\views\course" />
+      <recent name="C:\xampp1.8\htdocs\course\app\views\checkout" />
       <recent name="C:\xampp1.8\htdocs\course\app\controllers" />
-      <recent name="C:\xampp1.8\htdocs\course\app\models" />
-      <recent name="C:\xampp1.8\htdocs\course\public" />
+      <recent name="C:\xampp1.8\htdocs\course\app\views" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp1.8\htdocs\course\app\views\static" />
       <recent name="C:\xampp1.8\htdocs\course\public\css\site\admin" />
       <recent name="C:\xampp1.8\htdocs\course\public\js\site\admin" />
       <recent name="C:\xampp1.8\htdocs\course\public\js\site" />
@@ -617,7 +572,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26923078" sideWeight="0.6700565" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2724359" sideWeight="0.6700565" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299435" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -695,143 +650,117 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_07_11_014641_create_couriers_table.php">
+    <entry file="file://$PROJECT_DIR$/app/views/static/register.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="51" selection-start="772" selection-end="772" vertical-scroll-proportion="0.66021764">
+        <state line="19" column="13" selection-start="553" selection-end="553" vertical-scroll-proportion="-13.3">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/site/admin/couriers.js">
+    <entry file="file://$PROJECT_DIR$/app/views/static/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="118" column="17" selection-start="3642" selection-end="3642" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1436755708548" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1436755708548" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1436755708548" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1436755708548" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="66" selection-start="2594" selection-end="2594" vertical-scroll-proportion="0.5435835">
+        <state line="19" column="13" selection-start="583" selection-end="583" vertical-scroll-proportion="-13.3">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/includes/admin/menu.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/views/static/contact-us.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="50" selection-start="1052" selection-end="1052" vertical-scroll-proportion="0.42736077">
+        <state line="28" column="27" selection-start="657" selection-end="657" vertical-scroll-proportion="-19.6">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/site/common.css">
+    <entry file="file://$PROJECT_DIR$/app/views/static/about-us.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="47" selection-start="349" selection-end="349" vertical-scroll-proportion="-7.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/includes/header.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/site/admin/admin.css">
+    <entry file="file://$PROJECT_DIR$/app/views/includes/footer.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="81" selection-start="798" selection-end="798" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/software-users.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="6" selection-start="3192" selection-end="3192" vertical-scroll-proportion="0.28934625">
+        <state line="5" column="37" selection-start="271" selection-end="271" vertical-scroll-proportion="-3.5">
           <folding>
-            <element signature="tag#form#0;tag#div#0;tag#div#1;tag#div#0;tag#section#1;tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#2;tag#form#0;tag#div#0;tag#div#1;tag#div#0;tag#section#1;tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#footer#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/site/admin/view-software-user.js">
+    <entry file="file://$PROJECT_DIR$/app/views/includes/common_js_top.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="48" selection-start="196" selection-end="196" vertical-scroll-proportion="0.19626169">
+        <state line="1" column="38" selection-start="93" selection-end="93" vertical-scroll-proportion="-0.7">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/SoftwareUserController.php">
+    <entry file="file://$PROJECT_DIR$/app/views/includes/common_js_bottom.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="38" selection-start="2561" selection-end="2561" vertical-scroll-proportion="0.5181598">
+        <state line="8" column="72" selection-start="420" selection-end="420" vertical-scroll-proportion="-5.6">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/couriers.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/views/includes/common_css.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="355" column="26" selection-start="14215" selection-end="14215" vertical-scroll-proportion="0.7820823">
+        <state line="2" column="53" selection-start="177" selection-end="177" vertical-scroll-proportion="-1.4">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/site/admin/courses.js">
+    <entry file="file://$PROJECT_DIR$/app/views/course/institutes.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1436751249552" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1436751249552" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1436751249552" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1436751249552" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/site/admin/institutes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="129" selection-start="999" selection-end="999" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1436758777034" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1436758777034" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1436758777034" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1436758777034" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/site/admin/books.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="86" selection-start="728" selection-end="728" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1436758777074" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1436758777074" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1436758777074" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1436758777074" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/view-software-user.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="111" selection-start="2887" selection-end="2887" vertical-scroll-proportion="-11.2">
+        <state line="31" column="0" selection-start="673" selection-end="673" vertical-scroll-proportion="-21.7">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.php">
+    <entry file="file://$PROJECT_DIR$/app/views/course/institute.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="324" column="74" selection-start="8514" selection-end="8514" vertical-scroll-proportion="-17.033333">
+        <state line="31" column="0" selection-start="673" selection-end="673" vertical-scroll-proportion="-21.7">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/site/admin/software-users.js">
+    <entry file="file://$PROJECT_DIR$/app/views/course/course.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="111" column="67" selection-start="3502" selection-end="3502" vertical-scroll-proportion="0.56658876">
-          <folding>
-            <marker date="1436758961375" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1436758961375" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1436758961375" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1436758961375" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
+        <state line="31" column="0" selection-start="673" selection-end="673" vertical-scroll-proportion="-21.7">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/course/book.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="0" selection-start="673" selection-end="673" vertical-scroll-proportion="-21.7">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/checkout/payment.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="0" selection-start="673" selection-end="673" vertical-scroll-proportion="-21.7">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/checkout/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="0" selection-start="673" selection-end="673" vertical-scroll-proportion="-21.7">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/checkout/address.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="35" selection-start="539" selection-end="539" vertical-scroll-proportion="0.45762712">
+          <folding />
         </state>
       </provider>
     </entry>
