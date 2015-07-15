@@ -346,4 +346,52 @@ class AdminController extends BaseController
         else
             return json_encode(array('message'=>'empty'));
     }
+
+    public function locations(){
+
+        $adminId = Session::get('admin_id');
+        if(!isset($adminId))
+            return Redirect::to('/');
+
+        return View::make('admin.locations');
+    }
+
+    public function viewLocations($id){
+
+        $adminId = Session::get('admin_id');
+        if(!isset($adminId))
+            return Redirect::to('/');
+
+        if(isset($id)){
+            $location = Location::find($id);
+
+            if(isset($location)){
+
+                Session::put('location_id', $id);
+
+                return View::make('admin.view-location')
+                    ->with('location', $location);
+            }
+            else
+                return Redirect::to('/');
+        }
+        else
+            return Redirect::to('/');
+    }
+
+    public function listLocations($status, $page){
+
+        $adminId = Session::get('admin_id');
+        if(!isset($adminId))
+            return json_encode(array('message'=>'not logged'));
+
+        $locations = Location::where('status','=',$status)->get();
+
+        if(isset($locations) && count($locations)>0){
+
+            return json_encode(array('message'=>'found', 'locations' => $locations->toArray()));
+        }
+        else
+            return json_encode(array('message'=>'empty'));
+    }
 }
