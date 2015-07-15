@@ -31,7 +31,7 @@
             <div class='tab-container'>
                 <div id='tab-create'>
                     <div id='form-container'>
-                        <form id='form-update-course'>
+                        <form id='form-update-location'>
                             <div class='form-row'>
                                 <div class='form-label'>State</div>
                                 <div class='form-data'>
@@ -81,7 +81,7 @@
                             <div class='form-row'>
                                 <div class='form-label'>City</div>
                                 <div class='form-data'>
-                                    <input type='text' name='city' value='{{$location->name}}'/>
+                                    <input type='text' name='city' value='{{$location->city}}'/>
                                 </div>
                                 <div class='clear'></div>
                             </div>
@@ -115,6 +115,6 @@
 <!-- ./wrapper -->
 
 @include('includes/common_js_bottom')
-{{HTML::script(asset("/public/js/site/admin/view-course.js"))}}
+{{HTML::script(asset("/public/js/site/admin/view-location.js"))}}
 </body>
 </html>

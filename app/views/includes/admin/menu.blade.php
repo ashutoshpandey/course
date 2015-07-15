@@ -30,6 +30,11 @@
                     <i class="fa fa-edit"></i> <span>Software users</span>
                 </a>
             </li>
+            <li class="locations">
+                <a href="{{$root}}/admin-locations">
+                    <i class="fa fa-edit"></i> <span>Locations</span>
+                </a>
+            </li>
             <li class="couriers">
                 <a href="{{$root}}/admin-couriers">
                     <i class="fa fa-laptop"></i>

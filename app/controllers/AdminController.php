@@ -356,7 +356,7 @@ class AdminController extends BaseController
         return View::make('admin.locations');
     }
 
-    public function viewLocations($id){
+    public function viewLocation($id){
 
         $adminId = Session::get('admin_id');
         if(!isset($adminId))

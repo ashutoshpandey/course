@@ -55,6 +55,11 @@ Route::get('/edit-software-user', 'SoftwareUserController@edit');
 Route::post('/update-software-user', 'SoftwareUserController@update');
 Route::post('/save-software-user', 'SoftwareUserController@save');
 
+Route::get('/remove-location/{id}', 'LocationController@remove');
+Route::get('/edit-location', 'LocationController@edit');
+Route::post('/update-location', 'LocationController@update');
+Route::post('/save-location', 'LocationController@save');
+
 /********************** admin urls ************************/
 Route::get('/admin-section', 'AdminController@adminSection');
 Route::get('/admin-institutes', 'AdminController@institutes');
@@ -71,7 +76,7 @@ Route::get('/admin-list-courses/{status}/{page}', 'AdminController@listCourses')
 Route::get('/admin-list-books/{status}/{page}', 'AdminController@listBooks');
 Route::get('/admin-list-couriers/{status}/{page}', 'AdminController@listCouriers');
 Route::get('/admin-list-software-users/{status}/{page}', 'AdminController@listSoftwareUsers');
-Route::get('/admin-list-locations', 'AdminController@listLocations');
+Route::get('/admin-list-locations/{status}/{page}', 'AdminController@listLocations');
 
 Route::get('/admin-view-institute/{id}', 'AdminController@viewInstitute');
 Route::get('/admin-view-course/{id}', 'AdminController@viewCourse');

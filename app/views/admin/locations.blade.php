@@ -42,11 +42,11 @@
                     <li><a href='#tab-create'>Create</a></li>
                 </ul>
                 <div id='tab-list'>
-                    <div id='course-list'></div>
+                    <div id='location-list'></div>
                 </div>
                 <div id='tab-create'>
                     <div id='form-container'>
-                        <form id='form-create-course'>
+                        <form id='form-create-location'>
                             <div class='form-row'>
                                 <div class='form-label'>State</div>
                                 <div class='form-data'>
@@ -95,6 +95,9 @@
                                 <div class='form-data'>
                                     <input type="text" name="city" class="half"/>
                                 </div>
+                                <div class='clear'></div>
+                            </div>
+                            <div class='form-row'>
                                 <div class='form-label'>Pin</div>
                                 <div class='form-data'>
                                     <input type="text" name="pin" class="half"/>
@@ -120,7 +123,16 @@
     </div>
     <!-- /.content-wrapper -->
 
+</div>
+
     @include('includes/common_js_bottom')
-    {{HTML::script(asset("/public/js/site/admin/courses.js"))}}
+
+    {{HTML::script(asset("/public/js/site/admin/locations.js"))}}
+
+    <script type="text/javascript">
+        $(function(){
+            $(".orders").addClass('active');
+        });
+    </script>
 </body>
 </html>

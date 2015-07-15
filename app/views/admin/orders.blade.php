@@ -191,6 +191,8 @@
 </div><!-- ./wrapper -->
 
 @include('includes/common_js_bottom')
+{{HTML::script(asset("/public/js/site/admin/orders.js"))}}
+
 <script type="text/javascript">
     $(function(){
         $(".orders").addClass('active');
