@@ -8,7 +8,8 @@
 
     @include('includes.common_css')
 
-    {{HTML::style(asset("/public/css/site/home.css"))}}
+    {{HTML::style(asset("/public/css/site/static/home.css"))}}
+    {{HTML::script(asset("/public/js/site/static/home.js"))}}
 
     @include('includes.common_js_top')
 </head>

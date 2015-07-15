@@ -8,7 +8,8 @@
 
     @include('includes.common_css')
 
-    {{HTML::style(asset("/public/css/site/contact.css"))}}
+    {{HTML::style(asset("/public/css/site/static/contact.css"))}}
+    {{HTML::script(asset("/public/js/site/static/contact.js"))}}
 
     @include('includes.common_js_top')
 </head>

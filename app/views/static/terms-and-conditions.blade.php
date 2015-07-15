@@ -2,13 +2,14 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Coboo | Register</title>
+    <title>Coboo | Registration</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
     @include('includes.common_css')
 
-    {{HTML::style(asset("/public/css/site/terms.css"))}}
+    {{HTML::style(asset("/public/css/site/static/terms.css"))}}
+    {{HTML::script(asset("/public/js/site/static/terms.js"))}}
 
     @include('includes.common_js_top')
 </head>

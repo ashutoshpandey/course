@@ -2,14 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/StaticController.php" />
-      <change type="DELETED" beforePath="C:\xampp1.8\htdocs\course\app\controllers\HomeController.php" afterPath="" />
-      <change type="MOVED" beforePath="C:\xampp1.8\htdocs\course\app\views\hello.php" afterPath="$PROJECT_DIR$/app/views/static/home.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/includes/common_css.blade.php" afterPath="$PROJECT_DIR$/app/views/includes/common_css.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/includes/common_js_bottom.blade.php" afterPath="$PROJECT_DIR$/app/views/includes/common_js_bottom.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/includes/common_js_top.blade.php" afterPath="$PROJECT_DIR$/app/views/includes/common_js_top.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/includes/header.blade.php" afterPath="$PROJECT_DIR$/app/views/includes/header.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
+      <change type="MOVED" beforePath="C:\xampp1.8\htdocs\course\public\css\site\about.css" afterPath="$PROJECT_DIR$/public/css/site/static/about.css" />
+      <change type="MOVED" beforePath="C:\xampp1.8\htdocs\course\public\css\site\contact.css" afterPath="$PROJECT_DIR$/public/css/site/static/contact.css" />
+      <change type="MOVED" beforePath="C:\xampp1.8\htdocs\course\public\css\site\home.css" afterPath="$PROJECT_DIR$/public/css/site/static/home.css" />
+      <change type="MOVED" beforePath="C:\xampp1.8\htdocs\course\public\css\site\privacy.css" afterPath="$PROJECT_DIR$/public/css/site/static/privacy.css" />
+      <change type="MOVED" beforePath="C:\xampp1.8\htdocs\course\public\css\site\terms.css" afterPath="$PROJECT_DIR$/public/css/site/static/terms.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/static/about-us.blade.php" afterPath="$PROJECT_DIR$/app/views/static/about-us.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/static/contact-us.blade.php" afterPath="$PROJECT_DIR$/app/views/static/contact-us.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/static/home.blade.php" afterPath="$PROJECT_DIR$/app/views/static/home.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/static/register.blade.php" afterPath="$PROJECT_DIR$/app/views/static/register.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/static/terms-and-conditions.blade.php" afterPath="$PROJECT_DIR$/app/views/static/terms-and-conditions.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="course.iws" />
@@ -32,7 +34,7 @@
     <file path="/AdminController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436758909393" ignored="false" />
     <file path="/CourseController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436751047218" ignored="false" />
     <file path="/BookController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436721324325" ignored="false" />
-    <file path="/Dummy.txt" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436836482649" ignored="false" />
+    <file path="/Dummy.txt" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436928886900" ignored="false" />
     <file path="/AuthenticationController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436723089292" ignored="false" />
     <file path="/2015_07_11_013407_create_admins_table.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436722996092" ignored="false" />
     <file path="/2015_07_11_013408_create_software_users_table.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436617451715" ignored="false" />
@@ -81,12 +83,12 @@
     <file path="/HomeController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436836735628" ignored="false" />
     <file path="/StaticController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436838438320" ignored="false" />
     <file path="/SearchController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436838588152" ignored="false" />
-    <file path="/home.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436842746932" ignored="false" />
+    <file path="/home.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436935763162" ignored="false" />
     <file path="/footer.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436842600252" ignored="false" />
-    <file path="/about-us.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436842839177" ignored="false" />
-    <file path="/contact-us.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436842852403" ignored="false" />
-    <file path="/register.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436842945297" ignored="false" />
-    <file path="/terms-and-conditions.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436843585237" ignored="false" />
+    <file path="/about-us.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436935785649" ignored="false" />
+    <file path="/contact-us.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436935801969" ignored="false" />
+    <file path="/register.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436935810873" ignored="false" />
+    <file path="/terms-and-conditions.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1436935831344" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,13 +126,8 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/app/views/includes/footer.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/static/home.blade.php" />
         <option value="$PROJECT_DIR$/app/views/includes/common_css.blade.php" />
         <option value="$PROJECT_DIR$/app/views/includes/common_js_top.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/static/about-us.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/static/contact-us.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/static/register.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/static/terms-and-conditions.blade.php" />
         <option value="$PROJECT_DIR$/app/views/includes/header.blade.php" />
         <option value="$PROJECT_DIR$/app/views/course/institutes.blade.php" />
         <option value="$PROJECT_DIR$/app/views/course/institute.blade.php" />
@@ -139,6 +136,11 @@
         <option value="$PROJECT_DIR$/app/views/checkout/payment.blade.php" />
         <option value="$PROJECT_DIR$/app/views/checkout/login.blade.php" />
         <option value="$PROJECT_DIR$/app/views/checkout/address.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/static/home.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/static/about-us.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/static/contact-us.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/static/register.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/static/terms-and-conditions.blade.php" />
       </list>
     </option>
   </component>
@@ -198,7 +200,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -270,6 +271,32 @@
               <option name="myItemId" value="public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="site" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="course" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="course" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -308,6 +335,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="site" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="course" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="course" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="site" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -501,6 +554,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -509,8 +563,8 @@
     <property name="options.lastSelected" value="preferences.pluginManager" />
     <property name="last_opened_file_path" value="C:/cakephp-cakephp-4b9e390" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -521,11 +575,11 @@
       <recent name="C:\xampp1.8\htdocs\course\app\views" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp1.8\htdocs\course\public\css\site\static" />
       <recent name="C:\xampp1.8\htdocs\course\app\views\static" />
       <recent name="C:\xampp1.8\htdocs\course\public\css\site\admin" />
       <recent name="C:\xampp1.8\htdocs\course\public\js\site\admin" />
       <recent name="C:\xampp1.8\htdocs\course\public\js\site" />
-      <recent name="C:\xampp1.8\htdocs\course\public\css\site" />
     </key>
   </component>
   <component name="RunManager">
@@ -572,7 +626,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2724359" sideWeight="0.6700565" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27564102" sideWeight="0.6700565" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299435" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -650,44 +704,100 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/static/register.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/controllers/StaticController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="13" selection-start="553" selection-end="553" vertical-scroll-proportion="-13.3">
+        <state line="26" column="57" selection-start="567" selection-end="567" vertical-scroll-proportion="0.66101694">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/static/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="13" selection-start="583" selection-end="583" vertical-scroll-proportion="-13.3">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/static/contact-us.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="27" selection-start="657" selection-end="657" vertical-scroll-proportion="-19.6">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/static/about-us.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="47" selection-start="349" selection-end="349" vertical-scroll-proportion="-7.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/includes/header.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/js/site/static/home.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/site/static/about.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/static/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="61" selection-start="460" selection-end="460" vertical-scroll-proportion="0.27966103">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/static/about-us.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="54" selection-start="420" selection-end="420" vertical-scroll-proportion="0.27966103">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/site/static/contact.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/static/contact-us.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="35" selection-start="302" selection-end="302" vertical-scroll-proportion="0.20338982">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/static/register.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="66" selection-start="368" selection-end="368" vertical-scroll-proportion="0.2542373">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/static/terms-and-conditions.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="7" selection-start="743" selection-end="743" vertical-scroll-proportion="0.7881356">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/site/static/about.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/site/admin/admin.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/includes/common_js_bottom.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/includes/common_css.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/includes/footer.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="37" selection-start="271" selection-end="271" vertical-scroll-proportion="-3.5">
+        <state line="5" column="37" selection-start="271" selection-end="271" vertical-scroll-proportion="0.12711865">
           <folding>
             <element signature="n#style#0;n#span#0;n#footer#0;n#!!top" expanded="true" />
           </folding>
@@ -696,70 +806,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/includes/common_js_top.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="38" selection-start="93" selection-end="93" vertical-scroll-proportion="-0.7">
+        <state line="6" column="12" selection-start="386" selection-end="386" vertical-scroll-proportion="0.15254237">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/includes/common_js_bottom.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/views/includes/header.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="72" selection-start="420" selection-end="420" vertical-scroll-proportion="-5.6">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/includes/common_css.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="53" selection-start="177" selection-end="177" vertical-scroll-proportion="-1.4">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/course/institutes.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="0" selection-start="673" selection-end="673" vertical-scroll-proportion="-21.7">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/course/institute.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="0" selection-start="673" selection-end="673" vertical-scroll-proportion="-21.7">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/course/course.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="0" selection-start="673" selection-end="673" vertical-scroll-proportion="-21.7">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/course/book.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="0" selection-start="673" selection-end="673" vertical-scroll-proportion="-21.7">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/checkout/payment.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="0" selection-start="673" selection-end="673" vertical-scroll-proportion="-21.7">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/checkout/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="0" selection-start="673" selection-end="673" vertical-scroll-proportion="-21.7">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/checkout/address.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="35" selection-start="539" selection-end="539" vertical-scroll-proportion="0.45762712">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
