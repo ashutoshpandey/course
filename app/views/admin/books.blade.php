@@ -27,10 +27,6 @@
         <h1>
             Manage Books
         </h1>
-        <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="active">Dashboard</li>
-        </ol>
     </section>
 
     <!-- Main content -->
@@ -42,7 +38,7 @@
                 <li><a href='#tab-create'>Create</a></li>
             </ul>
             <div id='tab-list'>
-                <div id='book-list'></div>
+                <div id='book-list' class='list-container'></div>
             </div>
             <div id='tab-create'>
                 <div id='form-container'>

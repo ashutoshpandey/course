@@ -162,6 +162,26 @@ class UserController extends BaseController
             return json_encode(array('message'=>'invalid'));
     }
 
+    function remove($userId){
+
+        if(isset($userId)) {
+
+            $user = user::find($userId);
+
+            if(isset($user)){
+                $user->status = 'removed';
+
+                $user->save();
+
+                return json_encode(array('message'=>'done'));
+            }
+            else
+                return json_encode(array('message'=>'invalid'));
+        }
+        else
+            return json_encode(array('message'=>'invalid'));
+    }
+
     function userOrders(){
 
         $userId = Session::get('user_id');

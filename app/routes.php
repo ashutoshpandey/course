@@ -45,6 +45,8 @@ Route::get('/edit-book', 'BookController@edit');
 Route::post('/update-book', 'BookController@update');
 Route::post('/save-book', 'BookController@save');
 
+Route::get('/remove-user/{id}', 'UserController@remove');
+
 Route::get('/remove-courier/{id}', 'CourierController@remove');
 Route::get('/edit-courier', 'CourierController@edit');
 Route::post('/update-courier', 'CourierController@update');
@@ -67,6 +69,7 @@ Route::get('/admin-courses/{id}', 'AdminController@courses');
 Route::get('/admin-books/{id}', 'AdminController@books');
 Route::get('/admin-orders', 'AdminController@orders');
 Route::get('/admin-couriers', 'AdminController@couriers');
+Route::get('/admin-users', 'AdminController@users');
 Route::get('/admin-software-users', 'AdminController@softwareUsers');
 Route::get('/admin-locations', 'AdminController@locations');
 
@@ -76,6 +79,7 @@ Route::get('/admin-list-courses/{status}/{page}', 'AdminController@listCourses')
 Route::get('/admin-list-books/{status}/{page}', 'AdminController@listBooks');
 Route::get('/admin-list-couriers/{status}/{page}', 'AdminController@listCouriers');
 Route::get('/admin-list-software-users/{status}/{page}', 'AdminController@listSoftwareUsers');
+Route::get('/admin-list-users/{status}/{page}', 'AdminController@listUsers');
 Route::get('/admin-list-locations/{status}/{page}', 'AdminController@listLocations');
 
 Route::get('/admin-view-institute/{id}', 'AdminController@viewInstitute');
@@ -83,6 +87,8 @@ Route::get('/admin-view-course/{id}', 'AdminController@viewCourse');
 Route::get('/admin-view-book/{id}', 'AdminController@viewBook');
 Route::get('/admin-view-courier/{id}', 'AdminController@viewCourier');
 Route::get('/admin-view-software-user/{id}', 'AdminController@viewSoftwareUser');
+Route::get('/admin-view-user/{id}', 'AdminController@viewUser');
 Route::get('/admin-view-location/{id}', 'AdminController@viewLocation');
+Route::get('/admin-view-order/{id}', 'AdminController@viewOrder');
 
 Route::get('/logout', 'AuthenticationController@logout');

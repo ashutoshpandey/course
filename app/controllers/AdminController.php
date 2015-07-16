@@ -18,7 +18,14 @@ class AdminController extends BaseController
         if(!isset($adminId))
             return Redirect::to('/');
 
-        return View::make('admin.admin-section');
+        $orderCount = Order::where('status','=','pending')->count();
+        $userCount = User::where('status','=','active')->count();
+        $softwareUserCount = SoftwareUser::where('status','=','active')->count();
+
+        return View::make('admin.admin-section')
+                ->with('orderCount', $orderCount)
+                ->with('userCount', $userCount)
+                ->with('softwareUserCount', $softwareUserCount);
     }
 
     public function institutes(){
@@ -52,6 +59,27 @@ class AdminController extends BaseController
             return Redirect::to('/');
     }
 
+    public function listInstitutes($status, $page){
+
+        $adminId = Session::get('admin_id');
+        if(!isset($adminId))
+            return json_encode(array('message'=>'not logged'));
+
+        if(isset($status)){
+
+            $institutes = Institute::where('status','=', $status)->get();
+
+            if(isset($institutes) && count($institutes)>0){
+
+                return json_encode(array('message'=>'found', 'institutes' => $institutes->toArray()));
+            }
+            else
+                return json_encode(array('message'=>'empty'));
+        }
+        else
+            return json_encode(array('message'=>'invalid'));
+    }
+
     public function courses($id){
 
         $adminId = Session::get('admin_id');
@@ -73,6 +101,29 @@ class AdminController extends BaseController
         }
         else
             return Redirect::to('/');
+    }
+
+    public function listCourses($status, $page){
+
+        $adminId = Session::get('admin_id');
+        if(!isset($adminId))
+            return json_encode(array('message'=>'not logged'));
+
+        $institute_id = Session::get('institute_id');
+
+        if(isset($institute_id)){
+
+            $courses = Course::where('institute_id','=', $institute_id)->where('status', '=', $status)->get();
+
+            if(isset($courses) && count($courses)>0){
+
+                return json_encode(array('message'=>'found', 'courses' => $courses->toArray()));
+            }
+            else
+                return json_encode(array('message'=>'empty'));
+        }
+        else
+            return json_encode(array('message'=>'invalid'));
     }
 
     public function viewCourse($id){
@@ -144,80 +195,6 @@ class AdminController extends BaseController
             return Redirect::to('/');
     }
 
-    public function orders(){
-
-        $adminId = Session::get('admin_id');
-        if(!isset($adminId))
-            return Redirect::to('/');
-
-        return View::make('admin.orders');
-    }
-
-    public function listInstitutes($status, $page){
-
-        $adminId = Session::get('admin_id');
-        if(!isset($adminId))
-            return json_encode(array('message'=>'not logged'));
-
-        if(isset($status)){
-
-            $institutes = Institute::where('status','=', $status)->get();
-
-            if(isset($institutes) && count($institutes)>0){
-
-                return json_encode(array('message'=>'found', 'institutes' => $institutes->toArray()));
-            }
-            else
-                return json_encode(array('message'=>'empty'));
-        }
-        else
-            return json_encode(array('message'=>'invalid'));
-    }
-
-    public function listOrders($status, $page){
-
-        $adminId = Session::get('admin_id');
-        if(!isset($adminId))
-            return json_encode(array('message'=>'not logged'));
-
-        if(isset($status)){
-
-            $orders = Order::where('status','=', $status)->get();
-
-            if(isset($orders) && count($orders)>0){
-
-                return json_encode(array('message'=>'found', 'orders' => $orders->toArray()));
-            }
-            else
-                return json_encode(array('message'=>'empty'));
-        }
-        else
-            return json_encode(array('message'=>'invalid'));
-    }
-
-    public function listCourses($status, $page){
-
-        $adminId = Session::get('admin_id');
-        if(!isset($adminId))
-            return json_encode(array('message'=>'not logged'));
-
-        $institute_id = Session::get('institute_id');
-
-        if(isset($institute_id)){
-
-            $courses = Course::where('institute_id','=', $institute_id)->where('status', '=', $status)->get();
-
-            if(isset($courses) && count($courses)>0){
-
-                return json_encode(array('message'=>'found', 'courses' => $courses->toArray()));
-            }
-            else
-                return json_encode(array('message'=>'empty'));
-        }
-        else
-            return json_encode(array('message'=>'invalid'));
-    }
-
     public function listBooks($status, $page){
 
         $adminId = Session::get('admin_id');
@@ -233,6 +210,59 @@ class AdminController extends BaseController
             if(isset($books) && count($books)>0){
 
                 return json_encode(array('message'=>'found', 'books' => $books->toArray()));
+            }
+            else
+                return json_encode(array('message'=>'empty'));
+        }
+        else
+            return json_encode(array('message'=>'invalid'));
+    }
+
+    public function viewOrder($id){
+
+        $adminId = Session::get('admin_id');
+        if(!isset($adminId))
+            return Redirect::to('/');
+
+        if(isset($id)){
+
+            $order = Order::find($id);
+
+            if(isset($order)){
+
+                Session::put('book_id', $id);
+
+                return View::make('admin.view-order')->with('order', $order);
+            }
+            else
+                return Redirect::to('/');
+        }
+        else
+            return Redirect::to('/');
+    }
+
+    public function orders(){
+
+        $adminId = Session::get('admin_id');
+        if(!isset($adminId))
+            return Redirect::to('/');
+
+        return View::make('admin.orders');
+    }
+
+    public function listOrders($status, $page){
+
+        $adminId = Session::get('admin_id');
+        if(!isset($adminId))
+            return json_encode(array('message'=>'not logged'));
+
+        if(isset($status)){
+
+            $orders = Order::with('user')->where('status','=', $status)->get();
+
+            if(isset($orders) && count($orders)>0){
+
+                return json_encode(array('message'=>'found', 'orders' => $orders->toArray()));
             }
             else
                 return json_encode(array('message'=>'empty'));
@@ -342,6 +372,65 @@ class AdminController extends BaseController
         if(isset($softwareUsers) && count($softwareUsers)>0){
 
             return json_encode(array('message'=>'found', 'software_users' => $softwareUsers->toArray()));
+        }
+        else
+            return json_encode(array('message'=>'empty'));
+    }
+
+    public function users(){
+
+        $adminId = Session::get('admin_id');
+        if(!isset($adminId))
+            return Redirect::to('/');
+
+        return View::make('admin.users');
+    }
+
+    public function viewUser($id){
+
+        $adminId = Session::get('admin_id');
+        if(!isset($adminId))
+            return Redirect::to('/');
+
+        if(isset($id)){
+            $user = User::find($id);
+
+            if(isset($user)){
+
+                Session::put('user_id', $id);
+
+                if($user->gender=='male'){
+                    $male_checked = 'checked="checked"';
+                    $female_checked = '';
+                }
+                else{
+                    $female_checked = 'checked="checked"';
+                    $male_checked = '';
+                }
+
+                return View::make('admin.view-user')
+                    ->with('user', $user)
+                    ->with('male_checked', $male_checked)
+                    ->with('female_checked', $female_checked);
+            }
+            else
+                return Redirect::to('/');
+        }
+        else
+            return Redirect::to('/');
+    }
+
+    public function listUsers($status, $page){
+
+        $adminId = Session::get('admin_id');
+        if(!isset($adminId))
+            return json_encode(array('message'=>'not logged'));
+
+        $users = User::where('status','=',$status)->get();
+
+        if(isset($users) && count($users)>0){
+
+            return json_encode(array('message'=>'found', 'users' => $users->toArray()));
         }
         else
             return json_encode(array('message'=>'empty'));

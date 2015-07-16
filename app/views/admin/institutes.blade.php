@@ -42,7 +42,7 @@
     <li><a href='#tab-create'>Create</a></li>
 </ul>
 <div id='tab-list'>
-    <div id='institute-list'></div>
+    <div id='institute-list' class='list-container'></div>
 </div>
 <div id='tab-create'>
 <div id='form-container'>

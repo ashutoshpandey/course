@@ -8,7 +8,7 @@
     margin-bottom:15px;
 }
 
-.tab-container div {
+.tab-container div.form-row {
     padding:10px;
     background:#fff;
 }
@@ -33,15 +33,16 @@
 
 /************* admin forms *****************/
 .form-row{
-    padding: 0 !important;
+    padding: 10px !important;
 }
 .form-row .form-label{
     float: left;
-    width: 150px;
+    width: 15%;
 }
 .form-row .form-data{
     float: left;
-    width: 650px;
+    width: 35%;
+    padding-right: 20px;
 }
 
 .form-row select, input[type='text'], input[type='password'], input[type='email']{
@@ -63,4 +64,9 @@
 
 .message{
     color: red;
+}
+
+.list-container{
+    background: white;
+    padding: 20px;
 }
