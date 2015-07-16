@@ -62,6 +62,9 @@ Route::get('/edit-location', 'LocationController@edit');
 Route::post('/update-location', 'LocationController@update');
 Route::post('/save-location', 'LocationController@save');
 
+Route::get('/search-cities', 'SearchController@searchCities');
+Route::get('/search-keyword/{type}', 'SearchController@searchByKeyword');
+
 /********************** admin urls ************************/
 Route::get('/admin-section', 'AdminController@adminSection');
 Route::get('/admin-institutes', 'AdminController@institutes');

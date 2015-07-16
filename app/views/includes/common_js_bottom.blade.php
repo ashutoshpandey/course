@@ -1,10 +1,2 @@
-<footer class="main-footer">
-    <strong>Copyright &copy; 2014-2015 <a href="http://coursebooks.com">Course books</a>.</strong> All rights
-    reserved.
-</footer>
-
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
-
-<!-- Bootstrap 3.3.2 JS -->
-{{HTML::script(asset("/public/js/bootstrap.min.js"))}}
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 <span style="visibility: hidden" id='root' rel="{{$root}}"></span>
