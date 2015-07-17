@@ -23,8 +23,6 @@
     <section class='content'>
 
 
-
-
     <div class="search-bar-wrapper container">
         <div class="search-bar row">
             <form>
@@ -57,17 +55,6 @@
         </div>
 
     </div>
-
-
-
-
-
-
-
-
-
-
-
 
 
 

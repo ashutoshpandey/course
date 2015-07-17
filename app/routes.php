@@ -30,7 +30,8 @@ Route::post('/save-institute', 'InstituteController@save');
 Route::get('/edit-institute', 'InstituteController@edit');
 Route::post('/update-institute', 'InstituteController@update');
 Route::get('/get-institute/{id}', 'InstituteController@getInstitute');
-Route::get('/list-institutes/{page}/{city?}/{country?}', 'InstituteController@listInstitutes');
+Route::get('/institutes', 'InstituteController@institutes');
+Route::get('/list-institutes/{page?}/{city?}/{country?}', 'InstituteController@listInstitutes');
 Route::get('/remove-institute/{id}', 'InstituteController@remove');
 
 Route::get('/get-courses/{id}', 'InstituteController@getCourses');

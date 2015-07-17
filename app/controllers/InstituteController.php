@@ -146,6 +146,10 @@ class InstituteController extends BaseController
             return json_encode(array('message'=>'invalid'));
     }
 
+    public function institutes(){
+        return View::make('course.institutes');
+    }
+
     public function listInstitutes()
     {
         $key = Input::get('key');
