@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/InstituteController.php" afterPath="$PROJECT_DIR$/app/controllers/InstituteController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/database.php" afterPath="$PROJECT_DIR$/app/config/database.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/static/home.blade.php" afterPath="$PROJECT_DIR$/app/views/static/home.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/course/institutes.blade.php" afterPath="$PROJECT_DIR$/app/views/course/institutes.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="course.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -21,7 +16,7 @@
     <file path="/Order.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1437018045254" ignored="false" />
     <file path="/view-order.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1437019545110" ignored="false" />
     <file path="/common.css" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1437020249643" ignored="false" />
-    <file path="/institutes.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1437096515623" ignored="false" />
+    <file path="/institutes.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1437096615567" ignored="false" />
     <file path="/view-user.blade.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1437021287720" ignored="false" />
     <file path="/users.js" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1437021596464" ignored="false" />
     <file path="/UserController.php" changelist="8d19e4be-9b2b-48c1-b6ad-85ffc9be98ec" time="1437021954993" ignored="false" />
@@ -44,73 +39,7 @@
     <favorites_list name="course" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="institutes.blade.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/course/institutes.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="37" selection-start="94" selection-end="94" vertical-scroll-proportion="0.10169491">
-              <folding>
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/static/home.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="35" selection-start="679" selection-end="679" vertical-scroll-proportion="-13.3">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="institutes.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/site/institutes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="26" selection-start="493" selection-end="493" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="institutes.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/site/institutes.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InstituteController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/InstituteController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="149" column="47" selection-start="4483" selection-end="4483" vertical-scroll-proportion="-12.4">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/routes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="58" selection-start="1151" selection-end="1151" vertical-scroll-proportion="-14.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="database.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/config/database.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="32" selection-start="1820" selection-end="1820" vertical-scroll-proportion="-9.8">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -574,13 +503,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29594016" sideWeight="0.6700565" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29594016" sideWeight="0.6700565" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299435" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -723,21 +652,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="32" selection-start="1820" selection-end="1820" vertical-scroll-proportion="-9.8">
+        <state line="59" column="32" selection-start="1820" selection-end="1820" vertical-scroll-proportion="0.3559322">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/InstituteController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="149" column="47" selection-start="4483" selection-end="4483" vertical-scroll-proportion="-12.4">
+        <state line="149" column="47" selection-start="4483" selection-end="4483" vertical-scroll-proportion="0.45756456">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="58" selection-start="1151" selection-end="1151" vertical-scroll-proportion="-14.0">
+        <state line="29" column="58" selection-start="1151" selection-end="1151" vertical-scroll-proportion="0.5084746">
           <folding />
         </state>
       </provider>
@@ -751,21 +680,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/site/institutes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="26" selection-start="493" selection-end="493" vertical-scroll-proportion="0.0">
+        <state line="20" column="26" selection-start="493" selection-end="493" vertical-scroll-proportion="0.49822065">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/static/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="35" selection-start="679" selection-end="679" vertical-scroll-proportion="-13.3">
+        <state line="19" column="35" selection-start="679" selection-end="679" vertical-scroll-proportion="0.48305085">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/course/institutes.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="37" selection-start="94" selection-end="94" vertical-scroll-proportion="0.10169491">
+        <state line="30" column="60" selection-start="895" selection-end="895" vertical-scroll-proportion="0.7627119">
           <folding>
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
