@@ -28,7 +28,7 @@
             <form>
                 <div style="position:relative;" class="col-md-3 col-sm-3 col-xs-12 no-space">
                     <div id="loc" class="location left">
-                        <span class="palceholder">{{ HTML::image('public/images/location.jpg', 'loc-icon') }}</span>
+                        <span class="palceholder"><i class="fa fa-map-marker" style="font-size:20px; display:inline-block"></i></span>
                         <span><input placeholder="Please type a city" id="city" class="dark" style="outline:none"></span>
 
                         <div id="reference-pane">
@@ -40,7 +40,7 @@
                 <div style="position:relative;" class="col-md-7 col-sm-7 col-xs-12 no-space">
                     <div class="keyword-container" >
                         <div class="search-box">
-                            <span class="search-icon">{{ HTML::image('public/images/search.png', 'loc-icon') }}</span>
+                            <span class="search-icon"><i class="fa fa-search" style="font-size:20px; display:inline-block"></i></span>
                             <input value="" placeholder="Search for institute" class="discover" id="keyword">
                         </div>
                         <div id="explore-by"></div>
@@ -51,6 +51,7 @@
                         Search
                     </div>
                 </div>
+                <input type="hidden" id="search-city"/>
             </form>
         </div>
 

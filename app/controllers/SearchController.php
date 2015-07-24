@@ -7,15 +7,15 @@ class SearchController extends BaseController
         View::share('root', URL::to('/'));
     }
 
-    public function searchCities()
+    public function searchCities($key)
     {
-        $key = $_REQUEST['term'];
+        //$key = $_REQUEST['term'];
 
         if(isset($key)){
 
             $locations = Location::where('city','like', '%'. $key . '%')->get();
 
-            if(isset($locations)){
+            if(isset($locations) && count($locations)>0){
 
                 return json_encode(array('message'=>'found', 'locations' => $locations->toArray()));
             }
@@ -26,16 +26,15 @@ class SearchController extends BaseController
             return json_encode(array('message'=>'invalid'));
     }
 
-    public function searchByKeyword($type)
+    public function searchByKeyword($key, $cityId=null)
     {
-        $key = $_REQUEST['term'];
-
-        if(isset($type) && $type=='i')
-            return $this->getSearchInstitutes($key);
-        else if(isset($type) && $type=='b')
-            return $this->getSearchBooks($key);
-        else
-            return json_encode(array('message'=>'invalid'));
+        return $this->getSearchInstitutes($key, $cityId);
+//        if(isset($type) && $type=='i')
+//            return $this->getSearchInstitutes($key);
+//        else if(isset($type) && $type=='b')
+//            return $this->getSearchBooks($key);
+//        else
+//            return json_encode(array('message'=>'invalid'));
     }
 
     public function getSearchBooks($key)
@@ -55,13 +54,16 @@ class SearchController extends BaseController
             return json_encode(array('message'=>'invalid'));
     }
 
-    public function getSearchInstitutes($key)
+    public function getSearchInstitutes($key, $cityId)
     {
         if(isset($key)){
 
-            $institutes = Institute::where('name','like', '%'. $key . '%')->get();
+            if(isset($cityId))
+                $institutes = Institute::where('name','like', '%'. $key . '%')->where('location_id', '=', $cityId)->get();
+            else
+                $institutes = Institute::where('name','like', '%'. $key . '%')->get();
 
-            if(isset($institutes)){
+            if(isset($institutes) && count($institutes)>0){
 
                 return json_encode(array('message'=>'found', 'institutes' => $institutes->toArray()));
             }
