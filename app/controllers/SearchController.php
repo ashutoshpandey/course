@@ -73,4 +73,23 @@ class SearchController extends BaseController
         else
             return json_encode(array('message'=>'invalid'));
     }
+
+    public function institutes(){
+
+        $key = Input::get('keyword');
+        $cityId = Input::get('c');          // city id
+
+        if(isset($key)){
+
+            if(isset($cityId))
+                $institutes = Institute::where('name','like', '%'. $key . '%')->where('location_id', '=', $cityId)->with('location')->get();
+            else
+                $institutes = Institute::where('name','like', '%'. $key . '%')->with('location')->get();
+
+            if(isset($institutes) && count($institutes)>0)
+                return View::make('institute.institutes')->with('institutes', $institutes);
+            else
+                return View::make('institute.institutes');
+        }
+    }
 }

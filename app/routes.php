@@ -17,22 +17,15 @@ Route::get('/about-us', 'StaticController@aboutUs');
 Route::get('/terms-and-conditions', 'StaticController@termsAndConditions');
 Route::get('/privacy-policy', 'StaticController@privacyPolicy');
 
-Route::get('/institute', 'SearchController@home');
-Route::get('/course', 'SearchController@home');
-Route::get('/book', 'SearchController@home');
+Route::get('/institutes', 'SearchController@institutes');
+Route::get('/institute/{id}', 'SearchController@home');
+Route::get('/courses/{institute_id}', 'SearchController@courses');
+Route::get('/course/{id}', 'SearchController@course');
+Route::get('/books/{course_id}', 'SearchController@books');
+Route::get('/book/{id}', 'SearchController@book');
 
 Route::get('/admin-login', 'AuthenticationController@adminLogin');
-
 Route::post('/is-valid-admin', 'AuthenticationController@isValidAdmin');
-
-Route::get('/add-institute', 'InstituteController@add');
-Route::post('/save-institute', 'InstituteController@save');
-Route::get('/edit-institute', 'InstituteController@edit');
-Route::post('/update-institute', 'InstituteController@update');
-Route::get('/get-institute/{id}', 'InstituteController@getInstitute');
-Route::get('/institutes', 'InstituteController@institutes');
-Route::get('/list-institutes/{page?}/{city?}/{country?}', 'InstituteController@listInstitutes');
-Route::get('/remove-institute/{id}', 'InstituteController@remove');
 
 Route::get('/get-courses/{id}', 'InstituteController@getCourses');
 Route::get('/get-course-books/{id}', 'CourseController@getCourseBooks');
@@ -47,21 +40,6 @@ Route::post('/update-book', 'BookController@update');
 Route::post('/save-book', 'BookController@save');
 
 Route::get('/remove-user/{id}', 'UserController@remove');
-
-Route::get('/remove-courier/{id}', 'CourierController@remove');
-Route::get('/edit-courier', 'CourierController@edit');
-Route::post('/update-courier', 'CourierController@update');
-Route::post('/save-courier', 'CourierController@save');
-
-Route::get('/remove-software-user/{id}', 'SoftwareUserController@remove');
-Route::get('/edit-software-user', 'SoftwareUserController@edit');
-Route::post('/update-software-user', 'SoftwareUserController@update');
-Route::post('/save-software-user', 'SoftwareUserController@save');
-
-Route::get('/remove-location/{id}', 'LocationController@remove');
-Route::get('/edit-location', 'LocationController@edit');
-Route::post('/update-location', 'LocationController@update');
-Route::post('/save-location', 'LocationController@save');
 
 Route::get('/search-cities/{key}', 'SearchController@searchCities');
 Route::get('/search-keyword/{key}/{city_id?}', 'SearchController@searchByKeyword');
@@ -94,5 +72,28 @@ Route::get('/admin-view-software-user/{id}', 'AdminController@viewSoftwareUser')
 Route::get('/admin-view-user/{id}', 'AdminController@viewUser');
 Route::get('/admin-view-location/{id}', 'AdminController@viewLocation');
 Route::get('/admin-view-order/{id}', 'AdminController@viewOrder');
+
+Route::get('/remove-courier/{id}', 'CourierController@remove');
+Route::get('/edit-courier', 'CourierController@edit');
+Route::post('/update-courier', 'CourierController@update');
+Route::post('/save-courier', 'CourierController@save');
+
+Route::get('/remove-software-user/{id}', 'SoftwareUserController@remove');
+Route::get('/edit-software-user', 'SoftwareUserController@edit');
+Route::post('/update-software-user', 'SoftwareUserController@update');
+Route::post('/save-software-user', 'SoftwareUserController@save');
+
+Route::get('/remove-location/{id}', 'LocationController@remove');
+Route::get('/edit-location', 'LocationController@edit');
+Route::post('/update-location', 'LocationController@update');
+Route::post('/save-location', 'LocationController@save');
+
+Route::get('/add-institute', 'InstituteController@add');
+Route::post('/save-institute', 'InstituteController@save');
+Route::get('/edit-institute', 'InstituteController@edit');
+Route::post('/update-institute', 'InstituteController@update');
+Route::get('/get-institute/{id}', 'InstituteController@getInstitute');
+Route::get('/list-institutes/{page?}/{city?}/{country?}', 'InstituteController@listInstitutes');
+Route::get('/remove-institute/{id}', 'InstituteController@remove');
 
 Route::get('/logout', 'AuthenticationController@logout');

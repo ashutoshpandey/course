@@ -145,39 +145,4 @@ class InstituteController extends BaseController
         else
             return json_encode(array('message'=>'invalid'));
     }
-
-    public function institutes(){
-        return View::make('course.institutes');
-    }
-
-    public function listInstitutes()
-    {
-        $key = Input::get('key');
-
-        $institutes = Institute::where('city','like', '%' . $key . '%')->orWhere('city','like', '%' . $key . '%')->orWhere('country','like', '%' . $key . '%')->get();
-
-        if(isset($institutes)){
-
-            return json_encode(array('message'=>'found', 'institutes' => $institutes->toArray()));
-        }
-        else
-            return json_encode(array('message'=>'empty'));
-    }
-
-    public function getSearchInstitutes($key)
-    {
-        if(isset($key)){
-
-            $institutes = Institute::where('name','like', '%'. $key . '%')->get();
-
-            if(isset($institutes)){
-
-                return json_encode(array('message'=>'found', 'institutes' => $institutes->toArray()));
-            }
-            else
-                return json_encode(array('message'=>'empty'));
-        }
-        else
-            return json_encode(array('message'=>'invalid'));
-    }
 }

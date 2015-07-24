@@ -106,3 +106,37 @@ $(function () {
         $("#popup_div").dialog("close");
     });
 });
+
+function showGrid(){
+
+    var url;
+    var cityId = $("#search-city").val();
+
+    if(cityId.length==0)
+        url = root + '/search-keyword/' + request.term;
+    else
+        url = root + '/search-keyword/' + request.term + '/' + cityId;
+
+    $.ajax({
+        type: 'GET',
+        url: url,
+        dataType: "json",
+        success: function (data) {
+
+            if(data.message=="found"){
+                var str = "<div class='grid-info row'>";
+                str = str + "<div class='col-md-12'>";
+                str = str + "<div class='top-menu'>";
+                str = str + "<ul>";
+                str = str + "<li id='grid'>{{ HTML::image('public/images/grid.png', 'grid-icon') }}</li>";
+                str = str + "<li id='list'>{{ HTML::image('public/images/list.png', 'list-icon') }}</li>";
+                str = str + "</ul>";
+                str = str + "</div>";
+                str = str + "<div style='clear:both'></div>";
+                str = str + "<ul id='content'>";
+
+                $(".institutes-list").html(str);
+            }
+        }
+    })
+}
