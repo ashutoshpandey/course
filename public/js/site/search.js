@@ -2,6 +2,11 @@ var keywordType;
 
 $(function () {
 
+    $("#search_button").click(function(){
+        $("#form").attr('action', root + '/institutes');
+        $("#form").submit();
+    });
+
     keywordType = 'i';
 
     $("#city").autocomplete({
@@ -37,7 +42,7 @@ $(function () {
     };
 
     $("#keyword").autocomplete({
-        appendTo: "#reference-pane",
+        appendTo: "#explore-by",
         source: function (request, response) {
 
             var url;
