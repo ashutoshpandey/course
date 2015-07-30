@@ -28,7 +28,7 @@
             @if(isset($courses))
 
             <div class="grid-info row">
-                <div class="col-md-12">
+                <div class="col-md-8">
                     <div class="top-menu">
                         <ul>
                             <li id="grid">{{ HTML::image('public/images/grid.png', 'grid-icon') }}</li>
@@ -45,7 +45,7 @@
                                 <span class="name">{{$course->name}}</span></span>
                             </div>
                             <div class="add-map">
-                                <span class="add">{{$course->description}}<br/>	<a href="{{$root}}/books/{{$course->id}}">View Books</a> </span>
+                                <span class="add">{{$course->description}}<br/>	<a target="_blank" href="{{$root}}/books/{{$course->id}}">View Books</a> </span>
                             </div>
                         </li>
 
@@ -77,12 +77,7 @@
 <!-- ./wrapper -->
 
 @include('includes.footer')
-{{HTML::script(asset("/public/js/site/institutes.js"))}}
-{{HTML::script(asset("/public/js/site/search.js"))}}
-
-<script type="text/javascript">
-    $("#search_button").click(showGrid);
-</script>
+{{HTML::script(asset("/public/js/site/courses.js"))}}
 
 </body>
 </html>

@@ -5,16 +5,24 @@ class BookController extends BaseController
     function __construct()
     {
         View::share('root', URL::to('/'));
+        View::share('currency', 'Rs.');
     }
 
-    public function books($id){
+    public function books($courseId){
 
-        if(isset($id)) {
+        if(isset($courseId)) {
 
-            $books = Book::where('status','=','active')->where('course_id','=',$id)->get();
+            $books = Book::where('status','=','active')->where('course_id', $courseId)->get();
 
-            if(isset($books) && count($books)>0)
-                return View::make('book.list')->with('found', true)->with('books', $books);
+            if(isset($books)){
+
+                $subjects = Book::where('course_id', $courseId)->select('subject')->groupBy('subject')->get();
+
+                if(isset($subjects) && count($subjects)>0)
+                    return View::make('book.list')->with('found', true)->with('books', $books)->with('subjects', $subjects->toArray())->with('courseId', $courseId);
+                else
+                    return View::make('book.list')->with('found', false);
+            }
             else
                 return View::make('book.list')->with('found', false);
         }
@@ -160,12 +168,20 @@ class BookController extends BaseController
     {
         if(isset($id)){
 
-            $books = Book::where('course_id','=', $id)->get();
+            $subjectString = $_REQUEST['subjectString'];
 
-            if(isset($books)){
+            if(isset($subjectString) && strlen($subjectString)>0){
 
-                return json_encode(array('message'=>'found', 'books' => $books->toArray()));
+                $subjects = explode(',', $subjectString);
+
+                if(isset($subjects) && count($subjects)>0)
+                    $books = Book::where('course_id','=', $id)->whereIn('subject', $subjects)->get();
             }
+            else
+                $books = Book::where('course_id','=', $id)->get();
+
+            if(isset($books))
+                return json_encode(array('message'=>'found', 'currency' => 'Rs.', 'books' => $books->toArray()));
             else
                 return json_encode(array('message'=>'empty'));
         }

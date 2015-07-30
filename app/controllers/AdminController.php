@@ -67,7 +67,7 @@ class AdminController extends BaseController
 
         if(isset($status)){
 
-            $institutes = Institute::where('status','=', $status)->get();
+            $institutes = Institute::where('status','=', $status)->with('location')->get();
 
             if(isset($institutes) && count($institutes)>0){
 
@@ -163,7 +163,19 @@ class AdminController extends BaseController
 
                 Session::put('course_id', $id);
 
-                return View::make('admin.books')->with('course', $course);
+                $instituteId = Session::get('institute_id');
+
+                if(isset($instituteId)){
+
+                    $institute = Institute::find($instituteId);
+
+                    if(isset($institute))
+                        return View::make('admin.books')->with('course', $course)->with('institute', $institute);
+                    else
+                        return Redirect::to('/');
+                }
+                else
+                    return Redirect::to('/');
             }
             else
                 return Redirect::to('/');

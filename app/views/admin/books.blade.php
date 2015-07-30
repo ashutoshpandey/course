@@ -25,8 +25,16 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Manage Books
+            {{$institute->name}} -> {{$course->name}}
         </h1>
+
+        <ol class="breadcrumb">
+            <li><a href="{{$root}}/admin-section"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="{{$root}}/admin-institutes"><i class="fa fa-dashboard"></i> Institutes</a></li>
+            <li><a href="{{$root}}/admin-courses/{{$institute->id}}"><i class="fa fa-dashboard"></i> Courses</a></li>
+            <li class="active">Books</li>
+        </ol>
+
     </section>
 
     <!-- Main content -->
@@ -104,6 +112,6 @@
 
 </div><!-- ./wrapper -->
 @include('includes/common_js_bottom')
-{{HTML::script(asset("/public/js/site/admin/books.js"))}}
+{{HTML::script(asset("/public/js/site/books.js"))}}
 </body>
 </html>

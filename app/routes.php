@@ -22,6 +22,7 @@ Route::get('/institute/{id}', 'SearchController@home');
 Route::get('/courses/{institute_id}', 'CourseController@courses');
 Route::get('/course/{id}', 'CourseController@course');
 Route::get('/books/{course_id}', 'BookController@books');
+Route::post('/get-course-books/{course_id}/{subjects?}', 'BookController@getBooks');
 Route::get('/book/{id}', 'BookController@book');
 
 Route::get('/admin-login', 'AuthenticationController@adminLogin');

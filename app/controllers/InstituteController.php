@@ -30,6 +30,7 @@ class InstituteController extends BaseController
         $institute->land_mark = Input::get('land_mark');
         $institute->location_id = Input::get('city');
         $institute->zip = Input::get('zip');
+        $institute->afficiation = Input::get('affiliation');
         $institute->latitude = Input::get('latitude');
         $institute->longitude = Input::get('longitude');
         $institute->contact_number_1 = Input::get('contact_number_1');

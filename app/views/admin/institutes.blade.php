@@ -28,8 +28,8 @@
                 Manage Institutes
             </h1>
             <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li class="active">Dashboard</li>
+                <li><a href="{{$root}}/admin-section"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">Institutes</li>
             </ol>
         </section>
 
@@ -387,10 +387,13 @@
                                 <div class='clear'></div>
                             </div>
                             <div class='form-row'>
+                                <div class='form-label'>Affiliation</div>
+                                <div class='form-data'>
+                                    <input type='text' name='affiliation'/>
+                                </div>
                                 <div class='form-label'>Latitude / Longitude</div>
                                 <div class='form-data'>
-                                    <input type='text' name='latitude' class='half'/><input type='text' name='longitude'
-                                                                                            class='half'/>
+                                    <input type='text' name='latitude' style="width:20%; min-width: 100px"/> &nbsp;  &nbsp; <input type='text' name='longitude' style="width:20%; min-width: 100px"/>
                                 </div>
                                 <div class='clear'></div>
                             </div>

@@ -23,26 +23,40 @@
 
     <section class='content'>
 
-        <div class="container book-list">
+        <div class="container">
 
             @if(isset($books))
 
             <div class="grid-info row">
-                <div class="col-md-12">
-                    <div class="top-menu">
-                        <ul>
-                            <li id="grid">{{ HTML::image('public/images/grid.png', 'grid-icon') }}</li>
-                            <li id="list">{{ HTML::image('public/images/list.png', 'list-icon') }}</li>
-                        </ul>
+                <div class="col-md-2">
+                    <div class="subject-list">
+                        @if(isset($subjects))
+
+                            @foreach($subjects as $subject)
+
+                                <div><label><input type="checkbox" name="subject" value="{{$subject['subject']}}"/> {{$subject['subject']}}</label></div>
+                            @endforeach
+
+                        @endif
                     </div>
-                    <div style="clear:both"></div>
+                </div>
+
+                <div class="col-md-10 book-list" rel="{{$courseId}}">
+
+                    <label><input type="checkbox" name="select-all"/> Select all books</label> <br/>
+
                     <ul id="content">
 
                         @foreach($books as $book)
 
                         <li class="data">
                             <div class="name-date">
-                                <span class="name">{{$book->name}}</span></span>
+                                <span class="name">{{$book->name}}</span>
+                                <br/>
+                                {{$currency}} {{$book->price}}
+                                <br/>
+                                By <b>{{$book->author}}</b> <br/><br/>
+                                <label><input type="checkbox" name="pick-book" value="{{$book->id}}"/> Pick this book </label>
                             </div>
                         </li>
 
@@ -74,12 +88,7 @@
 <!-- ./wrapper -->
 
 @include('includes.footer')
-{{HTML::script(asset("/public/js/site/institutes.js"))}}
-{{HTML::script(asset("/public/js/site/search.js"))}}
-
-<script type="text/javascript">
-    $("#search_button").click(showGrid);
-</script>
+{{HTML::script(asset("/public/js/site/books.js"))}}
 
 </body>
 </html>

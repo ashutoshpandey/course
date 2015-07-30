@@ -26,6 +26,7 @@ class CreateInstituteTable extends Migration {
 			$table->float('latitude');
 			$table->float('longitude');
 			$table->string('zip', 20);
+            $table->string('affiliation', 255);
 
             $table->string('status', 50);
 

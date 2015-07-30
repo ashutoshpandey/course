@@ -80,7 +80,7 @@ function showGrid(data){
                 str = str + '<tr> \
                     <td>' + institute.id + '</td> \
                     <td>' + institute.name + '</td> \
-                    <td>' + institute.city + ' / ' + institute.state + '</td> \
+                    <td>' + institute.location.city + ' / ' + institute.location.state + '</td> \
                     <td></td> \
                 </tr>';
             }

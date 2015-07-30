@@ -25,11 +25,12 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1 style="text-transform: capitalize">
-                Manage {{$institute->name}} courses
+                {{$institute->name}} courses
             </h1>
             <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li class="active">Dashboard</li>
+                <li><a href="{{$root}}/admin-section"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li><a href="{{$root}}/admin-institutes"><i class="fa fa-dashboard"></i> Institutes</a></li>
+                <li class="active">Courses</li>
             </ol>
         </section>
 
