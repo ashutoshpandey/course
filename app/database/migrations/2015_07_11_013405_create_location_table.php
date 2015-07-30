@@ -18,7 +18,6 @@ class CreateLocationTable extends Migration {
 
             $table->string('city', 255);
             $table->string('state', 255);
-            $table->string('pin', 10);
             $table->string('country', 255);
 
             $table->string('status', 50);

@@ -7,6 +7,21 @@ class CourseController extends BaseController
         View::share('root', URL::to('/'));
     }
 
+    public function courses($id){
+
+        if(isset($id)) {
+
+            $courses = Course::where('status','=','active')->where('institute_id','=',$id)->get();
+
+            if(isset($courses) && count($courses)>0)
+                return View::make('course.list')->with('found', true)->with('courses', $courses);
+            else
+                return View::make('course.list')->with('found', false);
+        }
+        else
+            return Redirect::to('/');
+    }
+
     public function add()
     {
         $adminId = Session::get('admin_id');

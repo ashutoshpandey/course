@@ -483,4 +483,23 @@ class AdminController extends BaseController
         else
             return json_encode(array('message'=>'empty'));
     }
+
+    public function getCities($state){
+
+        $adminId = Session::get('admin_id');
+        if(!isset($adminId))
+            return json_encode(array('message'=>'not logged'));
+
+        if(isset($state)) {
+
+            $locations = Location::where('state', '=', $state)->where('status', '=', 'active')->get();
+
+            if (isset($locations) && count($locations) > 0)
+                return json_encode(array('message' => 'found', 'locations' => $locations->toArray()));
+            else
+                return json_encode(array('message' => 'empty'));
+        }
+        else
+            return json_encode(array('message' => 'invalid'));
+    }
 }

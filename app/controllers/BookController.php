@@ -7,6 +7,21 @@ class BookController extends BaseController
         View::share('root', URL::to('/'));
     }
 
+    public function books($id){
+
+        if(isset($id)) {
+
+            $books = Book::where('status','=','active')->where('course_id','=',$id)->get();
+
+            if(isset($books) && count($books)>0)
+                return View::make('book.list')->with('found', true)->with('books', $books);
+            else
+                return View::make('book.list')->with('found', false);
+        }
+        else
+            return Redirect::to('/');
+    }
+
     public function add()
     {
         $adminId = Session::get('admin_id');

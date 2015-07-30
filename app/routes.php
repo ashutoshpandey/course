@@ -19,10 +19,10 @@ Route::get('/privacy-policy', 'StaticController@privacyPolicy');
 
 Route::get('/institutes', 'SearchController@institutes');
 Route::get('/institute/{id}', 'SearchController@home');
-Route::get('/courses/{institute_id}', 'SearchController@courses');
-Route::get('/course/{id}', 'SearchController@course');
-Route::get('/books/{course_id}', 'SearchController@books');
-Route::get('/book/{id}', 'SearchController@book');
+Route::get('/courses/{institute_id}', 'CourseController@courses');
+Route::get('/course/{id}', 'CourseController@course');
+Route::get('/books/{course_id}', 'BookController@books');
+Route::get('/book/{id}', 'BookController@book');
 
 Route::get('/admin-login', 'AuthenticationController@adminLogin');
 Route::post('/is-valid-admin', 'AuthenticationController@isValidAdmin');
@@ -97,3 +97,5 @@ Route::get('/list-institutes/{page?}/{city?}/{country?}', 'InstituteController@l
 Route::get('/remove-institute/{id}', 'InstituteController@remove');
 
 Route::get('/logout', 'AuthenticationController@logout');
+
+Route::get('/admin-get-cities/{state}', 'AdminController@getCities');

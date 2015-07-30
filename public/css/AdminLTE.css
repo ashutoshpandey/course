@@ -29,8 +29,8 @@ body {
 /* Layout */
 .wrapper {
   min-height: 100%;
-  position: relative;
-  overflow: hidden!important;
+  /*position: relative;*/
+  /*overflow: hidden!important;*/
 }
 .wrapper:before,
 .wrapper:after {
@@ -96,7 +96,6 @@ body {
 .content-wrapper,
 .right-side {
   min-height: 100%;
-    /*height: 85vh;*/
   background-color: #ecf0f5;
   z-index: 800;
 }
@@ -4211,3 +4210,5 @@ table.text-center th {
     white-space: normal!important;
   }
 }
+
+input[type='date']{line-height: 20px !important;}

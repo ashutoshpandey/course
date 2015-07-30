@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Coboo | Listing institutes</title>
+    <title>Coboo | Listing Books</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
@@ -23,11 +23,9 @@
 
     <section class='content'>
 
-        @include('includes.search')
+        <div class="container book-list">
 
-        <div class="container institutes-list">
-
-            @if(isset($institutes))
+            @if(isset($books))
 
             <div class="grid-info row">
                 <div class="col-md-12">
@@ -40,15 +38,11 @@
                     <div style="clear:both"></div>
                     <ul id="content">
 
-                        @foreach($institutes as $institute)
+                        @foreach($books as $book)
 
                         <li class="data">
                             <div class="name-date">
-                                <span class="name">{{$institute->name}}</span><span class="date">{{$institute->establish_date}}</span>
-                            </div>
-                            <div class="add-map">
-                                <span class="add">{{$institute->address}}, {{$institute->location->city}}, {{$institute->location->state}}<br/>	<a href="{{$root}}/courses/{{$institute->id}}">View Courses</a> </span>
-                                <span class="map">{{ HTML::image('public/images/map.jpg', 'map-icon') }}</span>
+                                <span class="name">{{$book->name}}</span></span>
                             </div>
                         </li>
 
@@ -68,6 +62,8 @@
                 </div>
             </div>
 
+            @else
+                <h2>No books found</h2>
             @endif
 
         </div>

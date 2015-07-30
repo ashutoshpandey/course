@@ -27,10 +27,8 @@ class InstituteController extends BaseController
         $institute->name = Input::get('name');
         $institute->establish_date = date('Y-m-d', strtotime(Input::get('establish_date')));
         $institute->address = Input::get('address');
-        $institute->city = Input::get('city');
-        $institute->state = Input::get('state');
-        $institute->country = Input::get('country');
         $institute->land_mark = Input::get('land_mark');
+        $institute->location_id = Input::get('city');
         $institute->zip = Input::get('zip');
         $institute->latitude = Input::get('latitude');
         $institute->longitude = Input::get('longitude');
