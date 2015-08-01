@@ -25,6 +25,10 @@ Route::get('/books/{course_id}', 'BookController@books');
 Route::post('/get-course-books/{course_id}/{subjects?}', 'BookController@getBooks');
 Route::get('/book/{id}', 'BookController@book');
 
+Route::get('/add-to-bag/{id}', 'StaticController@addToBag');
+Route::get('/get-bag', 'StaticController@getBag');
+Route::get('/remove-from-bag/{id}', 'StaticController@removeFromBag');
+
 Route::get('/admin-login', 'AuthenticationController@adminLogin');
 Route::post('/is-valid-admin', 'AuthenticationController@isValidAdmin');
 

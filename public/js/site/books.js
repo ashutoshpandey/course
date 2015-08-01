@@ -13,7 +13,7 @@ $(document).ready(function () {
 
     $("input[name='subject']").click(getData);
 
-    $("input[name='select-all']").click(selectAll);
+//    $("input[name='select-all']").click(selectAll);
 });
 
 function getData(){
@@ -71,8 +71,25 @@ function getData(){
 
                     $(".book-list").html(str);
 
-                    $("input[name='select-all']").unbind('click');
-                    $("input[name='select-all']").click(selectAll);
+//                    $("input[name='select-all']").unbind('click');
+//                    $("input[name='select-all']").click(selectAll);
+
+                    $(".add-to-bag").click(function(){
+                        var id = $(this).attr("rel");
+
+                        $.ajax({
+                            url: root + '/add-to-bag',
+                            type: 'get',
+                            dataType: 'json',
+                            success: function(result){
+
+                                if(result.indexOf('done')>-1){
+                                    $(this).removeClass('add-to-bag');
+                                    $(this).addClass('added-to-bag');
+                                }
+                            }
+                        });
+                    })
                 }
             }
             else{

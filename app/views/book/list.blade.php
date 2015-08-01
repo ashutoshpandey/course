@@ -8,9 +8,8 @@
 
     @include('includes.common_css')
 
-    {{HTML::style(asset("/public/css/site/home.css"))}}
-    {{HTML::style(asset("/public/css/site/institutes.css"))}}
     {{HTML::style(asset("/public/css/site/grid-list.css"))}}
+    {{HTML::style(asset("/public/css/site/books.css"))}}
 
     @include('includes.common_js_top')
 </head>
@@ -25,7 +24,7 @@
 
         <h3>Showing courses for: {{$course->institute->name}} -> {{$course->name}}</h3>
         <br/><br/>
-        
+
         <div class="container">
 
             @if(isset($books))
@@ -60,7 +59,8 @@
                                 {{$currency}} {{$book->price}}
                                 <br/>
                                 By <b>{{$book->author}}</b> <br/><br/>
-                                <label><input type="checkbox" name="pick-book" value="{{$book->id}}"/> Pick this book </label>
+<!--                                <label><input type="checkbox" name="pick-book" value="{{$book->id}}"/> Pick this book </label>-->
+                                <span class="add-to-bag" rel="{{$book->id}}">Add to bag</span>
                             </div>
                         </li>
 
