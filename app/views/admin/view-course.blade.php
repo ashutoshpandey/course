@@ -48,7 +48,7 @@
                             </div>
                             <div class='form-row'>
                                 <div class='form-label'>&nbsp;</div>
-                                <div class='form-data'>
+                                <div class='form-data-full'>
                                     <input type='button' name='btn-update' value="Update Course" class='half'/> <span
                                         class='message'></span>
                                 </div>

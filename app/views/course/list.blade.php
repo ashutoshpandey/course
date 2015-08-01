@@ -25,17 +25,12 @@
 
         <div class="container course-list">
 
+            <h3>Showing courses for: {{$institute->name}}</h3>
+
             @if(isset($courses))
 
             <div class="grid-info row">
                 <div class="col-md-8">
-                    <div class="top-menu">
-                        <ul>
-                            <li id="grid">{{ HTML::image('public/images/grid.png', 'grid-icon') }}</li>
-                            <li id="list">{{ HTML::image('public/images/list.png', 'list-icon') }}</li>
-                        </ul>
-                    </div>
-                    <div style="clear:both"></div>
                     <ul id="content">
 
                         @foreach($courses as $course)

@@ -98,15 +98,8 @@
                                 <div class='clear'></div>
                             </div>
                             <div class='form-row'>
-                                <div class='form-label'>Pin</div>
-                                <div class='form-data'>
-                                    <input type="text" name="pin" class="half"/>
-                                </div>
-                                <div class='clear'></div>
-                            </div>
-                            <div class='form-row'>
                                 <div class='form-label'>&nbsp;</div>
-                                <div class='form-data'>
+                                <div class='form-data-full'>
                                     <input type='button' name='btn-create' value="Create Location" class='half'/> <span
                                         class='message'></span>
                                 </div>

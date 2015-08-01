@@ -58,7 +58,7 @@
                             </div>
                             <div class='form-label'>Publish Date</div>
                             <div class='form-data'>
-                                <input type='text' name='publish_date'/>
+                                <input type='date' name='publish_date'/>
                             </div>
                             <div class='clear'></div>
                         </div>
@@ -96,7 +96,7 @@
                         </div>
                         <div class='form-row'>
                             <div class='form-label'>&nbsp;</div>
-                            <div class='form-data'>
+                            <div class='form-data-full'>
                                 <input type='button' name='btn-create' value="Create Book" class='half'/> <span class='message'></span>
                             </div>
                             <div class='clear'></div>
@@ -112,6 +112,6 @@
 
 </div><!-- ./wrapper -->
 @include('includes/common_js_bottom')
-{{HTML::script(asset("/public/js/site/books.js"))}}
+{{HTML::script(asset("/public/js/site/admin/books.js"))}}
 </body>
 </html>

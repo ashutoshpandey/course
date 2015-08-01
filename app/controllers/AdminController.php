@@ -4,9 +4,7 @@ class AdminController extends BaseController
 {
     function __construct(){
 
-        //$name = Session::get('name');
-
-        $name = 'Ashutosh Pandey';
+        $name = Session::get('name');
 
         View::share('root', URL::to('/'));
         View::share('name', $name);
@@ -134,13 +132,13 @@ class AdminController extends BaseController
 
         if(isset($id)){
 
-            $institute = Institute::find($id);
+            $course = Course::find($id);
 
-            if(isset($institute)){
+            if(isset($course)){
 
-                Session::put('institute_id', $id);
+                Session::put('course_id', $id);
 
-                return View::make('admin.view-course')->with('institute', $institute);
+                return View::make('admin.view-course')->with('course', $course);
             }
             else
                 return Redirect::to('/');

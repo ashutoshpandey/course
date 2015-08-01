@@ -359,7 +359,7 @@
 </div>
 <div class='form-row'>
     <div class='form-label'>&nbsp;</div>
-    <div class='form-data'>
+    <div class='form-data-full'>
         <input type='button' name='btn-create' value="Create Courier" class='half'/> <span class='message'></span>
     </div>
     <div class='clear'></div>

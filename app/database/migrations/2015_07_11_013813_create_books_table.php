@@ -23,6 +23,7 @@ class CreateBooksTable extends Migration {
             $table->string('author', 255);
             $table->float('price');
             $table->float('discounted_price');
+            $table->date('publish_date');
             $table->string('book_type', 255);           // regular, supplementary
             $table->string('status', 50);
 

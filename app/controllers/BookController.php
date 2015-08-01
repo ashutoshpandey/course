@@ -16,12 +16,24 @@ class BookController extends BaseController
 
             if(isset($books)){
 
-                $subjects = Book::where('course_id', $courseId)->select('subject')->groupBy('subject')->get();
+                $course = Course::where('id', $courseId)->with('institute')->first();
 
-                if(isset($subjects) && count($subjects)>0)
-                    return View::make('book.list')->with('found', true)->with('books', $books)->with('subjects', $subjects->toArray())->with('courseId', $courseId);
+                if(isset($course)){
+
+                    $subjects = Book::where('course_id', $courseId)->select('subject')->groupBy('subject')->get();
+
+                    if(isset($subjects) && count($subjects)>0){
+                        return View::make('book.list')
+                                        ->with('found', true)
+                                        ->with('books', $books)
+                                        ->with('subjects', $subjects->toArray())
+                                        ->with('course', $course);
+                    }
+                    else
+                        return View::make('book.list')->with('found', false);
+                }
                 else
-                    return View::make('book.list')->with('found', false);
+                    return Redirect::to('/');
             }
             else
                 return View::make('book.list')->with('found', false);

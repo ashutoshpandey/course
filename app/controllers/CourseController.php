@@ -11,12 +11,18 @@ class CourseController extends BaseController
 
         if(isset($id)) {
 
-            $courses = Course::where('status','=','active')->where('institute_id','=',$id)->get();
+            $institute = Institute::find($id);
 
-            if(isset($courses) && count($courses)>0)
-                return View::make('course.list')->with('found', true)->with('courses', $courses);
+            if(isset($institute)){
+                $courses = Course::where('status','=','active')->where('institute_id','=',$id)->get();
+
+                if(isset($courses) && count($courses)>0)
+                    return View::make('course.list')->with('found', true)->with('courses', $courses)->with('institute', $institute);
+                else
+                    return View::make('course.list')->with('found', false);
+            }
             else
-                return View::make('course.list')->with('found', false);
+                return Redirect::to('/');
         }
         else
             return Redirect::to('/');

@@ -25,7 +25,7 @@ function createBook(){
                 else{
                     $('.message').html('Book created successfully');
 
-                    $('#form-container').find('input[type="text"], textarea').val('');
+                    $('#form-container').find('input[type="text"], input[type="date"], textarea').val('');
 
                     listBooks(1);
                 }

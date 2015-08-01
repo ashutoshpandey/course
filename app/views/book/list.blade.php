@@ -23,6 +23,9 @@
 
     <section class='content'>
 
+        <h3>Showing courses for: {{$course->institute->name}} -> {{$course->name}}</h3>
+        <br/><br/>
+        
         <div class="container">
 
             @if(isset($books))
@@ -35,13 +38,14 @@
                             @foreach($subjects as $subject)
 
                                 <div><label><input type="checkbox" name="subject" value="{{$subject['subject']}}"/> {{$subject['subject']}}</label></div>
+
                             @endforeach
 
                         @endif
                     </div>
                 </div>
 
-                <div class="col-md-10 book-list" rel="{{$courseId}}">
+                <div class="col-md-10 book-list" rel="{{$course->id}}">
 
                     <label><input type="checkbox" name="select-all"/> Select all books</label> <br/>
 
