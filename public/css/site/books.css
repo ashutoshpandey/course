@@ -4,3 +4,8 @@
     color: white;
     cursor: pointer;
 }
+
+.added-to-bag{
+    color: red;
+    font-weight: bold;
+}

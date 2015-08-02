@@ -1,5 +1,4 @@
 $(function(){
-    $("input[name='btn-create']").click(createBook);
 
     $('a[href="#tab-edit"]').hide();
     $('#tab-edit').hide();
@@ -11,26 +10,15 @@ function createBook(){
 
     if(isBookFormValid()){
 
-        var data = $("#form-create-book").serialize();
+        $("#ifr").load(function(){
+            $('.message').html('Book created successfully');
 
-        $.ajax({
-            url: root + '/save-book',
-            type: 'post',
-            data: data,
-            dataType: 'json',
-            success: function(result){
+            $('#form-container').find('input[type="text"], input[type="date"], textarea').val('');
 
-                if(result.message.indexOf('not logged')>-1)
-                    window.location.replace(root);
-                else{
-                    $('.message').html('Book created successfully');
-
-                    $('#form-container').find('input[type="text"], input[type="date"], textarea').val('');
-
-                    listBooks(1);
-                }
-            }
+            listBooks(1);
         });
+
+        return true;
     }
 }
 

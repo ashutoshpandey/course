@@ -27,32 +27,55 @@ class StaticController extends BaseController
         return View::make('static.terms-and-conditions');
     }
 
-    public function addToBag($id){
+    public function addToBag($productId){
 
         $cart = Session::get('cart');
 
-        if(isset($cart))
-            ;
+        if(isset($cart)){
+            foreach($cart as $cartItem){
+                if($productId===$cartItem['productId']) {
+                    echo json_encode(array('message' => 'duplicate'));
+                    return;
+                }
+            }
+        }
         else
             $cart = array();
 
-        $uniqueId = date('Ymdhis');
+        $product = Book::find($productId);
 
-        $cart[] = array('id' => $uniqueId, 'productId' => $id);
+        if(isset($product)) {
 
-        Session::put('cart', $cart);
+            $uniqueId = date('Ymdhis');
 
-        echo json_encode(array('message' => 'done', 'cart' => $cart));
+            $cart[] = array('id' => $uniqueId, 'productId' => $productId, 'name' => $product->name, 'price' => $product->price, 'price' => $product->discounted_price, 'type' => $product->book_type);
+
+            Session::put('cart', $cart);
+
+            echo json_encode(array('message' => 'done', 'cart' => $cart));
+        }
+        else
+            echo json_encode(array('message' => 'invalid'));
+    }
+
+    public function bag(){
+
+        $cart = Session::get('cart');
+
+        if(isset($cart) && count($cart)>0)
+            return View::make('cart.list')->with('found', true)->with('cart', $cart);
+        else
+            return View::make('cart.list')->with('found', false);
     }
 
     public function getBag(){
 
         $cart = Session::get('cart');
 
-        if(isset($cart))
-            echo json_encode(array('message' => 'done', 'cart' => $cart));
+        if(isset($cart) && count($cart)>0)
+            echo json_encode(array('message' => 'found', 'cart' => $cart, 'count' => count($cart)));
         else
-            echo json_encode(array('message' => 'done'));
+            echo json_encode(array('message' => 'empty'));
     }
 
     public function removeFromBag($id){

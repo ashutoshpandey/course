@@ -30,13 +30,13 @@ class BookController extends BaseController
                                         ->with('course', $course);
                     }
                     else
-                        return View::make('book.list')->with('found', false);
+                        return View::make('book.list')->with('found', false)->with('course', $course);
                 }
                 else
                     return Redirect::to('/');
             }
             else
-                return View::make('book.list')->with('found', false);
+                return View::make('book.list')->with('found', false)->with('course', $course);
         }
         else
             return Redirect::to('/');
@@ -65,7 +65,6 @@ class BookController extends BaseController
 
         $book->course_id = $courseId;
         $book->name = Input::get('name');
-        $book->publish_date = date('Y-m-d', strtotime(Input::get('publish_date')));
         $book->subject = Input::get('subject');
         $book->author = Input::get('author');
         $book->price = Input::get('price');
@@ -76,6 +75,43 @@ class BookController extends BaseController
         $book->created_at = date('Y-m-d h:i:s');
 
         $book->save();
+
+        if (Input::hasFile('picture_1')) {
+
+            $imageName = Input::file('picture_1')->getClientOriginalName();
+
+            $destinationPath = "public/book-images/" . $book->id . "/";
+
+            $directoryPath = base_path() . '/' . $destinationPath;
+
+            if (!file_exists($directoryPath))
+                mkdir($directoryPath);
+
+            Input::file('picture_1')->move($destinationPath, $imageName);
+
+            $book->picture_1 = $imageName;
+
+            $book->save();
+        }
+        if (Input::hasFile('picture_2')) {
+
+            $imageName = Input::file('picture_2')->getClientOriginalName();
+            $extension = Input::file('picture_2')->getClientOriginalExtension();
+
+            $fileName = $imageName . '.' . $extension;
+            $destinationPath = "public/book-images/" . $book->id . "/";
+
+            $directoryPath = base_path() . '/' . $destinationPath;
+
+            if (!file_exists($directoryPath))
+                mkdir($directoryPath);
+
+            Input::file('picture_2')->move($destinationPath, $fileName);
+
+            $book->picture_2 = $fileName;
+
+            $book->save();
+        }
 
         return json_encode(array('message'=>'done'));
     }

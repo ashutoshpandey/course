@@ -27,6 +27,7 @@ Route::get('/book/{id}', 'BookController@book');
 
 Route::get('/add-to-bag/{id}', 'StaticController@addToBag');
 Route::get('/get-bag', 'StaticController@getBag');
+Route::get('/bag', 'StaticController@bag');
 Route::get('/remove-from-bag/{id}', 'StaticController@removeFromBag');
 
 Route::get('/admin-login', 'AuthenticationController@adminLogin');

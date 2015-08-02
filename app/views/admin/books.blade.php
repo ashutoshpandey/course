@@ -50,15 +50,11 @@
             </div>
             <div id='tab-create'>
                 <div id='form-container'>
-                    <form id='form-create-book'>
+                    <form target="ifr" id='form-create-book' enctype="multipart/form-data" method="post" action="{{$root}}/save-book" onsubmit="return createBook()">
                         <div class='form-row'>
                             <div class='form-label'>Name</div>
                             <div class='form-data'>
                                 <input type='text' name='name'/>
-                            </div>
-                            <div class='form-label'>Publish Date</div>
-                            <div class='form-data'>
-                                <input type='date' name='publish_date'/>
                             </div>
                             <div class='clear'></div>
                         </div>
@@ -90,18 +86,34 @@
                                 <select name='book_type'>
                                     <option>Course</option>
                                     <option>Supplementary</option>
+                                    <option>Stationary</option>
                                 </select>
+                            </div>
+                            <div class='clear'></div>
+                        </div>
+                        <div class='form-row'>
+                            <div class='form-label'>Picture 1</div>
+                            <div class='form-data'>
+                                <input type='file' name='picture_1'/>
+                            </div>
+                            <div class='clear'></div>
+                        </div>
+                        <div class='form-row'>
+                            <div class='form-label'>Picture 2</div>
+                            <div class='form-data'>
+                                <input type='file' name='picture_2'/>
                             </div>
                             <div class='clear'></div>
                         </div>
                         <div class='form-row'>
                             <div class='form-label'>&nbsp;</div>
                             <div class='form-data-full'>
-                                <input type='button' name='btn-create' value="Create Book" class='half'/> <span class='message'></span>
+                                <input type='submit' name='btn-create' value="Create Book" class='half'/> <span class='message'></span>
                             </div>
                             <div class='clear'></div>
                         </div>
                     </form>
+                    <iframe name="ifr" id="ifr" style="visibility: hidden; height: 1px; width: 1px"></iframe>
                 </div>
             </div>
         </div>

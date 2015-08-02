@@ -10,3 +10,15 @@ input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px #f0ede7 inset;
 }
 
+.bag{
+    color: red;
+    padding: 7px;
+    border: solid 1px grey;
+    float: right;
+    display: none;
+    text-decoration: none;
+}
+.bag:hover{
+    background-color: yellow;
+    text-decoration: none;
+}

@@ -13,6 +13,12 @@ $(document).ready(function () {
 
     $("input[name='subject']").click(getData);
 
+    $(".add-to-bag").click(function(){
+        var id = $(this).attr("rel");
+
+        addToBag(id, $(this));
+    });
+
 //    $("input[name='select-all']").click(selectAll);
 });
 
@@ -74,26 +80,32 @@ function getData(){
 //                    $("input[name='select-all']").unbind('click');
 //                    $("input[name='select-all']").click(selectAll);
 
+                    $(".add-to-bag").unbind('click');
                     $(".add-to-bag").click(function(){
                         var id = $(this).attr("rel");
 
-                        $.ajax({
-                            url: root + '/add-to-bag',
-                            type: 'get',
-                            dataType: 'json',
-                            success: function(result){
-
-                                if(result.indexOf('done')>-1){
-                                    $(this).removeClass('add-to-bag');
-                                    $(this).addClass('added-to-bag');
-                                }
-                            }
-                        });
-                    })
+                        addToBag(id, $(this));
+                    });
                 }
             }
             else{
                 $(".book-list").html('No books found');
+            }
+        }
+    });
+}
+
+function addToBag(id, obj){
+    $.ajax({
+        url: root + '/add-to-bag/' + id,
+        type: 'get',
+        dataType: 'json',
+        success: function(result){
+
+            if(result!=undefined && result.message!=undefined && (result.message.indexOf('done')>-1 || result.message.indexOf('duplicate')>-1)){
+                $(obj).html('In bag');
+                $(obj).removeClass('add-to-bag');
+                $(obj).addClass('added-to-bag');
             }
         }
     });

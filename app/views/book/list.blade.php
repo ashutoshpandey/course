@@ -27,7 +27,7 @@
 
         <div class="container">
 
-            @if(isset($books))
+            @if($found)
 
             <div class="grid-info row">
                 <div class="col-md-2">
