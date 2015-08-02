@@ -8,9 +8,7 @@
 
     @include('includes.common_css')
 
-    {{HTML::style(asset("/public/css/site/home.css"))}}
-    {{HTML::style(asset("/public/css/site/institutes.css"))}}
-    {{HTML::style(asset("/public/css/site/grid-list.css"))}}
+    {{HTML::style(asset("/public/css/site/cart.css"))}}
 
     @include('includes.common_js_top')
 </head>
@@ -37,10 +35,10 @@
 
                         <li class="data">
                             <div class="name-date">
-                                <span class="name">{{$cartItem->name}}</span></span>
+                                <span class="name">{{$cartItem['name']}}</span></span>
                             </div>
                             <div class="add-map">
-                                <span class="add">{{$cartItem->discounted_price}} <span class="original-price">{{$cartItem->price}}</span><br/>	<a target="_blank" href="{{$root}}/remove-bag-item/{{$course->id}}">Remove</a> </span>
+                                <span class="discounted-price">{{$cartItem['discounted_price']}}</span> <span class="original-price">{{$cartItem['price']}}</span><br/>	<span class="remove-bag-item" rel="{{$cartItem['id']}}">Remove</span>
                             </div>
                         </li>
 
@@ -72,7 +70,7 @@
 <!-- ./wrapper -->
 
 @include('includes.footer')
-{{HTML::script(asset("/public/js/site/courses.js"))}}
+{{HTML::script(asset("/public/js/site/cart.js"))}}
 
 </body>
 </html>

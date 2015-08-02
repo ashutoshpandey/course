@@ -1,6 +1,6 @@
 <?php
 
-class BookController extends BaseController
+class ProductController extends BaseController
 {
     function __construct()
     {
@@ -8,35 +8,35 @@ class BookController extends BaseController
         View::share('currency', 'Rs.');
     }
 
-    public function books($courseId){
+    public function products($courseId){
 
         if(isset($courseId)) {
 
-            $books = Book::where('status','=','active')->where('course_id', $courseId)->get();
+            $products = Product::where('status','=','active')->where('course_id', $courseId)->get();
 
-            if(isset($books)){
+            if(isset($products)){
 
                 $course = Course::where('id', $courseId)->with('institute')->first();
 
                 if(isset($course)){
 
-                    $subjects = Book::where('course_id', $courseId)->select('subject')->groupBy('subject')->get();
+                    $subjects = Product::where('course_id', $courseId)->select('subject')->groupBy('subject')->get();
 
                     if(isset($subjects) && count($subjects)>0){
-                        return View::make('book.list')
+                        return View::make('product.list')
                                         ->with('found', true)
-                                        ->with('books', $books)
+                                        ->with('products', $products)
                                         ->with('subjects', $subjects->toArray())
                                         ->with('course', $course);
                     }
                     else
-                        return View::make('book.list')->with('found', false)->with('course', $course);
+                        return View::make('product.list')->with('found', false)->with('course', $course);
                 }
                 else
                     return Redirect::to('/');
             }
             else
-                return View::make('book.list')->with('found', false)->with('course', $course);
+                return View::make('product.list')->with('found', false)->with('course', $course);
         }
         else
             return Redirect::to('/');
@@ -48,7 +48,7 @@ class BookController extends BaseController
         if(!isset($adminId))
             return Redirect::to('/');
 
-        return View::make('book.add');
+        return View::make('product.add');
     }
 
     public function save()
@@ -61,26 +61,26 @@ class BookController extends BaseController
         if(!isset($courseId))
             return json_encode(array('message' => 'invalid'));
 
-        $book = new Book();
+        $product = new Product();
 
-        $book->course_id = $courseId;
-        $book->name = Input::get('name');
-        $book->subject = Input::get('subject');
-        $book->author = Input::get('author');
-        $book->price = Input::get('price');
-        $book->discounted_price = Input::get('discounted_price');
-        $book->book_type = Input::get('book_type');
+        $product->course_id = $courseId;
+        $product->name = Input::get('name');
+        $product->subject = Input::get('subject');
+        $product->author = Input::get('author');
+        $product->price = Input::get('price');
+        $product->discounted_price = Input::get('discounted_price');
+        $product->product_type = Input::get('product_type');
 
-        $book->status = 'active';
-        $book->created_at = date('Y-m-d h:i:s');
+        $product->status = 'active';
+        $product->created_at = date('Y-m-d h:i:s');
 
-        $book->save();
+        $product->save();
 
         if (Input::hasFile('picture_1')) {
 
             $imageName = Input::file('picture_1')->getClientOriginalName();
 
-            $destinationPath = "public/book-images/" . $book->id . "/";
+            $destinationPath = "public/product-images/" . $product->id . "/";
 
             $directoryPath = base_path() . '/' . $destinationPath;
 
@@ -89,9 +89,9 @@ class BookController extends BaseController
 
             Input::file('picture_1')->move($destinationPath, $imageName);
 
-            $book->picture_1 = $imageName;
+            $product->picture_1 = $imageName;
 
-            $book->save();
+            $product->save();
         }
         if (Input::hasFile('picture_2')) {
 
@@ -99,7 +99,7 @@ class BookController extends BaseController
             $extension = Input::file('picture_2')->getClientOriginalExtension();
 
             $fileName = $imageName . '.' . $extension;
-            $destinationPath = "public/book-images/" . $book->id . "/";
+            $destinationPath = "public/product-images/" . $product->id . "/";
 
             $directoryPath = base_path() . '/' . $destinationPath;
 
@@ -108,9 +108,9 @@ class BookController extends BaseController
 
             Input::file('picture_2')->move($destinationPath, $fileName);
 
-            $book->picture_2 = $fileName;
+            $product->picture_2 = $fileName;
 
-            $book->save();
+            $product->save();
         }
 
         return json_encode(array('message'=>'done'));
@@ -124,13 +124,13 @@ class BookController extends BaseController
 
         if(isset($id)){
 
-            $book = Book::find($id);
+            $product = Product::find($id);
 
-            if(isset($book)){
+            if(isset($product)){
 
-                Session::put('book_id', $id);
+                Session::put('product_id', $id);
 
-                return View::make('book.edit')->with('book', $book);
+                return View::make('product.edit')->with('product', $product);
             }
             else
                 return Redirect::to('/');
@@ -147,12 +147,12 @@ class BookController extends BaseController
 
         if(isset($id)){
 
-            $book = Book::find($id);
+            $product = Product::find($id);
 
-            if(isset($book)){
+            if(isset($product)){
 
-                $book->status = 'removed';
-                $book->save();
+                $product->status = 'removed';
+                $product->save();
 
                 return json_encode(array('message'=>'done'));
             }
@@ -169,22 +169,22 @@ class BookController extends BaseController
         if(!isset($adminId))
             return json_encode(array('message' => 'not logged'));
 
-        $id = Session::get('book_id');
+        $id = Session::get('product_id');
 
         if(isset($id)){
-            $book = Book::find($id);
+            $product = Product::find($id);
 
-            if(isset($book)){
+            if(isset($product)){
 
-                $book->name = Input::get('name');
-                $book->publish_date = date('Y-m-d', strtotime(Input::get('publish_date')));
-                $book->subject = Input::get('subject');
-                $book->author = Input::get('author');
-                $book->price = Input::get('price');
-                $book->discounted_price = Input::get('discounted_price');
-                $book->book_type = Input::get('book_type');
+                $product->name = Input::get('name');
+                $product->publish_date = date('Y-m-d', strtotime(Input::get('publish_date')));
+                $product->subject = Input::get('subject');
+                $product->author = Input::get('author');
+                $product->price = Input::get('price');
+                $product->discounted_price = Input::get('discounted_price');
+                $product->product_type = Input::get('product_type');
 
-                $book->save();
+                $product->save();
 
                 return json_encode(array('message'=>'done'));
             }
@@ -195,15 +195,15 @@ class BookController extends BaseController
             return json_encode(array('message'=>'invalid'));
     }
 
-    public function getBook($id)
+    public function getProduct($id)
     {
         if(isset($id)){
 
-            $book = Book::find($id);
+            $product = Product::find($id);
 
-            if(isset($book)){
+            if(isset($product)){
 
-                return json_encode(array('message'=>'found', 'book' => $book));
+                return json_encode(array('message'=>'found', 'product' => $product));
             }
             else
                 return json_encode(array('message'=>'empty'));
@@ -212,7 +212,7 @@ class BookController extends BaseController
             return json_encode(array('message'=>'invalid'));
     }
 
-    public function getBooks($id)
+    public function getProducts($id)
     {
         if(isset($id)){
 
@@ -223,13 +223,13 @@ class BookController extends BaseController
                 $subjects = explode(',', $subjectString);
 
                 if(isset($subjects) && count($subjects)>0)
-                    $books = Book::where('course_id','=', $id)->whereIn('subject', $subjects)->get();
+                    $products = Product::where('course_id','=', $id)->whereIn('subject', $subjects)->get();
             }
             else
-                $books = Book::where('course_id','=', $id)->get();
+                $products = Product::where('course_id','=', $id)->get();
 
-            if(isset($books))
-                return json_encode(array('message'=>'found', 'currency' => 'Rs.', 'books' => $books->toArray()));
+            if(isset($products))
+                return json_encode(array('message'=>'found', 'currency' => 'Rs.', 'products' => $products->toArray()));
             else
                 return json_encode(array('message'=>'empty'));
         }
@@ -237,15 +237,15 @@ class BookController extends BaseController
             return json_encode(array('message'=>'invalid'));
     }
 
-    public function getSearchBooks($key)
+    public function getSearchProducts($key)
     {
         if(isset($key)){
 
-            $books = Book::where('name','like', '%'. $key . '%')->get();
+            $products = Product::where('name','like', '%'. $key . '%')->get();
 
-            if(isset($books)){
+            if(isset($products)){
 
-                return json_encode(array('message'=>'found', 'books' => $books->toArray()));
+                return json_encode(array('message'=>'found', 'products' => $products->toArray()));
             }
             else
                 return json_encode(array('message'=>'empty'));

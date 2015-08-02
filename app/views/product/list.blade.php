@@ -92,7 +92,7 @@
 <!-- ./wrapper -->
 
 @include('includes.footer')
-{{HTML::script(asset("/public/js/site/books.js"))}}
+{{HTML::script(asset("/public/js/site/products.js"))}}
 
 </body>
 </html>

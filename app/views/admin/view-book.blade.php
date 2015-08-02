@@ -97,6 +97,6 @@
 </div><!-- ./wrapper -->
 
 @include('includes/common_js_bottom')
-{{HTML::script(asset("/public/js/site/admin/view-book.js"))}}
+{{HTML::script(asset("/public/js/site/admin/view-product.js"))}}
 </body>
 </html>

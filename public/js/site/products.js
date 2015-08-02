@@ -104,6 +104,7 @@ function addToBag(id, obj){
 
             if(result!=undefined && result.message!=undefined && (result.message.indexOf('done')>-1 || result.message.indexOf('duplicate')>-1)){
                 $(obj).html('In bag');
+                $('.bag').html(result.count).show();
                 $(obj).removeClass('add-to-bag');
                 $(obj).addClass('added-to-bag');
             }

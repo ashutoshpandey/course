@@ -19,9 +19,11 @@ class CreateOrdersTable extends Migration {
             $table->integer('user_id')->unsigned();
 
             $table->float('amount');
-            $table->string('promo', 255);
+            $table->string('discount_details', 255);
             $table->float('discount');
             $table->float('net_amount');
+
+            $table->string('email', 255);
 
             $table->string('shipping_name', 255);
             $table->string('shipping_address', 1000);
@@ -43,13 +45,9 @@ class CreateOrdersTable extends Migration {
             $table->string('billing_contact_number_1', 20);
             $table->string('billing_contact_number_2', 20);
 
-            $table->integer('courier_id')->unsigned();
-            $table->string('docket_number', 255);
-
             $table->string('status', 50);
 
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('courier_id')->references('id')->on('couriers');
 
             $table->timestamps();
 		});

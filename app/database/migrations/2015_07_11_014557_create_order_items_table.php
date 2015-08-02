@@ -17,13 +17,15 @@ class CreateOrderItemsTable extends Migration {
             $table->increments('id');
 
             $table->integer('order_id')->unsigned();
-            $table->integer('book_id')->unsigned();
+            $table->integer('product_id')->unsigned();
 
             $table->integer('quantity');
+			$table->float('price');
+			$table->float('discounted_price');
 
             $table->string('status', 50);
 
-            $table->foreign('book_id')->references('id')->on('books');
+            $table->foreign('product_id')->references('id')->on('products');
             $table->foreign('order_id')->references('id')->on('orders');
 
             $table->timestamps();

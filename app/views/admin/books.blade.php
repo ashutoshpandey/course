@@ -124,6 +124,6 @@
 
 </div><!-- ./wrapper -->
 @include('includes/common_js_bottom')
-{{HTML::script(asset("/public/js/site/admin/books.js"))}}
+{{HTML::script(asset("/public/js/site/admin/products.js"))}}
 </body>
 </html>

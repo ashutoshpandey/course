@@ -1,0 +1,13 @@
+.original-price{
+    text-decoration: line-through;
+}
+.remove-bag-item{
+    color: dodgerblue;
+    cursor: pointer;
+}
+.remove-bag-item:hover{
+    color: red;
+}
+.discounted-price{
+    color: dodgerblue;
+}

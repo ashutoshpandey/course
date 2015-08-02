@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBooksTable extends Migration {
+class CreateProductsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,7 +12,7 @@ class CreateBooksTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('books', function(Blueprint $table)
+		Schema::create('products', function(Blueprint $table)
 		{
             $table->increments('id');
 
@@ -24,7 +24,7 @@ class CreateBooksTable extends Migration {
             $table->float('price');
             $table->float('discounted_price');
             $table->date('publish_date');
-            $table->string('book_type', 255);           // regular, supplementary
+            $table->string('product_type', 255);           // regular, supplementary
             $table->string('status', 50);
 
             $table->foreign('course_id')->references('id')->on('courses');
@@ -40,7 +40,7 @@ class CreateBooksTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('books', function(Blueprint $table)
+		Schema::table('products', function(Blueprint $table)
 		{
 			//
 		});

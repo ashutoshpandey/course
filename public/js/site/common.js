@@ -15,12 +15,8 @@ function getBag(){
         success: function(result){
             if(result!=undefined && result.message!=undefined && result.message.indexOf('found')>-1){
 
-                if(result.count!=undefined) {
-
-                    $('.bag').html(result.count);
-
-                    $('.bag').show();
-                }
+                if(result.count!=undefined)
+                    $('.bag').html(result.count).show();
                 else
                     $('.bag').hide();
             }

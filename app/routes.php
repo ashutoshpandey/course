@@ -21,11 +21,11 @@ Route::get('/institutes', 'SearchController@institutes');
 Route::get('/institute/{id}', 'SearchController@home');
 Route::get('/courses/{institute_id}', 'CourseController@courses');
 Route::get('/course/{id}', 'CourseController@course');
-Route::get('/books/{course_id}', 'BookController@books');
-Route::post('/get-course-books/{course_id}/{subjects?}', 'BookController@getBooks');
-Route::get('/book/{id}', 'BookController@book');
+Route::get('/products/{course_id}', 'ProductController@products');
+Route::post('/get-course-products/{course_id}/{subjects?}', 'ProductController@getProducts');
+Route::get('/product/{id}', 'ProductController@product');
 
-Route::get('/add-to-bag/{id}', 'StaticController@addToBag');
+Route::get('/add-to-bag/{id}/{quantity}', 'StaticController@addToBag');
 Route::get('/get-bag', 'StaticController@getBag');
 Route::get('/bag', 'StaticController@bag');
 Route::get('/remove-from-bag/{id}', 'StaticController@removeFromBag');
@@ -34,16 +34,16 @@ Route::get('/admin-login', 'AuthenticationController@adminLogin');
 Route::post('/is-valid-admin', 'AuthenticationController@isValidAdmin');
 
 Route::get('/get-courses/{id}', 'InstituteController@getCourses');
-Route::get('/get-course-books/{id}', 'CourseController@getCourseBooks');
+Route::get('/get-course-products/{id}', 'CourseController@getCourseProducts');
 Route::get('/remove-course/{id}', 'CourseController@remove');
 Route::get('/edit-course', 'CourseController@edit');
 Route::post('/update-course', 'CourseController@update');
 Route::post('/save-course', 'CourseController@save');
 
-Route::get('/remove-book/{id}', 'BookController@remove');
-Route::get('/edit-book', 'BookController@edit');
-Route::post('/update-book', 'BookController@update');
-Route::post('/save-book', 'BookController@save');
+Route::get('/remove-product/{id}', 'ProductController@remove');
+Route::get('/edit-product', 'ProductController@edit');
+Route::post('/update-product', 'ProductController@update');
+Route::post('/save-product', 'ProductController@save');
 
 Route::get('/remove-user/{id}', 'UserController@remove');
 
@@ -54,7 +54,7 @@ Route::get('/search-keyword/{key}/{city_id?}', 'SearchController@searchByKeyword
 Route::get('/admin-section', 'AdminController@adminSection');
 Route::get('/admin-institutes', 'AdminController@institutes');
 Route::get('/admin-courses/{id}', 'AdminController@courses');
-Route::get('/admin-books/{id}', 'AdminController@books');
+Route::get('/admin-products/{id}', 'AdminController@products');
 Route::get('/admin-orders', 'AdminController@orders');
 Route::get('/admin-couriers', 'AdminController@couriers');
 Route::get('/admin-users', 'AdminController@users');
@@ -64,7 +64,7 @@ Route::get('/admin-locations', 'AdminController@locations');
 Route::get('/admin-list-institutes/{status}/{page}', 'AdminController@listInstitutes');
 Route::get('/admin-list-orders/{status}/{page}', 'AdminController@listOrders');
 Route::get('/admin-list-courses/{status}/{page}', 'AdminController@listCourses');
-Route::get('/admin-list-books/{status}/{page}', 'AdminController@listBooks');
+Route::get('/admin-list-products/{status}/{page}', 'AdminController@listProducts');
 Route::get('/admin-list-couriers/{status}/{page}', 'AdminController@listCouriers');
 Route::get('/admin-list-software-users/{status}/{page}', 'AdminController@listSoftwareUsers');
 Route::get('/admin-list-users/{status}/{page}', 'AdminController@listUsers');
@@ -72,7 +72,7 @@ Route::get('/admin-list-locations/{status}/{page}', 'AdminController@listLocatio
 
 Route::get('/admin-view-institute/{id}', 'AdminController@viewInstitute');
 Route::get('/admin-view-course/{id}', 'AdminController@viewCourse');
-Route::get('/admin-view-book/{id}', 'AdminController@viewBook');
+Route::get('/admin-view-product/{id}', 'AdminController@viewProduct');
 Route::get('/admin-view-courier/{id}', 'AdminController@viewCourier');
 Route::get('/admin-view-software-user/{id}', 'AdminController@viewSoftwareUser');
 Route::get('/admin-view-user/{id}', 'AdminController@viewUser');
