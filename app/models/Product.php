@@ -1,8 +1,8 @@
 <?php
 
-class Book extends Eloquent{
+class Product extends Eloquent{
 
-	protected $table = 'books';
+	protected $table = 'products';
 
 	public function course(){
 		return $this->belongsTo('Course', 'course_id');

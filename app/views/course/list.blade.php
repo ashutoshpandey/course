@@ -40,7 +40,7 @@
                                 <span class="name">{{$course->name}}</span></span>
                             </div>
                             <div class="add-map">
-                                <span class="add">{{$course->description}}<br/>	<a target="_blank" href="{{$root}}/books/{{$course->id}}">View Books</a> </span>
+                                <span class="add">{{$course->description}}<br/>	<a target="_blank" href="{{$root}}/products/{{$course->id}}">View Books</a> </span>
                             </div>
                         </li>
 

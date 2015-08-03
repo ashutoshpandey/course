@@ -25,10 +25,16 @@ Route::get('/products/{course_id}', 'ProductController@products');
 Route::post('/get-course-products/{course_id}/{subjects?}', 'ProductController@getProducts');
 Route::get('/product/{id}', 'ProductController@product');
 
-Route::get('/add-to-bag/{id}/{quantity}', 'StaticController@addToBag');
-Route::get('/get-bag', 'StaticController@getBag');
-Route::get('/bag', 'StaticController@bag');
-Route::get('/remove-from-bag/{id}', 'StaticController@removeFromBag');
+Route::get('/add-to-bag/{id}/{quantity}', 'CartController@addToBag');
+Route::get('/get-bag', 'CartController@getBag');
+Route::get('/bag', 'CartController@bag');
+Route::get('/remove-from-bag/{id}', 'CartController@removeFromBag');
+Route::get('/save-order', 'CartController@saveOrder');
+
+Route::get('/checkout-login', 'CheckoutController@login');
+Route::get('/checkout-address', 'CheckoutController@address');
+Route::get('/checkout-payment', 'CheckoutController@payment');
+
 
 Route::get('/admin-login', 'AuthenticationController@adminLogin');
 Route::post('/is-valid-admin', 'AuthenticationController@isValidAdmin');

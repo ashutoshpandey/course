@@ -5,6 +5,22 @@ $(document).ready(function () {
 
         removeFromBag(id, $(this));
     });
+
+    $(".checkout").click(function(){
+        $.ajax({
+            url: root + '/save-order/',
+            type: 'get',
+            dataType: 'json',
+            success: function(result){
+
+                if(result!=undefined && result.message!=undefined && result.message.indexOf('done')>-1){
+                    window.location.replace(root + '/checkout');
+                }
+            }
+        });
+    });
+
+    $(".payment").click(payment);
 });
 
 function removeFromBag(id, obj){
@@ -18,6 +34,20 @@ function removeFromBag(id, obj){
                 $(obj).html('In bag');
                 $('.bag').html(result.count).show();
                 $(obj).closest('.data').remove();
+            }
+        }
+    });
+}
+
+function payment(){
+    $.ajax({
+        url: root + '/save-order',
+        type: 'get',
+        dataType: 'json',
+        success: function(result){
+
+            if(result!=undefined && result.message!=undefined && result.message.indexOf('done')>-1){
+                window.location.replace(root + '/checkout-login');
             }
         }
     });

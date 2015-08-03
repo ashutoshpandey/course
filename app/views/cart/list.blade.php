@@ -46,6 +46,10 @@
 
                     </ul>
 
+                    <div>
+                        <span class='payment'>Payment</span>
+                    </div>
+
                     {{--<div id="popup_div">--}}
                         {{--Test the dialog--}}
                         {{--<br/>--}}

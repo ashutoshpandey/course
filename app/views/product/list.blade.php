@@ -9,7 +9,7 @@
     @include('includes.common_css')
 
     {{HTML::style(asset("/public/css/site/grid-list.css"))}}
-    {{HTML::style(asset("/public/css/site/books.css"))}}
+    {{HTML::style(asset("/public/css/site/products.css"))}}
 
     @include('includes.common_js_top')
 </head>
@@ -44,23 +44,23 @@
                     </div>
                 </div>
 
-                <div class="col-md-10 book-list" rel="{{$course->id}}">
+                <div class="col-md-10 product-list" rel="{{$course->id}}">
 
-                    <label><input type="checkbox" name="select-all"/> Select all books</label> <br/>
+                    <label><input type="checkbox" name="select-all"/> Select all products</label> <br/>
 
                     <ul id="content">
 
-                        @foreach($books as $book)
+                        @foreach($products as $product)
 
                         <li class="data">
                             <div class="name-date">
-                                <span class="name">{{$book->name}}</span>
+                                <span class="name">{{$product->name}}</span>
                                 <br/>
-                                {{$currency}} {{$book->price}}
+                                {{$currency}} {{$product->price}}
                                 <br/>
-                                By <b>{{$book->author}}</b> <br/><br/>
-<!--                                <label><input type="checkbox" name="pick-book" value="{{$book->id}}"/> Pick this book </label>-->
-                                <span class="add-to-bag" rel="{{$book->id}}">Add to bag</span>
+                                By <b>{{$product->author}}</b> <br/><br/>
+<!--                                <label><input type="checkbox" name="pick-product" value="{{$product->id}}"/> Pick this product </label>-->
+                                <span class="add-to-bag" rel="{{$product->id}}">Add to bag</span>
                             </div>
                         </li>
 
@@ -81,7 +81,7 @@
             </div>
 
             @else
-                <h2>No books found</h2>
+                <h2>No products found</h2>
             @endif
 
         </div>
