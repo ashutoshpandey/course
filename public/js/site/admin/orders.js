@@ -29,7 +29,7 @@ function showGrid(data){
             <thead> \
                 <tr> \
                     <th data-column-id="id" data-type="numeric">ID</th> \
-                    <th data-column-id="id">Customer id</th> \
+                    <th data-column-id="customer_id">Customer id</th> \
                     <th data-column-id="name">Customer name</th> \
                     <th data-column-id="email">Email</th> \
                     <th data-column-id="amount">Amount</th> \
@@ -47,8 +47,8 @@ function showGrid(data){
                     <td>' + order.id + '</td> \
                     <td>' + order.user_id + '</td> \
                     <td>' + order.billing_name + '</td> \
-                    <td>' + order.user.email + '</td> \
-                    <td>' + order.amount + '</td> \
+                    <td>' + order.email + '</td> \
+                    <td>' + order.net_amount + '</td> \
                     <td>' + order.created_at + '</td> \
                     <td></td> \
                 </tr>';
