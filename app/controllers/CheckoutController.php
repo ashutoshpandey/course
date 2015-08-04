@@ -23,6 +23,32 @@ class CheckoutController extends BaseController
             return Redirect::to('/');
     }
 
+    public function guest(){
+
+        $orderId = Session::get('order_id');
+
+        if(isset($orderId)){
+
+            $order = Order::find($orderId);
+
+            if(isset($order)) {
+
+                $email = Input::get('guest-email');
+
+                $order->user_id = null;
+                $order->email = $email;
+
+                $order->save();
+
+                return json_encode(array('message'=>'done'));
+            }
+            else
+                return json_encode(array('message'=>'session'));
+        }
+        else
+            return json_encode(array('message'=>'session'));
+    }
+
     public function address(){
 
         $orderId = Session::get('order_id');
@@ -33,8 +59,10 @@ class CheckoutController extends BaseController
 
             if(isset($order)) {
 
-                $order->user_id = -1;
-                $order->email = '';
+                $email = Input::get('guest-email');
+
+                $order->user_id = null;
+                $order->email = $email;
 
                 $order->save();
 
@@ -47,7 +75,7 @@ class CheckoutController extends BaseController
             return Redirect::to('/');
     }
 
-    public function payment(){
+    public function updateAddress(){
 
         $orderId = Session::get('order_id');
 
@@ -57,27 +85,61 @@ class CheckoutController extends BaseController
 
             if(isset($order)) {
 
-                $order->billing_name = Input::get('billing_name');
-                $order->billing_address = Input::get('billing_address');
-                $order->billing_city = Input::get('billing_city');
-                $order->billing_state = Input::get('billing_state');
-                $order->billing_country = Input::get('billing_country');
-                $order->billing_zip = Input::get('billing_zip');
-                $order->billing_land_mark = Input::get('billing_land_mark');
-                $order->billing_phone_number_1 = Input::get('billing_phone_number_1');
-                $order->billing_phone_number_2 = Input::get('billing_phone_number_2');
+                $billingSame = Input::get('chk-billing-same');
 
-                $order->shipping_name = Input::get('shipping_name');
-                $order->shipping_address = Input::get('shipping_address');
-                $order->shipping_city = Input::get('shipping_city');
-                $order->shipping_state = Input::get('shipping_state');
-                $order->shipping_country = Input::get('shipping_country');
-                $order->shipping_zip = Input::get('shipping_zip');
-                $order->shipping_land_mark = Input::get('shipping_land_mark');
-                $order->shipping_phone_number_1 = Input::get('shipping_phone_number_1');
-                $order->shipping_phone_number_2 = Input::get('shipping_phone_number_2');
+                $order->shipping_name = Input::get('shipping-name');
+                $order->shipping_address = Input::get('shipping-address');
+                $order->shipping_city = Input::get('shipping-city');
+                $order->shipping_state = Input::get('shipping-state');
+                $order->shipping_country = 'India';
+                $order->shipping_zip = Input::get('shipping-zip');
+                $order->shipping_land_mark = Input::get('shipping-land-mark');
+                $order->shipping_contact_number_1 = Input::get('shipping-contact-number-1');
+                $order->shipping_contact_number_2 = Input::get('shipping-contact-number-2');
+
+                if(isset($billingSame) && $billingSame=="yes"){
+                    $order->billing_name = Input::get('shipping-name');
+                    $order->billing_address = Input::get('shipping-address');
+                    $order->billing_city = Input::get('shipping-city');
+                    $order->billing_state = Input::get('shipping-state');
+                    $order->billing_country = 'India';
+                    $order->billing_zip = Input::get('shipping-zip');
+                    $order->billing_land_mark = Input::get('shipping-land-mark');
+                    $order->billing_contact_number_1 = Input::get('shipping-contact-number-1');
+                    $order->billing_contact_number_2 = Input::get('shipping-contact-number-2');
+                }
+                else {
+                    $order->billing_name = Input::get('billing-name');
+                    $order->billing_address = Input::get('billing-address');
+                    $order->billing_city = Input::get('billing-city');
+                    $order->billing_state = Input::get('billing-state');
+                    $order->billing_country = 'India';
+                    $order->billing_zip = Input::get('billing-zip');
+                    $order->billing_land_mark = Input::get('billing-land-mark');
+                    $order->billing_contact_number_1 = Input::get('billing-contact-number-1');
+                    $order->billing_contact_number_2 = Input::get('billing-contact-number-2');
+                }
 
                 $order->save();
+
+                return json_encode(array('message'=>'done'));
+            }
+            else
+                return json_encode(array('message'=>'session'));
+        }
+        else
+            return json_encode(array('message'=>'session'));
+    }
+
+    public function payment(){
+
+        $orderId = Session::get('order_id');
+
+        if(isset($orderId)){
+
+            $order = Order::find($orderId);
+
+            if(isset($order)) {
 
                 return View::make('order.payment')->with('order', $order);
             }

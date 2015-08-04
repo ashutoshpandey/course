@@ -32,7 +32,9 @@ Route::get('/remove-from-bag/{id}', 'CartController@removeFromBag');
 Route::get('/save-order', 'CartController@saveOrder');
 
 Route::get('/checkout-login', 'CheckoutController@login');
+Route::get('/checkout-guest', 'CheckoutController@guest');
 Route::get('/checkout-address', 'CheckoutController@address');
+Route::post('/checkout-update-address', 'CheckoutController@updateAddress');
 Route::get('/checkout-payment', 'CheckoutController@payment');
 
 
