@@ -46,8 +46,10 @@ function payment(){
         dataType: 'json',
         success: function(result){
 
-            if(result!=undefined && result.message!=undefined && result.message.indexOf('done')>-1){
-                window.location.replace(root + '/checkout-login');
+            if(result!=undefined && result.message!=undefined){
+                if(result.message.indexOf('done')>-1 || result.message.indexOf('exists')>-1) {
+                    window.location.replace(root + '/checkout-login');
+                }
             }
         }
     });

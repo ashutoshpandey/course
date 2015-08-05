@@ -23,7 +23,6 @@ class AuthenticationController extends BaseController
             return json_encode(array('message'=>'wrong'));
         else{
             Session::put('user_id', $user->id);
-            Session::put('user_type', $user->user_type);
             Session::put('name', $user->name);
 
             return json_encode(array('message'=>'correct'));

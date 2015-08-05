@@ -24,7 +24,7 @@ function moveToPayment(){
             if(result!=undefined && result.message!=undefined) {
 
                 if (result.message.indexOf('done') > -1)
-                    ;//window.location.replace(root + '/checkout-payment');
+                    window.location.replace(root + '/checkout-payment');
                 else if (result.message.indexOf('session') > -1)
                     window.location.replace(root);
             }

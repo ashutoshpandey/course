@@ -58,7 +58,7 @@
         <div class='form-row'>
             <div class='form-label'>&nbsp;</div>
             <div class='form-data'>
-                <input type='email' name='guest-email'/> &nbsp; &nbsp; <input type="button" name="btn-checkout-login" value="Continue"/>
+                <input type="button" name="btn-checkout-login" value="Continue"/>
                 &nbsp;&nbsp;
                 <span class="message message-login"></span>
             </div>

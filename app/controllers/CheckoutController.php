@@ -14,8 +14,15 @@ class CheckoutController extends BaseController
 
             $order = Order::find($orderId);
 
-            if(isset($order))
-                return View::make('checkout.login')->with('order', $order);
+            if(isset($order)){
+
+                $userId = Session::get('user_id');
+
+                if(isset($userId))
+                    return Redirect::to('/checkout-address');
+                else
+                    return View::make('order.payment')->with('order', $order);
+            }
             else
                 return Redirect::to('/');
         }
@@ -33,7 +40,7 @@ class CheckoutController extends BaseController
 
             if(isset($order)) {
 
-                $email = Input::get('guest-email');
+                $email = Input::get('email');
 
                 $order->user_id = null;
                 $order->email = $email;
@@ -59,14 +66,14 @@ class CheckoutController extends BaseController
 
             if(isset($order)) {
 
-                $email = Input::get('guest-email');
+                $userId = Session::get('user_id');
 
-                $order->user_id = null;
-                $order->email = $email;
+                $user = User::find($userId)->with('UserAddress');
 
-                $order->save();
-
-                return View::make('checkout.address')->with('order', $order);
+                if(isset($user))
+                    return View::make('checkout.address')->with('order', $order)->with('user', $user);
+                else
+                    return View::make('checkout.address')->with('order', $order);
             }
             else
                 return Redirect::to('/');
@@ -148,5 +155,41 @@ class CheckoutController extends BaseController
         }
         else
             return Redirect::to('/');
+    }
+
+    public function isValidUser()
+    {
+        $orderId = Session::get('order_id');
+
+        if(isset($orderId)) {
+
+            $order = Order::find($orderId);
+
+            if(isset($order)) {
+                $email = Input::get('email');
+                $password = Input::get('password');
+
+                $user = User::where('email', '=', $email)
+                    ->where('password', '=', $password)->first();
+
+                if (is_null($user))
+                    return json_encode(array('message' => 'wrong'));
+                else {
+                    Session::put('user_id', $user->id);
+                    Session::put('name', $user->name);
+
+                    $order->user_id = $user->id;
+                    $order->email = $email;
+
+                    $order->save();
+
+                    return json_encode(array('message' => 'correct'));
+                }
+            }
+            else
+                return json_encode(array('message' => 'invalid'));
+        }
+        else
+            return json_encode(array('message' => 'invalid'));
     }
 }

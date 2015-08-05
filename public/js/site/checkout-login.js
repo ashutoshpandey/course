@@ -8,7 +8,10 @@ function doLogin(){
 
     if(isLoginFormValid()){
 
-        var data = $("#form-checkout-login").serialize();
+        var email = $("input[name='login-email']").val();
+        var password = $("input[name='login-password']").val();
+
+        var data = 'email=' + email + '&password=' + password;
 
         $.ajax({
             url: root + '/is-valid-checkout-user',
@@ -19,6 +22,8 @@ function doLogin(){
 
                 if(result.message.indexOf('wrong')>-1)
                     $('.message-login').html('Invalid username or password');
+                else if(result.message.indexOf('invalid')>-1)
+                    window.location.replace(root);
                 else if(result.message.indexOf('correct')>-1)
                     window.location.replace(root + '/checkout-address');
                 else

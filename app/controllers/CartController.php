@@ -90,49 +90,63 @@ class CartController extends BaseController
 
         if(isset($cart)) {
 
-            $order = new Order();
+            $orderId = Session::get('order_id');
+            $exists = false;
+            if(isset($orderId)) {
+                $order = Order::find($orderId);
 
-            $total = 0;
-            foreach($cart as $cartItem){
-                $discounted_price = $cartItem['discounted_price'];
-                $total += $discounted_price;
+                if(isset($order))
+                   $exists = true;
             }
 
-            $discount_on_total = 0;
-            $net_total = $total-$discount_on_total;
+            if(!$exists){
 
-            $order->amount = $total;
-            $order->discount = 0;
-            $order->discount_details = '';
-            $order->net_amount = $net_total;
+                $order = new Order();
 
-            $order->status = 'inactive';                // let us complete order items first
-            $order->created_at = date('Y-m-d h:i:s');
+                $total = 0;
+                foreach ($cart as $cartItem) {
+                    $discounted_price = $cartItem['discounted_price'];
+                    $total += $discounted_price;
+                }
 
-            $order->save();
+                $discount_on_total = 0;
+                $net_total = $total - $discount_on_total;
 
-            foreach($cart as $cartItem){
+                $order->amount = $total;
+                $order->discount = 0;
+                $order->discount_details = '';
+                $order->net_amount = $net_total;
 
-                $orderItem = new OrderItem();
+                $order->status = 'inactive';                // let us complete order items first
+                $order->created_at = date('Y-m-d h:i:s');
 
-                $orderItem->order_id = $order->id;
-                $orderItem->product_id = $cartItem['productId'];
-                $orderItem->quantity = $cartItem['quantity'];
-                $orderItem->price = $cartItem['price'];
-                $orderItem->discounted_price = $cartItem['discounted_price'];
+                $order->save();
 
-                $orderItem->created_at = date('Y-m-d h:i:s');
-                $orderItem->status = 'active';
+                foreach ($cart as $cartItem) {
 
-                $orderItem->save();
+                    $orderItem = new OrderItem();
+
+                    $orderItem->order_id = $order->id;
+                    $orderItem->product_id = $cartItem['productId'];
+                    $orderItem->quantity = $cartItem['quantity'];
+                    $orderItem->price = $cartItem['price'];
+                    $orderItem->discounted_price = $cartItem['discounted_price'];
+
+                    $orderItem->created_at = date('Y-m-d h:i:s');
+                    $orderItem->status = 'active';
+
+                    $orderItem->save();
+                }
+
+                $order->status = 'pending';
+                $order->save();
+
+                Session::put('order_id', $order->id);
+
+                echo json_encode(array('message' => 'done'));
             }
-
-            $order->status = 'pending';
-            $order->save();
-
-            Session::put('order_id', $order->id);
-
-            echo json_encode(array('message' => 'done'));
+            else
+                echo json_encode(array('message' => 'exists'));
         }
         else
             echo json_encode(array('message' => 'invalid'));
