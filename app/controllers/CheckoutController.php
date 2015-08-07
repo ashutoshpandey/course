@@ -21,7 +21,7 @@ class CheckoutController extends BaseController
                 if(isset($userId))
                     return Redirect::to('/checkout-address');
                 else
-                    return View::make('order.payment')->with('order', $order);
+                    return View::make('checkout.login')->with('order', $order);
             }
             else
                 return Redirect::to('/');
@@ -68,7 +68,8 @@ class CheckoutController extends BaseController
 
                 $userId = Session::get('user_id');
 
-                $user = User::find($userId)->with('UserAddress');
+                if(isset($user))
+                    $user = User::find($userId)->with('UserAddress');
 
                 if(isset($user))
                     return View::make('checkout.address')->with('order', $order)->with('user', $user);
@@ -144,11 +145,28 @@ class CheckoutController extends BaseController
 
         if(isset($orderId)){
 
-            $order = Order::find($orderId);
+            $order = Order::with('orderItems')->find($orderId);
 
             if(isset($order)) {
 
-                return View::make('order.payment')->with('order', $order);
+                $product_array = array();
+
+                foreach($order->orderItems as $orderItem){
+
+                    $product = Product::find($orderItem->product_id);
+
+                    if(isset($product)) {
+                        $product_array[] = array(
+                            "name" => $product->name,
+                            "value" => $product->discounted_price,
+                            "description" => ""
+                        );
+                    }
+                }
+
+
+
+                return View::make('checkout.payment')->with('order', $order)->with('product_json', json_encode($product_array));
             }
             else
                 return Redirect::to('/');

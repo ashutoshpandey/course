@@ -60,7 +60,11 @@
                                 <br/>
                                 By <b>{{$product->author}}</b> <br/><br/>
 <!--                                <label><input type="checkbox" name="pick-product" value="{{$product->id}}"/> Pick this product </label>-->
-                                <span class="add-to-bag" rel="{{$product->id}}">Add to bag</span>
+                                @if($product->added=='y')
+                                    <span class="added-to-bag" rel="{{$product->id}}">In bag</span>
+                                @else
+                                    <span class="add-to-bag" rel="{{$product->id}}">Add to bag</span>
+                                @endif
                             </div>
                         </li>
 

@@ -16,6 +16,30 @@ class ProductController extends BaseController
 
             if(isset($products)){
 
+                $cart = Session::get('cart');
+                if($cart) {
+                    $arProducts = array();
+                    foreach ($products as $product) {
+
+                        $product->added = 'n';
+
+                        foreach($cart as $cartItem){
+
+                            if($cartItem['productId']==$product->id) {
+                                $product->added = 'y';
+                                break;
+                            }
+                        }
+                    }
+                }
+                else{
+                    $arProducts = array();
+                    foreach ($products as $product) {
+                        $product->added = 'n';
+                        $arProducts[] = $product;
+                    }
+                }
+
                 $course = Course::where('id', $courseId)->with('institute')->first();
 
                 if(isset($course)){
@@ -23,6 +47,7 @@ class ProductController extends BaseController
                     $subjects = Product::where('course_id', $courseId)->select('subject')->groupBy('subject')->get();
 
                     if(isset($subjects) && count($subjects)>0){
+
                         return View::make('product.list')
                                         ->with('found', true)
                                         ->with('products', $products)
