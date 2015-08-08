@@ -7,6 +7,6 @@ class User extends Eloquent{
 	protected $hidden = array('password');
 
     public function orders(){
-        return $this->hasMany('orders', 'user_id');
+        return $this->hasMany('Order', 'user_id');
     }
 }

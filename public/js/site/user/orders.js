@@ -5,10 +5,10 @@ $(function(){
 
 function listOrders(page){
 
-    var status = 'pending';
+    var status = 'active';
 
     $.getJSON(
-        root + '/admin-list-orders/' + status + '/' + page,
+        root + '/get-user-orders/' + status + '/' + page,
         function(result){
 
             if(result.message.indexOf('not logged')>-1)
@@ -29,9 +29,6 @@ function showGrid(data){
             <thead> \
                 <tr> \
                     <th data-column-id="id" data-type="numeric">ID</th> \
-                    <th data-column-id="customer_id">Customer id</th> \
-                    <th data-column-id="name">Customer name</th> \
-                    <th data-column-id="email">Email</th> \
                     <th data-column-id="amount">Amount</th> \
                     <th data-column-id="date">Date</th> \
                     <th data-formatter="link">Action</th> \
@@ -45,9 +42,6 @@ function showGrid(data){
 
             str = str + '<tr> \
                     <td>' + order.id + '</td> \
-                    <td>' + order.user_id + '</td> \
-                    <td>' + order.billing_name + '</td> \
-                    <td>' + order.email + '</td> \
                     <td>' + order.net_amount + '</td> \
                     <td>' + order.created_at + '</td> \
                     <td></td> \
@@ -63,7 +57,7 @@ function showGrid(data){
             formatters: {
                 'link': function(column, row)
                 {
-                    var str = '<a target="_blank" href="' + root + '/admin-view-order/' + row.id + '">View</a>';
+                    var str = '<a target="_blank" href="' + root + '/user-order/' + row.id + '">View</a>';
 
                     return str;
                 }

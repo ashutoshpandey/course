@@ -9,6 +9,6 @@ class Order extends Eloquent{
     }
 
     public function user(){
-        return $this->belongsTo('user', 'user_id');
+        return $this->belongsTo('User', 'user_id');
     }
 }

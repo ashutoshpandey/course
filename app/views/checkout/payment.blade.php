@@ -14,9 +14,9 @@ $PAYU_BASE_URL = "https://test.payu.in";
 
 $action = '';
 
-$surl = "http://helpmyskills.com/coboo/transactionsuccess";
-$furl = "http://helpmyskills.com/coboo/transactionfailure";
-$curl = "http://helpmyskills.com/coboo/transactioncancelled";
+$surl = "http://medifyhealth.com/course/transactionsuccess";
+$furl = "http://medifyhealth.com/course/transactionfailure";
+$curl = "http://medifyhealth.com/course/transactioncancelled";
 $service_provider = "";
 
 /*

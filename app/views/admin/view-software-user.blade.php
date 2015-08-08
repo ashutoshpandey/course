@@ -105,6 +105,6 @@
 </div><!-- ./wrapper -->
 
 @include('includes/common_js_bottom')
-{{HTML::script(asset("/public/js/site/admin/view-software-user.js"))}}
+{{HTML::script(asset("/public/js/site/admin/view-software-user-section.js"))}}
 </body>
 </html>

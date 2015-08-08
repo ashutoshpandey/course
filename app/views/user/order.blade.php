@@ -6,12 +6,12 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-    @include('includes.admin.common_css')
+    @include('includes.user.common_css')
 
     {{HTML::style(asset("/public/css/AdminLTE.css"))}}
     {{HTML::style(asset("/public/css/admin-skins/_all-skins.min.css"))}}
 
-    @include('includes.admin.common_js_top')
+    @include('includes.user.common_js_top')
 </head>
 <body class="skin-blue sidebar-mini">
 <div class="wrapper">
@@ -123,7 +123,7 @@
 </div>
 <!-- ./wrapper -->
 
-@include('includes/common_js_bottom')
-{{HTML::script(asset("/public/js/site/admin/view-location.js"))}}
+@include('includes/user/common_js_bottom')
+{{HTML::script(asset("/public/js/site/user/order.js"))}}
 </body>
 </html>

@@ -60,6 +60,16 @@ Route::get('/remove-user/{id}', 'UserController@remove');
 Route::get('/search-cities/{key}', 'SearchController@searchCities');
 Route::get('/search-keyword/{key}/{city_id?}', 'SearchController@searchByKeyword');
 
+/********************** user urls ************************/
+
+Route::get('/user-section', 'UserController@userSection');
+Route::get('/user-orders', 'UserController@orders');
+Route::get('/get-user-orders/{status?}/{page?}/{startDate?}/{endDate?}', 'UserController@getUserOrders');
+Route::get('/user-order/{id}', 'UserController@order');
+Route::get('/user-profile', 'UserController@profile');
+Route::post('/update-user-profile', 'UserController@updateProfile');
+Route::post('/update-user-password', 'UserController@updatePassword');
+
 /********************** admin urls ************************/
 Route::get('/admin-section', 'AdminController@adminSection');
 Route::get('/admin-institutes', 'AdminController@institutes');
