@@ -109,7 +109,17 @@
                 </div>
                 <div id="tab-items">
                     <div class="order-items">
-                        &nbsp;
+
+                        @if($orderItems)
+
+                            @foreach($orderItems as $orderItem)
+
+                                <span>{{$orderItem->product->name}}</span>
+
+                            @endforeach
+
+                        @endif
+
                     </div>
                 </div>
             </div>

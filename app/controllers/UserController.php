@@ -51,8 +51,12 @@ class UserController extends BaseController
 
         $order = Order::find($id);
 
-        if(isset($order))
-            return View::make('user.order')->with('order', $order);
+        if(isset($order)) {
+
+            $orderItems = OrderItem::where('order_id', $order->id)->get();
+
+            return View::make('user.order')->with('order', $order)->with('orderItems', $orderItems);
+        }
         else
             return Redirect::to('/');
     }
