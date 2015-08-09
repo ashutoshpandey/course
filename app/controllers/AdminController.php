@@ -242,7 +242,9 @@ class AdminController extends BaseController
 
                 Session::put('book_id', $id);
 
-                return View::make('admin.view-order')->with('order', $order);
+                $orderItems = OrderItem::where('order_id', $order->id)->get();
+
+                return View::make('admin.view-order')->with('order', $order)->with('orderItems', $orderItems);
             }
             else
                 return Redirect::to('/');

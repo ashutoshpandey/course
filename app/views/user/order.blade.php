@@ -110,14 +110,43 @@
                 <div id="tab-items">
                     <div class="order-items">
 
-                        @if($orderItems)
+                        @if(isset($orderItems))
 
-                            @foreach($orderItems as $orderItem)
+                            <table id="grid-items" class="table table-condensed table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th data-column-id="id" data-type="numeric">ID</th>
+                                        <th data-column-id="product">Product</th>
+                                        <th data-column-id="quantity">Quantity</th>
+                                        <th data-column-id="price">Price</th>
+                                        <th data-column-id="status">Status</th>
+                                        <th data-column-id="price" style="text-align:right">Net Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
 
-                                <span>{{$orderItem->product->name}}</span>
+                                    <?php $total = 0; ?>
+                                    @foreach($orderItems as $orderItem)
 
-                            @endforeach
+                                        <tr>
+                                            <td>{{$orderItem->id}}</td>
+                                            <td>{{$orderItem->product->name}}</td>
+                                            <td>{{$orderItem->quantity}}</td>
+                                            <td>{{$orderItem->discounted_price}}</td>
+                                            <td>{{$orderItem->status}}</td>
+                                            <td style="text-align:right">{{$orderItem->discounted_price * $orderItem->quantity}}</td>
+                                        </tr>
 
+                                        <?php $total = $total + $orderItem->discounted_price * $orderItem->quantity; ?>
+
+                                    @endforeach
+
+                                    <tr>
+                                        <td colspan="6" style="text-align:right">Total = {{$total}}</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
                         @endif
 
                     </div>

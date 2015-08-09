@@ -109,7 +109,46 @@
                 </div>
                 <div id="tab-items">
                     <div class="order-items">
-                        &nbsp;
+
+                        @if(isset($orderItems))
+
+                            <br/><br/>
+                            <label><input type="checkbox" name="check-select-all"/> Select All</label>
+
+                            &nbsp;&nbsp; <input type="button" name="btn-update-order" value="Update Order"/>
+
+                            <table id="grid-items" class="table table-condensed table-hover table-striped">
+                                <thead>
+                                <tr>
+                                    <th data-formatter="check">Select</th>
+                                    <th data-column-id="id" data-type="numeric">ID</th>
+                                    <th data-column-id="product">Product</th>
+                                    <th data-column-id="quantity">Quantity</th>
+                                    <th data-column-id="price">Price</th>
+                                    <th data-column-id="price">Net Price</th>
+                                    <th data-column-id="status">Status</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                @foreach($orderItems as $orderItem)
+
+                                    <tr>
+                                        <td></td>
+                                        <td>{{$orderItem->id}}</td>
+                                        <td>{{$orderItem->product->name}}</td>
+                                        <td>{{$orderItem->quantity}}</td>
+                                        <td>{{$orderItem->discounted_price}}</td>
+                                        <td>{{$orderItem->discounted_price * $orderItem->quantity}}</td>
+                                        <td>{{$orderItem->status}}</td>
+                                    </tr>
+
+                                @endforeach
+
+                                </tbody>
+                            </table>
+                        @endif
+
                     </div>
                 </div>
             </div>
@@ -124,6 +163,6 @@
 <!-- ./wrapper -->
 
 @include('includes/common_js_bottom')
-{{HTML::script(asset("/public/js/site/admin/view-location.js"))}}
+{{HTML::script(asset("/public/js/site/admin/view-order.js"))}}
 </body>
 </html>

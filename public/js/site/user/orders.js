@@ -1,69 +1,30 @@
-$(function(){
+$(function () {
 
-    listOrders(1);
-});
+    $("#grid-items").bootgrid({
+        formatters: {
+            'link': function (column, row) {
+                var str = '&nbsp;&nbsp; <a class="remove" href="#" rel="' + row.id + '">Remove</a>';
 
-function listOrders(page){
-
-    var status = 'active';
-
-    $.getJSON(
-        root + '/get-user-orders/' + status + '/' + page,
-        function(result){
-
-            if(result.message.indexOf('not logged')>-1)
-                window.location.replace(root);
-            else{
-                showGrid(result);
+                return str;
             }
         }
-    );
-}
-function showGrid(data){
+    }).on("loaded.rs.jquery.bootgrid", function () {
+        $(".remove").click(function () {
+            var id = $(this).attr("rel");
 
-    if(data!=undefined && data.orders!=undefined && data.orders.length>0){
+            if (!confirm("Are you sure to remove this software user?"))
+                return;
 
-        var str = '';
-
-        str = str + '<table id="grid-basic" class="table table-condensed table-hover table-striped"> \
-            <thead> \
-                <tr> \
-                    <th data-column-id="id" data-type="numeric">ID</th> \
-                    <th data-column-id="amount">Amount</th> \
-                    <th data-column-id="date">Date</th> \
-                    <th data-formatter="link">Action</th> \
-                </tr> \
-            </thead> \
-            <tbody>';
-
-        for(var i =0;i<data.orders.length;i++){
-
-            var order = data.orders[i];
-
-            str = str + '<tr> \
-                    <td>' + order.id + '</td> \
-                    <td>' + order.net_amount + '</td> \
-                    <td>' + order.created_at + '</td> \
-                    <td></td> \
-                </tr>';
-        }
-
-        str = str + '</tbody> \
-        </table>';
-
-        $('#order-list').html(str);
-
-        $("#grid-basic").bootgrid({
-            formatters: {
-                'link': function(column, row)
-                {
-                    var str = '<a target="_blank" href="' + root + '/user-order/' + row.id + '">View</a>';
-
-                    return str;
+            $.getJSON(root + '/remove-software-user/' + id,
+                function (result) {
+                    if (result.message.indexOf('done') > -1)
+                        listSoftwareUsers(1);
+                    else if (result.message.indexOf('not logged') > -1)
+                        window.location.replace(root);
+                    else
+                        alert("Server returned error : " + result);
                 }
-            }
+            );
         });
-    }
-    else
-        $('#order-list').html('No orders found');
-}
+    });
+});
