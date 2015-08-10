@@ -243,8 +243,9 @@ class AdminController extends BaseController
                 Session::put('book_id', $id);
 
                 $orderItems = OrderItem::where('order_id', $order->id)->get();
+                $couriers = Courier::where('status', 'active')->get();
 
-                return View::make('admin.view-order')->with('order', $order)->with('orderItems', $orderItems);
+                return View::make('admin.view-order')->with('order', $order)->with('orderItems', $orderItems)->with('couriers', $couriers);
             }
             else
                 return Redirect::to('/');
@@ -260,6 +261,12 @@ class AdminController extends BaseController
             return Redirect::to('/');
 
         return View::make('admin.orders');
+    }
+
+    public function updateCourier(){
+        $ids = Input::get('check-item');
+        $docket = Input::get('docket');
+        $courier = Input::get('courier');
     }
 
     public function listOrders($status, $page){

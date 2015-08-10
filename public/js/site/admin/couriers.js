@@ -5,6 +5,8 @@ $(function(){
     $('#tab-edit').hide();
 
     listCouriers(1);
+
+    loadCities();
 });
 
 function createCourier(){
@@ -126,4 +128,29 @@ function showGrid(data){
     }
     else
         $('#courier-list').html('No couriers found');
+}
+
+function loadCities(){
+
+    var state = $("select[name='state']").val();
+
+    $.ajax({
+        url: root + '/admin-get-cities/' + state,
+        type: 'get',
+        dataType: 'json',
+        success: function(result){
+
+            $("select[name='city']").find('option').remove();
+
+            if(result.message=="found"){
+
+                for(var i=0; i<result.locations.length; i++){
+
+                    var location = result.locations[i];
+
+                    $("select[name='city']").append('<option value="' + location.id + '">' + location.city + '</option>');
+                }
+            }
+        }
+    });
 }

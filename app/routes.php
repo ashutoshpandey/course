@@ -98,6 +98,7 @@ Route::get('/admin-view-software-user/{id}', 'AdminController@viewSoftwareUser')
 Route::get('/admin-view-user/{id}', 'AdminController@viewUser');
 Route::get('/admin-view-location/{id}', 'AdminController@viewLocation');
 Route::get('/admin-view-order/{id}', 'AdminController@viewOrder');
+Route::post('/update-order-courier', 'AdminController@updateCourier');
 
 Route::get('/remove-courier/{id}', 'CourierController@remove');
 Route::get('/edit-courier', 'CourierController@edit');

@@ -19,8 +19,7 @@ class CreateCouriersTable extends Migration {
             $table->string('name', 50);
             $table->string('contact_person', 50);
             $table->string('address', 1000);
-            $table->string('city', 255);
-            $table->string('state', 255);
+            $table->integer('location_id')->unsigned();
             $table->string('country', 255);
             $table->string('zip', 20);
             $table->string('land_mark', 255);

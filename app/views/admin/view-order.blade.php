@@ -115,7 +115,7 @@
                             <br/><br/>
                             <label><input type="checkbox" name="check-select-all"/> Select All</label>
 
-                            &nbsp;&nbsp; <input type="button" name="btn-update-order" value="Update Order"/>
+                            &nbsp;&nbsp; <input type="button" name="btn-update-order" value="Update Order" data-modal-id="popup"/>
 
                             <table id="grid-items" class="table table-condensed table-hover table-striped">
                                 <thead>
@@ -163,6 +163,7 @@
 <!-- ./wrapper -->
 
 @include('includes/common_js_bottom')
+@include('includes/admin/order-popup')
 {{HTML::script(asset("/public/js/site/admin/view-order.js"))}}
 </body>
 </html>
