@@ -17,7 +17,7 @@
             @endif
         </select>
         <br/><br/>
-        <input type="button" name="btn-set-courier" value=" Update "/>
+        <input type="button" name="btn-set-courier" value=" Update "/> &nbsp; <span id="message-courier" class="message"></span>
     </div>
     <footer>
         <a href="#" class="js-modal-close">Close</a>

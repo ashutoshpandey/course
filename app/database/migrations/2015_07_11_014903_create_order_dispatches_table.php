@@ -21,6 +21,9 @@ class CreateOrderDispatchesTable extends Migration {
 			$table->string('docket', 255);
             $table->string('status', 50);
 
+			$table->foreign('order_id')->references('id')->on('orders');
+			$table->foreign('courier_id')->references('id')->on('couriers');
+
             $table->timestamps();
 		});
 	}

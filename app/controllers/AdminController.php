@@ -240,7 +240,7 @@ class AdminController extends BaseController
 
             if(isset($order)){
 
-                Session::put('book_id', $id);
+                Session::put('order_id', $id);
 
                 $orderItems = OrderItem::where('order_id', $order->id)->get();
                 $couriers = Courier::where('status', 'active')->get();
@@ -264,9 +264,65 @@ class AdminController extends BaseController
     }
 
     public function updateCourier(){
-        $ids = Input::get('check-item');
+        $ids = Input::get('ids');
         $docket = Input::get('docket');
         $courier = Input::get('courier');
+
+        if(isset($ids) && isset($docket) && isset($courier)){
+
+            $orderId = Session::get('order_id');
+
+            if(isset($orderId)){
+
+                $order = Order::find($orderId);
+
+                if(isset($order)){
+
+                    $arIds = explode(',', $ids);
+
+                    if(isset($arIds) && count($arIds)>0){
+
+                        $orderDispatch = new OrderDispatch();
+
+                        $orderDispatch->order_id = $orderId;
+                        $orderDispatch->docket = $docket;
+                        $orderDispatch->courier_id = $courier;
+                        $orderDispatch->status = 'active';
+
+                        $orderDispatch->save();
+
+                        foreach($arIds as $id){
+
+                            $orderItem = OrderItem::find($id);
+                            if(isset($orderItem)){
+
+                                $orderDispatchItem = new OrderDispatchItem();
+
+                                $orderDispatchItem->order_item_id = $id;
+                                $orderDispatchItem->order_dispatch_id = $orderDispatch->id;
+                                $orderDispatchItem->status = 'active';
+
+                                $orderDispatchItem->save();
+
+                                $orderItem->status = 'shipped';
+                                $orderItem->save();
+                            }
+                            else
+                                return json_encode(array('message'=>'done'));
+                        }
+
+                        return json_encode(array('message'=>'done'));
+                    }
+                    else
+                        return json_encode(array('message'=>'done'));
+                }
+                else{
+                    return json_encode(array('message'=>'invalid'));
+                }
+            }
+            else
+                return json_encode(array('message'=>'invalid'));
+        }
     }
 
     public function listOrders($status, $page){

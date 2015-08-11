@@ -20,6 +20,8 @@ class CreateOrderDispatchItemsTable extends Migration {
 			$table->integer('order_item_id')->unsigned();
             $table->string('status', 50);
 
+			$table->foreign('order_dispatch_id')->references('id')->on('order_dispatches');
+
             $table->timestamps();
 		});
 	}
