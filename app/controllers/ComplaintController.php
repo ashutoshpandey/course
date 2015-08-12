@@ -4,7 +4,10 @@ class ComplaintController extends BaseController
 {
     function __construct()
     {
+        $name = Session::get('name');
+
         View::share('root', URL::to('/'));
+        View::share('name', $name);
     }
 
     public function manage()
@@ -13,7 +16,7 @@ class ComplaintController extends BaseController
         if(!isset($adminId))
             return Redirect::to('/');
 
-        return View::make('complaints.manage');
+        return View::make('complaint.manage');
     }
 
     public function save()
@@ -26,9 +29,11 @@ class ComplaintController extends BaseController
 
         $complaint->name = Input::get('name');
         $complaint->email = Input::get('email');
-        $complaint->contact_number = Input::get('contact_number');
+        $complaint->address = Input::get('address');
+        $complaint->contact_number_1 = Input::get('contact_number_1');
+        $complaint->contact_number_2 = Input::get('contact_number_2');
         $complaint->software_user_id = $adminId;
-        $complaint->status = 'active';
+        $complaint->status = Input::get('status');
         $complaint->save();
 
         $complaintUpdate = new ComplaintUpdate();
@@ -94,12 +99,11 @@ class ComplaintController extends BaseController
             return json_encode(array('message'=>'invalid'));
     }
 
-    public function pendingComplaints()
+    public function pendingComplaints($page=1)
     {
-        $complaints = Complaint::where('status','pending');
+        $complaints = Complaint::where('status', 'in', array('Problem', 'Complaint'))->get();
 
-        if(isset($complaints)){
-
+        if(isset($complaints) && count($complaints)>0){
             return json_encode(array('message'=>'found', 'complaints' => $complaints->toArray()));
         }
         else

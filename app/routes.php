@@ -77,9 +77,9 @@ Route::post('/complaint-status', 'UserController@complaintStatus');
 
 Route::get('/manage-complaints', 'ComplaintController@manage');
 Route::get('/get-complaint/{id}', 'ComplaintController@getComplaint');
-Route::get('/save-complaint', 'ComplaintController@save');
+Route::post('/save-complaint', 'ComplaintController@save');
 Route::post('/update-complaint', 'ComplaintController@update');
-Route::get('/pending-complaints', 'ComplaintController@pendingComplaints');
+Route::get('/pending-complaints/{page?}', 'ComplaintController@pendingComplaints');
 Route::get('/software-user-complaints/{id}', 'ComplaintController@softwareUserComplaints');
 
 /********************** admin urls ************************/
