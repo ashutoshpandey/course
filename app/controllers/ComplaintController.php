@@ -7,13 +7,13 @@ class ComplaintController extends BaseController
         View::share('root', URL::to('/'));
     }
 
-    public function add()
+    public function manage()
     {
         $adminId = Session::get('admin_id');
         if(!isset($adminId))
             return Redirect::to('/');
 
-        return View::make('complaints.add');
+        return View::make('complaints.manage');
     }
 
     public function save()
@@ -25,46 +25,21 @@ class ComplaintController extends BaseController
         $complaint = new Complaint();
 
         $complaint->name = Input::get('name');
-        $complaint->contact_person = Input::get('contact_person');
-        $complaint->address = Input::get('address');
-        $complaint->location_id = Input::get('city');
-        $complaint->country = 'India';
-        $complaint->land_mark = Input::get('land_mark');
-        $complaint->zip = Input::get('zip');
-        $complaint->contact_number_1 = Input::get('contact_number_1');
-        $complaint->contact_number_2 = Input::get('contact_number_2');
         $complaint->email = Input::get('email');
-
+        $complaint->contact_number = Input::get('contact_number');
+        $complaint->software_user_id = $adminId;
         $complaint->status = 'active';
-        $complaint->created_at = date('Y-m-d h:i:s');
-
         $complaint->save();
 
+        $complaintUpdate = new ComplaintUpdate();
+
+        $complaintUpdate->complaint_id = $complaint->id;
+        $complaintUpdate->software_user_id = $adminId;
+        $complaintUpdate->description = Input::get('description');
+        $complaintUpdate->status = $complaint->status;
+        $complaintUpdate->save();
+
         return json_encode(array('message'=>'done'));
-    }
-
-    public function remove($id)
-    {
-        $adminId = Session::get('admin_id');
-        if(!isset($adminId))
-            return json_encode(array('message'=>'not logged'));
-
-        if(isset($id)){
-
-            $complaint = Complaint::find($id);
-
-            if(isset($complaint)){
-
-                $complaint->status = 'removed';
-                $complaint->save();
-
-                return json_encode(array('message'=>'done'));
-            }
-            else
-                return json_encode(array('message'=>'invalid'));
-        }
-        else
-            return json_encode(array('message'=>'invalid'));
     }
 
     public function update()
@@ -80,19 +55,16 @@ class ComplaintController extends BaseController
 
             if(isset($complaint)){
 
-                $complaint->name = Input::get('name');
-                $complaint->contact_person = Input::get('contact_person');
-                $complaint->address = Input::get('address');
-                $complaint->city = Input::get('city');
-                $complaint->state = Input::get('state');
-                $complaint->country = Input::get('country');
-                $complaint->land_mark = Input::get('land_mark');
-                $complaint->zip = Input::get('zip');
-                $complaint->contact_number_1 = Input::get('contact_number_1');
-                $complaint->contact_number_2 = Input::get('contact_number_2');
-                $complaint->email = Input::get('email');
-
+                $complaint->status = Input::get('status');
                 $complaint->save();
+
+                $complaintUpdate = new ComplaintUpdate();
+
+                $complaintUpdate->complaint_id = $complaint->id;
+                $complaintUpdate->software_user_id = $adminId;
+                $complaintUpdate->description = Input::get('description');
+                $complaintUpdate->status = $complaint->status;
+                $complaintUpdate->save();
 
                 return json_encode(array('message'=>'done'));
             }
@@ -111,6 +83,8 @@ class ComplaintController extends BaseController
 
             if(isset($complaint)){
 
+                Session::put('complaint_id', $id);
+
                 return json_encode(array('message'=>'found', 'complaint' => $complaint));
             }
             else
@@ -120,7 +94,7 @@ class ComplaintController extends BaseController
             return json_encode(array('message'=>'invalid'));
     }
 
-    public function listPendingComplaints()
+    public function pendingComplaints()
     {
         $complaints = Complaint::where('status','pending');
 
@@ -132,7 +106,7 @@ class ComplaintController extends BaseController
             return json_encode(array('message'=>'empty'));
     }
 
-    public function getSoftwareUserComplaints($id)
+    public function softwareUserComplaints($id)
     {
         if(isset($id)){
 

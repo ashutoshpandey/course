@@ -69,6 +69,18 @@ Route::get('/user-order/{id}', 'UserController@order');
 Route::get('/user-profile', 'UserController@profile');
 Route::post('/update-user-profile', 'UserController@updateProfile');
 Route::post('/update-user-password', 'UserController@updatePassword');
+Route::get('/complaint', 'UserController@complaint');
+Route::post('/submit-complaint', 'UserController@submitComplaint');
+Route::post('/complaint-status', 'UserController@complaintStatus');
+
+/********************** complaint urls ************************/
+
+Route::get('/manage-complaints', 'ComplaintController@manage');
+Route::get('/get-complaint/{id}', 'ComplaintController@getComplaint');
+Route::get('/save-complaint', 'ComplaintController@save');
+Route::post('/update-complaint', 'ComplaintController@update');
+Route::get('/pending-complaints', 'ComplaintController@pendingComplaints');
+Route::get('/software-user-complaints/{id}', 'ComplaintController@softwareUserComplaints');
 
 /********************** admin urls ************************/
 Route::get('/admin-section', 'AdminController@adminSection');

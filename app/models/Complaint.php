@@ -2,7 +2,7 @@
 
 class Complaint extends Eloquent{
 
-	protected $table = 'courses';
+	protected $table = 'complaints';
 
 	public function orderDispatch(){
 		return $this->belongsTo('OrderDispatch', 'order_dispatch_id');
@@ -15,4 +15,8 @@ class Complaint extends Eloquent{
     public function softwareUser(){
         return $this->belongsTo('SoftwareUser', 'software_user_id');
     }
+
+	public function complaintUpdates(){
+		return $this->hasMany('ComplaintUpdate', 'complaint_id');
+	}
 }

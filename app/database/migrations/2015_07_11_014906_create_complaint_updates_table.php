@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateComplaintsTable extends Migration {
+class CreateComplaintUpdatesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,15 +12,13 @@ class CreateComplaintsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('complaints', function(Blueprint $table)
+		Schema::create('complaint_updates', function(Blueprint $table)
 		{
             $table->increments('id');
 
-            $table->integer('user_id')->unsigned()->nullable();
-			$table->string('contact_number', 25);
-			$table->string('email', 255);
-			$table->string('name', 255);
+            $table->integer('complaint_id')->unsigned()->nullable();
 			$table->integer('software_user_id')->unsigned();
+			$table->text('description');
             $table->string('status', 50);
 
 			$table->foreign('software_user_id')->references('id')->on('software_users');
