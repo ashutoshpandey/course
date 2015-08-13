@@ -58,7 +58,11 @@ function listComplaints(page){
 }
 function showGrid(data){
 
+    var userType = '';
+
     if(data!=undefined && data.complaints!=undefined && data.complaints.length>0){
+
+        userType = data.userType;
 
         var str = '';
 
@@ -67,8 +71,8 @@ function showGrid(data){
                 <tr> \
                     <th data-column-id="id" data-type="numeric">ID</th> \
                     <th data-column-id="name">Name</th> \
-                    <th data-column-id="city">Location</th> \
-                    <th data-formatter="link">Action</th> \
+                    <th data-column-id="city">Phone</th> \
+                    <th data-formatter="link"></th> \
                 </tr> \
             </thead> \
             <tbody>';
@@ -80,7 +84,7 @@ function showGrid(data){
                 str = str + '<tr> \
                     <td>' + complaint.id + '</td> \
                     <td>' + complaint.name + '</td> \
-                    <td>' + complaint.location.city + ' / ' + complaint.location.state + '</td> \
+                    <td>' + complaint.contact_number_1 + ' / ' + complaint.contact_number_2 + '</td> \
                     <td></td> \
                 </tr>';
             }
@@ -95,21 +99,21 @@ function showGrid(data){
             'link': function(column, row)
             {
                 var str = '<a target="_blank" href="' + root + '/admin-view-complaint/' + row.id + '">View</a>';
-                str = str + '&nbsp;&nbsp; <a class="remove" href="#" rel="' + row.id + '">Remove</a>';
-                str = str + '&nbsp;&nbsp; <a href="' + root + '/admin-courses/' + row.id + '">Courses</a>';
+                if(userType=='Administrator')
+                    str = str + '&nbsp;&nbsp; <a class="resolve" href="#" rel="' + row.id + '">Resolve</a>';
 
                 return str;
             }
         }
     }).on("loaded.rs.jquery.bootgrid", function()
         {
-            $(".remove").click(function(){
+            $(".resolve").click(function(){
                 var id = $(this).attr("rel");
 
-                if(!confirm("Are you sure to remove this complaint?"))
+                if(!confirm("Are you sure to resolve this complaint?"))
                     return;
 
-                $.getJSON(root + '/remove-complaint/' + id,
+                $.getJSON(root + '/resolve-complaint/' + id,
                     function(result){
                         if(result.message.indexOf('done')>-1)
                             listComplaints(1);

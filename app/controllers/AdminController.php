@@ -19,10 +19,12 @@ class AdminController extends BaseController
         $orderCount = Order::where('status','=','pending')->count();
         $userCount = User::where('status','=','active')->count();
         $softwareUserCount = SoftwareUser::where('status','=','active')->count();
+        $complaintCount = Complaint::whereIn('status', array('Complaint', 'Problem'))->count();
 
         return View::make('admin.admin-section')
                 ->with('orderCount', $orderCount)
                 ->with('userCount', $userCount)
+                ->with('complaintCount', $complaintCount)
                 ->with('softwareUserCount', $softwareUserCount);
     }
 

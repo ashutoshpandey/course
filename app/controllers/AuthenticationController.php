@@ -42,6 +42,7 @@ class AuthenticationController extends BaseController
         else
         {
             Session::put('admin_id', $admin->id);
+            Session::put('user_type', 'Administrator');
             Session::put('name', $admin->name);
 
             return json_encode(array('message'=>'correct'));
@@ -60,7 +61,8 @@ class AuthenticationController extends BaseController
             return json_encode(array('message'=>'wrong'));
         else
         {
-            Session::put('softwareUserId', $user->id);
+            Session::put('admin_id', $user->id);
+            Session::put('user_type', $user->user_type);
             Session::put('name', $user->name);
 
             return json_encode(array('message'=>'correct'));
