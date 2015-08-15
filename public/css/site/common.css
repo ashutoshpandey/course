@@ -1,9 +1,13 @@
 .clear{clear: both;}
 
 .main-footer{
-    width:70%;
+    width:100%;
     margin: auto;
     text-align: center;
+    height:50px;
+    position:absolute;
+    bottom:0;
+    left:0;
 }
 
 input:-webkit-autofill {
@@ -89,4 +93,42 @@ a.close:hover {
 
 @media (min-width: 32em) {
     .modal-box { width: 70%; }
+}
+
+.search-bar-wrapper {
+    background-size: cover;
+    padding: 30px 0 0;
+    z-index: 6;
+}
+
+.search-bar {
+    width: 100%;
+    cursor: default;
+    padding: 14px 0;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+}
+
+.logo{
+    font-size: 25px;
+    font-weight: bold;
+    padding-top: 10px;
+    font-family: 'Source Code Pro', Monaco, Consolas, "Lucida Console", monospace;
+}
+
+.site-name{
+    color: #b21c43;
+}
+
+.punch-line{
+    color: #5da2ff;
+}
+
+@media (min-width: 1200px){
+    .logo{
+        width: 1170px;
+        margin: auto;
+    }
 }

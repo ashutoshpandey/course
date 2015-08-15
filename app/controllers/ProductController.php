@@ -237,9 +237,11 @@ class ProductController extends BaseController
             return json_encode(array('message'=>'invalid'));
     }
 
-    public function getProducts($id)
+    public function getProducts()
     {
-        if(isset($id)){
+        $courseId = Session::get('course_id');
+
+        if(isset($courseId)){
 
             $subjectString = $_REQUEST['subjectString'];
 
@@ -248,10 +250,10 @@ class ProductController extends BaseController
                 $subjects = explode(',', $subjectString);
 
                 if(isset($subjects) && count($subjects)>0)
-                    $products = Product::where('course_id','=', $id)->whereIn('subject', $subjects)->get();
+                    $products = Product::where('course_id','=', $courseId)->whereIn('subject', $subjects)->get();
             }
             else
-                $products = Product::where('course_id','=', $id)->get();
+                $products = Product::where('course_id','=', $courseId)->get();
 
             if(isset($products))
                 return json_encode(array('message'=>'found', 'currency' => 'Rs.', 'products' => $products->toArray()));

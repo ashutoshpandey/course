@@ -2,6 +2,18 @@ var keywordType;
 
 $(function () {
 
+    $("#search_button").click(function(){
+
+        var location = $("input[name='city']").val();
+        var institute = $("input[name='keyword']").val();
+
+        if(location.length==0 && institute.length==0)
+            return;
+
+        $("#form").attr('action', root + '/institutes');
+        $("#form").submit();
+    });
+
     keywordType = 'i';
 
     $("#city").autocomplete({
@@ -69,7 +81,6 @@ $(function () {
         minLength: 1,
         delay: 100,
         select: function(event, ui){
-            $("#search-city").val(ui.item.id);
         }
     }).data("ui-autocomplete")._renderItem = function (ul, item) {
         return $("<li>")

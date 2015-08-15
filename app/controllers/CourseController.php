@@ -16,6 +16,8 @@ class CourseController extends BaseController
             if(isset($institute)){
                 $courses = Course::where('status','=','active')->where('institute_id','=',$id)->get();
 
+                Session::put('course_id', $id);
+
                 if(isset($courses) && count($courses)>0)
                     return View::make('course.list')->with('found', true)->with('courses', $courses)->with('institute', $institute);
                 else

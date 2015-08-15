@@ -81,7 +81,7 @@ class SearchController extends BaseController
 
         if(isset($key)){
 
-            if(isset($cityId))
+            if(isset($cityId) && strlen($cityId)>0)
                 $institutes = Institute::where('name','like', '%'. $key . '%')->where('location_id', '=', $cityId)->with('location')->get();
             else
                 $institutes = Institute::where('name','like', '%'. $key . '%')->with('location')->get();

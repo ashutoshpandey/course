@@ -11,6 +11,7 @@
     {{HTML::style(asset("/public/css/site/home.css"))}}
     {{HTML::style(asset("/public/css/site/institutes.css"))}}
     {{HTML::style(asset("/public/css/site/grid-list.css"))}}
+    <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet"/>
 
     @include('includes.common_js_top')
 </head>
@@ -22,7 +23,6 @@
     </header>
 
     <section class='content'>
-
         @include('includes.search')
 
         <div class="container institutes-list">
@@ -31,12 +31,12 @@
 
             <div class="grid-info row">
                 <div class="col-md-12">
-                    <div class="top-menu">
-                        <ul>
-                            <li id="grid">{{ HTML::image('public/images/grid.png', 'grid-icon') }}</li>
-                            <li id="list">{{ HTML::image('public/images/list.png', 'list-icon') }}</li>
-                        </ul>
-                    </div>
+                    {{--<div class="top-menu">--}}
+                        {{--<ul>--}}
+                            {{--<li id="grid">{{ HTML::image('public/images/grid.png', 'grid-icon') }}</li>--}}
+                            {{--<li id="list">{{ HTML::image('public/images/list.png', 'list-icon') }}</li>--}}
+                        {{--</ul>--}}
+                    {{--</div>--}}
                     <div style="clear:both"></div>
                     <ul id="content">
 
@@ -44,10 +44,10 @@
 
                         <li class="data">
                             <div class="name-date">
-                                <span class="name">{{$institute->name}}</span><span class="date">{{$institute->establish_date}}</span>
+                                <span class="name">{{$institute->name}}</span><span class="date">{{date('d-M-Y', strtotime($institute->establish_date))}}</span>
                             </div>
                             <div class="add-map">
-                                <span class="add">{{$institute->address}}, {{$institute->location->city}}, {{$institute->location->state}}<br/>	<a href="{{$root}}/courses/{{$institute->id}}">View Courses</a> </span>
+                                <span class="add">{{$institute->address}}, {{$institute->location->city}}, {{$institute->location->state}}<br/>	<a target="_blank" href="{{$root}}/courses/{{$institute->id}}">View Courses</a> </span>
                                 <span class="map">{{ HTML::image('public/images/map.jpg', 'map-icon') }}</span>
                             </div>
                         </li>
@@ -80,10 +80,6 @@
 @include('includes.footer')
 {{HTML::script(asset("/public/js/site/institutes.js"))}}
 {{HTML::script(asset("/public/js/site/search.js"))}}
-
-<script type="text/javascript">
-    $("#search_button").click(showGrid);
-</script>
 
 </body>
 </html>

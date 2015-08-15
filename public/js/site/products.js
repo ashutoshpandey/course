@@ -24,8 +24,6 @@ $(document).ready(function () {
 
 function getData(){
 
-    var courseId = $('.book-list').attr('rel');
-
     var subjects = Array();
 
     $("input[name='subject']").each(function(){
@@ -40,7 +38,7 @@ function getData(){
     else
         subjectString = '';
 
-    var url = root + '/get-course-books/' + courseId;
+    var url = root + '/get-course-products';
 
     $.ajax({
         url: url,
@@ -51,31 +49,31 @@ function getData(){
 
             if(result!=undefined && result.message!=undefined && result.message.indexOf('found')>-1){
 
-                if(result.books!=undefined && result.books.length>0){
+                if(result.products!=undefined && result.products.length>0){
 
                     var str = "<label><input type='checkbox' name='select-all'/> Select all products</label> <br/>";
 
                     str += "<ul id='content'>";
 
-                    for(var i=0; i<result.books.length;i++){
+                    for(var i=0; i<result.products.length;i++){
 
-                        var book = result.books[i];
+                        var product = result.products[i];
 
                         str = str + "<li class='data'>";
                         str += "<div class='name-date'>";
-                        str += "<span class='name'>" + book.name + "</span>";
+                        str += "<span class='name'>" + product.name + "</span>";
                         str += "<br/>";
-                        str += result.currency + ' ' + book.price;
+                        str += result.currency + ' ' + product.price;
                         str += "<br/>";
-                        str += "By <b>" + book.author + "</b><br/><br/>";
-                        str += "<label><input type='checkbox' name='pick-book' value='" + book.id + "'/> Pick this book </label>";
+                        str += "By <b>" + product.author + "</b><br/><br/>";
+                        str += "<span class='add-to-bag' rel='" + product.id + "'>Add to bag</span>";
                         str += "</div>";
                         str += "</li>";
                     }
 
                     str += "</ul>";
 
-                    $(".book-list").html(str);
+                    $(".product-list").html(str);
 
 //                    $("input[name='select-all']").unbind('click');
 //                    $("input[name='select-all']").click(selectAll);
@@ -89,7 +87,7 @@ function getData(){
                 }
             }
             else{
-                $(".book-list").html('No books found');
+                $(".product-list").html('No products found');
             }
         }
     });
@@ -116,8 +114,8 @@ function addToBag(id, obj){
 function selectAll(){
 
     if($(this).is(':checked'))
-        $("input[name='pick-book']").prop('checked', true);
+        $("input[name='pick-product']").prop('checked', true);
     else
-        $("input[name='pick-book']").prop('checked', false);
+        $("input[name='pick-product']").prop('checked', false);
 }
 

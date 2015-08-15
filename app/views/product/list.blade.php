@@ -22,10 +22,10 @@
 
     <section class='content'>
 
-        <h3>Showing courses for: {{$course->institute->name}} -> {{$course->name}}</h3>
-        <br/><br/>
-
         <div class="container">
+
+            <h3>Showing courses for: {{$course->institute->name}} -> {{$course->name}}</h3>
+            <br/><br/>
 
             @if($found)
 

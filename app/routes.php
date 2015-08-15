@@ -22,7 +22,7 @@ Route::get('/institute/{id}', 'SearchController@home');
 Route::get('/courses/{institute_id}', 'CourseController@courses');
 Route::get('/course/{id}', 'CourseController@course');
 Route::get('/products/{course_id}', 'ProductController@products');
-Route::post('/get-course-products/{course_id}/{subjects?}', 'ProductController@getProducts');
+Route::post('/get-course-products/{subjects?}', 'ProductController@getProducts');
 Route::get('/product/{id}', 'ProductController@product');
 
 Route::get('/add-to-bag/{id}/{quantity}', 'CartController@addToBag');

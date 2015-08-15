@@ -3,13 +3,11 @@
         <form id="form">
             <div style="position:relative;" class="col-md-3 col-sm-3 col-xs-12 no-space">
                 <div id="loc" class="location left">
-                    <span class="palceholder"><i class="fa fa-map-marker" style="font-size:20px; display:inline-block"></i></span>
-                    <span><input placeholder="Please type a city" id="city" autocomplete="off" class="dark" style="outline:none"></span>
+                    <span class="palceholder">&nbsp;&nbsp;<i class="fa fa-map-marker" style="font-size:20px; display:inline-block"></i></span>
+                    <span><input placeholder="Please type a city" name="city" id="city" autocomplete="off" class="dark" style="outline:none"></span>
 
                     <div id="reference-pane">
                     </div>
-                    <span id="arw1" class="right arrow">{{ HTML::image('public/images/arrow.png', 'loc-icon') }}</span>
-
                 </div>
             </div>
             <div style="position:relative;" class="col-md-7 col-sm-7 col-xs-12 no-space">

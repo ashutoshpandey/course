@@ -30,12 +30,5 @@
     @include('includes.footer')
     {{HTML::script(asset("/public/js/site/search.js"))}}
 
-    <script type="text/javascript">
-        $("#search_button").click(function(){
-            $("#form").attr('action', root + '/institutes');
-            $("#form").submit();
-        });
-    </script>
-
 </body>
 </html>
