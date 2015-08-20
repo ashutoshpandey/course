@@ -66,7 +66,12 @@ function getData(){
                         str += result.currency + ' ' + product.price;
                         str += "<br/>";
                         str += "By <b>" + product.author + "</b><br/><br/>";
-                        str += "<span class='add-to-bag' rel='" + product.id + "'>Add to bag</span>";
+
+                        if(product.added=='y')
+                            str += "<span class='added-to-bag' rel='" + product.id + "'>In bag</span>";
+                        else
+                            str += "<span class='add-to-bag' rel='" + product.id + "'>Add to bag</span>";
+
                         str += "</div>";
                         str += "</li>";
                     }

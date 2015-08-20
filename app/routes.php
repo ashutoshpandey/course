@@ -36,6 +36,8 @@ Route::get('/checkout-guest', 'CheckoutController@guest');
 Route::get('/checkout-address', 'CheckoutController@address');
 Route::post('/checkout-update-address', 'CheckoutController@updateAddress');
 Route::get('/checkout-payment', 'CheckoutController@payment');
+Route::any('/transaction-success', 'CheckoutController@transactionSuccess');
+Route::any('/transaction-failure', 'CheckoutController@transactionFailure');
 
 Route::post('/is-valid-user', 'AuthenticationController@isValidUser');
 Route::post('/is-valid-checkout-user', 'CheckoutController@isValidUser');

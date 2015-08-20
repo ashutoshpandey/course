@@ -18,7 +18,6 @@ class ProductController extends BaseController
 
                 $cart = Session::get('cart');
                 if($cart) {
-                    $arProducts = array();
                     foreach ($products as $product) {
 
                         $product->added = 'n';
@@ -36,7 +35,6 @@ class ProductController extends BaseController
                     $arProducts = array();
                     foreach ($products as $product) {
                         $product->added = 'n';
-                        $arProducts[] = $product;
                     }
                 }
 
@@ -254,6 +252,28 @@ class ProductController extends BaseController
             }
             else
                 $products = Product::where('course_id','=', $courseId)->get();
+
+            $cart = Session::get('cart');
+            if($cart) {
+                foreach ($products as $product) {
+
+                    $product->added = 'n';
+
+                    foreach($cart as $cartItem){
+
+                        if($cartItem['productId']==$product->id) {
+                            $product->added = 'y';
+                            break;
+                        }
+                    }
+                }
+            }
+            else{
+                $arProducts = array();
+                foreach ($products as $product) {
+                    $product->added = 'n';
+                }
+            }
 
             if(isset($products))
                 return json_encode(array('message'=>'found', 'currency' => 'Rs.', 'products' => $products->toArray()));

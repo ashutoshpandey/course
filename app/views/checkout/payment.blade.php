@@ -14,9 +14,9 @@ $PAYU_BASE_URL = "https://test.payu.in";
 
 $action = '';
 
-$surl = "http://medifyhealth.com/course/transactionsuccess";
-$furl = "http://medifyhealth.com/course/transactionfailure";
-$curl = "http://medifyhealth.com/course/transactioncancelled";
+$surl = "http://medifyhealth.com/course/transaction-success";
+$furl = "http://medifyhealth.com/course/transaction-failure";
+$curl = "http://medifyhealth.com/course/transaction-cancelled";
 $service_provider = "";
 
 /*
@@ -32,7 +32,8 @@ if(!empty($_POST)) {
 
 $posted = array();
 
-$posted["txnid"] = $order->id;
+#$posted["txnid"] = $order->id;
+$posted["txnid"] = $transactionId;
 $posted["firstname"] = $order->shipping_name;
 $posted["key"] = $MERCHANT_KEY;
 $posted["amount"] = $order->net_amount;
@@ -41,7 +42,7 @@ $posted["phone"] = $order->shipping_contact_number_1;
 $posted["surl"] = $surl;
 $posted["furl"] = $furl;
 $posted["productinfo"] = $product_json;
-$posted["service_provider"] = "payu_paisa";
+#$posted["service_provider"] = "payu_paisa";
 $posted["city"] = $order->shipping_city;
 $posted["state"] = $order->shipping_state;
 $posted["zipcode"] = $order->shipping_zip;
@@ -71,7 +72,6 @@ if(empty($posted['hash']) && sizeof($posted) > 0) {
             || empty($posted['productinfo'])
             || empty($posted['surl'])
             || empty($posted['furl'])
-            || empty($posted['service_provider'])
     ) {
         $formError = 1;
     } else {

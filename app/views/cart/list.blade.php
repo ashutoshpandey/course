@@ -23,47 +23,52 @@
 
         <div class="container course-list">
 
-            <h3>Showing your bag</h3>
-
             @if($found)
+
+            <h3>Showing your bag</h3>
 
             <div class="grid-info row">
                 <div class="col-md-8">
-                    <ul id="content">
+
+                    <table class="zui-table zui-table-zebra zui-table-horizontal">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>&nbsp;</th>
+                        </tr>
+                        </thead>
+                        <tbody>
 
                         @foreach($cart as $cartItem)
 
-                        <li class="data">
-                            <div class="name-date">
-                                <span class="name">{{$cartItem['name']}}</span></span>
-                            </div>
-                            <div class="add-map">
-                                <span class="discounted-price">{{$cartItem['discounted_price']}}</span> <span class="original-price">{{$cartItem['price']}}</span><br/>	<span class="remove-bag-item" rel="{{$cartItem['id']}}">Remove</span>
-                            </div>
-                        </li>
+                        <tr>
+                            <td>{{$cartItem['name']}}</td>
+                            <td><span class="discounted-price">{{$cartItem['discounted_price']}}</span> <span class="original-price">{{$cartItem['price']}}</span></td>
+                            <td><span class="remove-bag-item" rel="{{$cartItem['id']}}">Remove</span></td>
+                        </tr>
 
                         @endforeach
 
-                    </ul>
+                        </tbody>
+                    </table>
+
+                    <br/><br/>
 
                     <div>
                         <span class='payment'>Payment</span>
                     </div>
-
-                    {{--<div id="popup_div">--}}
-                        {{--Test the dialog--}}
-                        {{--<br/>--}}
-                        {{--<button id="btnClose">Close</button>--}}
-                    {{--</div>--}}
-
-                    <div id='page_navigation'></div>
-                    <input type='hidden' id='current_page'/>
-                    <input type='hidden' id='show_per_page'/>
                 </div>
             </div>
 
             @else
-                <h2>No courses found</h2>
+                <br/>
+
+                <h3>Your bag is empty</h3>
+
+                <br/>
+
+                <a href="{{$root}}">Go to home</a>
             @endif
 
         </div>

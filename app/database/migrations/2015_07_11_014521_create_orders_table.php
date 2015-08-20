@@ -45,6 +45,12 @@ class CreateOrdersTable extends Migration {
             $table->string('billing_contact_number_1', 20);
             $table->string('billing_contact_number_2', 20);
 
+            $table->string('transaction_id', 255);
+            $table->string('payment_mode', 255);
+            $table->string('gateway_payment_id', 255);
+            $table->float('net_amount_debit');
+            $table->string('payment_mode', 255);
+
             $table->string('status', 50);
 
             $table->foreign('user_id')->references('id')->on('users');

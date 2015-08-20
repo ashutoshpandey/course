@@ -21,6 +21,8 @@
 
     <section class='content'>
 
+        <div class="container">
+
         <h3>Shipping Address</h3>
 
         <form id="form-address" action="{{$root}}/checkout-payment" method="post">
@@ -173,6 +175,8 @@
                 <div class='clear'></div>
             </div>
         </form>
+
+        </div>
 
     </section>
 

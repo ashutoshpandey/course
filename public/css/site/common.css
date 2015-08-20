@@ -16,14 +16,16 @@ input:-webkit-autofill {
 
 .bag{
     color: red;
-    padding: 7px;
-    border: solid 1px grey;
+    padding: 20px 12px;
     float: right;
     display: none;
     text-decoration: none;
+    font-size: 14px;
+    line-height: 12px;
+    background: url('../../images/bag.png') no-repeat;
+    background-size: contain;
 }
 .bag:hover{
-    background-color: yellow;
     text-decoration: none;
 }
 

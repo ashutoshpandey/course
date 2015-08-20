@@ -30,10 +30,37 @@ function removeFromBag(id, obj){
         dataType: 'json',
         success: function(result){
 
-            if(result!=undefined && result.message!=undefined && result.message.indexOf('done')>-1){
-                $(obj).html('In bag');
-                $('.bag').html(result.count).show();
-                $(obj).closest('.data').remove();
+            if(result!=undefined && result.message!=undefined){
+
+                if(result.message.indexOf('done')>-1) {
+
+                    $(obj).closest('tr').remove();
+
+                    if (result.count == 0) {
+                        $('.bag').hide();
+                        $(".course-list").html('');
+
+                        var str = "<br/>";
+                        str += "<h3>Your bag is empty</h3>";
+                        str += "<br/>";
+                        str += "<a href='{{$root}}'>Go to home</a>"
+
+                        $(".course-list").append(str);
+                    }
+                    else
+                        $('.bag').html(result.count).show();
+                }
+                else{
+                    $('.bag').hide();
+                    $(".course-list").html('');
+
+                    var str = "<br/>";
+                    str += "<h3>Your bag is empty</h3>";
+                    str += "<br/>";
+                    str += "<a href='{{$root}}'>Go to home</a>"
+
+                    $(".course-list").append(str);
+                }
             }
         }
     });

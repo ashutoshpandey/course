@@ -164,9 +164,16 @@ class CheckoutController extends BaseController
                     }
                 }
 
+                $transactionId = microtime(true);
 
+                Session::put('transactionId', $transactionId);
 
-                return View::make('checkout.payment')->with('order', $order)->with('product_json', json_encode($product_array));
+                $order->transaction_id = $transactionId;
+                $order->save();
+
+                return View::make('checkout.payment')->with('order', $order)
+                                                     ->with('product_json', json_encode($product_array))
+                                                     ->with('transactionId', $transactionId);
             }
             else
                 return Redirect::to('/');
@@ -209,5 +216,50 @@ class CheckoutController extends BaseController
         }
         else
             return json_encode(array('message' => 'invalid'));
+    }
+
+    public function transactionSuccess(){
+
+        $transactionId = Session::get('transactionId');
+
+        if($transactionId){
+
+            $status = Input::get('status');
+
+            if($status=='success'){
+                $payment_mode = Input::get('mode');
+                $gateway_payment_id = Input::get('mihpayid');
+                $net_amount_debit = Input::get('net_amount_debit');
+
+                $order = Order::where('transaction_id', $transactionId)->first();
+
+                if(isset($order)){
+                    $order->payment_mode = $payment_mode;
+                    $order->gateway_payment_id = $gateway_payment_id;
+                    $order->net_amount_debit = $net_amount_debit;
+
+                    $order->save();
+
+                    return View::make('checkout.transaction-success')->with('order', $order);
+                }
+                else
+                    return Redirect::to('/transaction-failure');
+            }
+            else
+                return Redirect::to('/transaction-failure');
+        }
+        else
+            return Redirect::to('/');
+    }
+
+    public function transactionFailure(){
+
+        $transactionId = Session::get('transactionId');
+
+        if($transactionId){
+            return View::make('checkout.transaction-failure');
+        }
+        else
+            return Redirect::to('/');
     }
 }
