@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'AcademicM54';
+  src: url('../../fonts/AcademicM54.eot?#iefix') format('embedded-opentype'),  url('../../fonts/AcademicM54.woff') format('woff'), url('../../fonts/AcademicM54.ttf')  format('truetype'), url('AcademicM54.svg#AcademicM54') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Raleway-Heavy';
+  src: url('../../fonts/Raleway-Heavy.eot?#iefix') format('embedded-opentype'),  url('../../fonts/Raleway-Heavy.woff') format('woff'), url('../../fonts/Raleway-Heavy.ttf')  format('truetype'), url('Raleway-Heavy.svg#Raleway-Heavy') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto-Black';
+  src: url('../../fonts/Roboto-Black.eot?#iefix') format('embedded-opentype'),  url('../../fonts/Roboto-Black.woff') format('woff'), url('../../fonts/Roboto-Black.ttf')  format('truetype'), url('../../fonts/Roboto-Black.svg#Roboto-Black') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+    font-family: 'sf_viper_squadronregular';
+    src: url('../../fonts/sfvipersquadron.eot');
+    src: url('../../fonts/sfvipersquadron.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/sfvipersquadron.woff2') format('woff2'),
+         url('../../fonts/sfvipersquadron.woff') format('woff'),
+         url('../../fonts/sfvipersquadron.ttf') format('truetype'),
+         url('../../fonts/sfvipersquadron.svg#sf_viper_squadronregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

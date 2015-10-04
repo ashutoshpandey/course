@@ -1,0 +1,361 @@
+body {
+    background: url('../../images/background-pattern.png');
+}
+
+header {
+    background: #1976D2;
+    height: 72px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.svg-lib{
+    display: none;
+}
+
+header a {
+    color: #fff;
+}
+
+.logo {
+    font: 30px/72px sf_viper_squadronregular;
+    width: 150px;
+}
+
+.profile {
+    font: 18px/72px AcademicM54;
+}
+
+.profile svg {
+    margin: 0 0 -5px 10px;
+    display: inline-block;
+}
+
+#body_compensator {
+    margin-top: 72px;
+}
+
+.search-bar {
+    text-align: center;
+}
+
+.search-bar h1 {
+    font: 36px AcademicM54;
+}
+
+.search-bar .row {
+    margin: 100px auto 150px;
+}
+
+.search-bar.listing .row {
+    margin: 50px 0 0;
+}
+
+.search-bar .row .col-3, .search-bar .row .col-6 {
+    position: relative;
+}
+
+.search-bar input {
+    width: 100%;
+    font: 16px AcademicM54;
+    padding-left: 40px;
+}
+.search-bar > div > form > div{
+    position: relative;
+}
+.search-bar > div > form > div:nth-child(1) input {
+    border-right: none;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    background: url("../../images/stripe-searchbox.png") no-repeat scroll 0 -40px;
+}
+
+.search-bar > div > form > div:nth-child(2) input {
+    background: url('../../images/stripe-searchbox.png') no-repeat scroll 0 -83px;
+}
+
+.search-bar > div > form > div:nth-child(3) button span {
+    background: rgba(0, 0, 0, 0) url("../../images/stripe-searchbox.png") no-repeat scroll -9px -10px;
+    display: inline-block;
+    height: 22px;
+    margin-bottom: -5px;
+    margin-right: 10px;
+    width: 22px;
+}
+
+.search-bar > div > form > div:nth-child(3) button {
+    border: 1px solid #2196F3;
+    color: #fff;
+    padding: 0;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    cursor: pointer;
+    background: #2196F3;
+    width: 100%;
+    display: block;
+    height: 44px;
+    font: 16px AcademicM54;
+}
+
+.how-it-works h1 {
+    font: 32px AcademicM54;
+}
+
+.how-it-works h2 {
+    color: #1976D2;
+    font: 20px AcademicM54;
+}
+
+.how-it-works p {
+    color: #373435;
+    font: 12px AcademicM54;
+}
+
+footer {
+    float: left;
+    width: 100%;
+    text-align: center;
+    background: #1976D2;
+    margin-top: 100px;
+    padding: 20px 0;
+    font: 24px AcademicM54;
+    color: #fff;
+}
+
+footer a {
+    color: #fff;
+}
+
+footer .small-text {
+    font-size: 16px;
+}
+
+footer span.copyright {
+    display: inline;
+    font: 26px Arial !important;
+    position: relative;
+    top: 3px;
+}
+
+footer a.mailid svg, footer a.telephone-no svg {
+    margin-bottom: -5px;
+    margin-right: 10px;
+}
+
+/* ***************SUGGESTIONS****** */
+.suggestions {
+    border: 1px solid #000;
+    border-top: none;
+    left: 0;
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    width: 100%;
+    background: #fff;
+    z-index: 1;
+    display: none;
+}
+
+.suggestions ul {
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+
+.suggestions ul li {
+    list-style: none;
+    padding: 0 0 0 40px;
+    font: 16px/30px AcademicM54;
+    cursor: pointer;
+}
+
+.suggestions ul li:hover {
+    background-color: #EEE !important;
+}
+
+.suggestions ul.cites li {
+    background: rgba(0, 0, 0, 0) url("../../images/stripe-searchbox.png") no-repeat scroll 0 -47px;
+}
+
+.suggestions ul.institutes li {
+    background: rgba(0, 0, 0, 0) url("../../images/stripe-searchbox.png") no-repeat scroll 0 -89px;
+}
+
+/* ****************LIST PAGE******************** */
+
+.sort {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+.az-sort.sort, .some-other-sorts.sort {
+    margin: 25px 10px 35px 0;
+}
+
+.sort .selected {
+    height: 44px;
+    font: 16px /44px AcademicM54;
+    border: 1px solid #000;
+    border-radius: 2px;
+    position: relative;
+}
+
+.sort .selected .drop-down-arrow {
+    border: 7px solid transparent;
+    border-top: 7px solid #000;
+    position: absolute;
+    right: 13px;
+    top: 19px;
+}
+
+.sort .selected p {
+    margin: 0;
+    padding: 0 40px 0 20px;
+}
+
+.sort .options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    border: 1px solid #000;
+    border-top: none;
+    background: #ffffff;
+    z-index: 1;
+    display: none;
+}
+
+.sort .options .option {
+    display: block;
+    font: 16px/30px AcademicM54;
+    padding: 0 20px;
+}
+
+.institute {
+    padding: 20px 0 0 84px;
+    font: 16px AcademicM54;
+    min-height: 114px;
+    border-top: 1px solid #B6B6B6;
+}
+.trending .institute {
+    padding: 10px 0 0 52px;
+    font: 9px AcademicM54;
+    min-height: 62px;
+}
+
+.institute:last-child {
+    border-bottom: 1px solid #B6B6B6;
+}
+
+.institute-logo {
+    left: 0;
+    position: absolute;
+    top: 20px;
+    width: 72px;
+}
+.trending .institute-logo {
+    top: 10px;
+    width: 42px;
+}
+
+.institute .institute-details p {
+    margin: 0;
+    color: #727272;
+}
+
+.institute .institute-details p.name {
+    color: #1976D2;
+}
+.institute .related-links{
+    text-align: right;
+}
+.institute .related-links .view-course {
+    background: #1976d2 none repeat scroll 0 0;
+    border: medium none;
+    border-radius: 2px;
+    color: #fff;
+    font: 9px AcademicM54;
+    height: 16px;
+    width: 80px;
+}
+
+.institute .related-links .share {
+    display: inline-block;
+}
+
+.institute .related-links .share svg {
+    border-left: 1px solid #B6B6B6;
+    margin-bottom: -5px;
+    margin-left: 12px;
+}
+.trending h2 {
+    padding-bottom: 10px;
+    color: #1976d2;
+    font: 16px/26px AcademicM54;
+    background: rgba(0, 0, 0, 0) url("../../images/arrow-line.svg") no-repeat scroll center bottom / 100% auto;
+}
+.trending .block-title {
+    color: #727272;
+    font: 16px AcademicM54;
+}
+
+
+
+
+
+
+
+
+
+
+/* ****************Media Queries**************** */
+@media screen and (max-width: 976px) {
+    .search-bar > div > form > div input {
+        background-position: 10px 0;
+    }
+}
+
+@media screen and (max-width: 777px) {
+    header .col-10 {
+        margin: 0;
+    }
+    .institute .col-8{
+        margin: 0;
+    }
+
+    .search-bar .row {
+        margin: 50px auto 100px;
+    }
+
+    .search-bar.listing  .row {
+        margin: 0 auto 25px;
+    }
+
+    .az-sort.sort, .some-other-sorts.sort {
+        margin: 0 0  20px;
+    }
+
+    .search-bar > div > form > div:nth-child(1) input {
+        border-right: 1px solid #000;
+    }
+
+    .search-bar .col-3:nth-child(3) input {
+        background-image: none;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .search-bar .row {
+        margin: 0 auto 50px;
+    }
+}
+
+.search-location{
+    margin: 20px auto 20px;
+    font-size: 20px;
+}

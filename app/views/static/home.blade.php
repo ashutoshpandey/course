@@ -6,28 +6,24 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-    @include('includes.common_css')
-
-    {{HTML::style(asset("/public/css/site/home.css"))}}
-    <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet"/>
+    {{HTML::style(asset("/public/css/site/fonts.css"))}}
+    {{HTML::style(asset("/public/css/site/framework.css"))}}
+    {{HTML::style(asset("/public/css/site/style.css"))}}
+    {{HTML::style(asset("/public/css/jquery-ui.css"))}}
 
     @include('includes.common_js_top')
 </head>
-<body class="skin-blue sidebar-mini">
-<div class="wrapper">
+<body>
 
-    <header class="main-header">
-        @include('includes.header')
-    </header>
+    @include('includes.header')
 
-    <section class='content'>
+    <section>
         @include('includes.search')
     </section>
 
-</div>
-<!-- ./wrapper -->
-
-    @include('includes.footer')
+    <section>
+        @include('includes.footer')
+    </section>
     {{HTML::script(asset("/public/js/site/search.js"))}}
 
 </body>

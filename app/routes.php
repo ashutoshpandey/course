@@ -17,7 +17,7 @@ Route::get('/about-us', 'StaticController@aboutUs');
 Route::get('/terms-and-conditions', 'StaticController@termsAndConditions');
 Route::get('/privacy-policy', 'StaticController@privacyPolicy');
 
-Route::get('/institutes', 'SearchController@institutes');
+Route::post('/institutes', 'SearchController@institutes');
 Route::get('/institute/{id}', 'SearchController@home');
 Route::get('/courses/{institute_id}', 'CourseController@courses');
 Route::get('/course/{id}', 'CourseController@course');

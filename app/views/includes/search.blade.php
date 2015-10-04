@@ -1,31 +1,63 @@
-<div class="search-bar-wrapper container">
-    <div class="search-bar row">
-        <form id="form">
-            <div style="position:relative;" class="col-md-3 col-sm-3 col-xs-12 no-space">
-                <div id="loc" class="location left">
-                    <span class="palceholder">&nbsp;&nbsp;<i class="fa fa-map-marker" style="font-size:20px; display:inline-block"></i></span>
-                    <span><input placeholder="Please type a city" name="city" id="city" autocomplete="off" class="dark" style="outline:none"></span>
+<div class="row">
+    <div class="search-bar col-8 f-none h-center">
+        <div class="row">
+            <h1>get your course books</h1>
 
-                    <div id="reference-pane">
-                    </div>
+            <form id="form" method="post">
+                <div class="col-3">
+                    <input type="text" data="cites" name="city" id="city" autocomplete="off" placeholder='Choose a city'/>
                 </div>
-            </div>
-            <div style="position:relative;" class="col-md-7 col-sm-7 col-xs-12 no-space">
-                <div class="keyword-container" >
-                    <div class="search-box">
-                        <span class="search-icon"><i class="fa fa-search" style="font-size:20px; display:inline-block"></i></span>
-                        <input value="" placeholder="Search for institute" autocomplete="off" class="discover" id="keyword" name="keyword">
-                    </div>
-                    <div id="explore-by"></div>
+                <div class="col-6">
+                    <input type="text" data="institutes" name="keyword" id="keyword" autocomplete="off"
+                           placeholder='Choose an institute'/>
                 </div>
-            </div>
-            <div style="position:relative;" class="col-md-2 col-sm-2 col-xs-12 no-space left">
-                <div class="search_btn" id="search_button">
-                    Search
+                <div class="col-3">
+                    <button type="button" id="search_button"><span></span>Search</button>
                 </div>
-            </div>
-            <input type="hidden" id="search-city" name="c"/>
-        </form>
+                <input type="hidden" id="search-city" name="c"/>
+            </form>
+
+        </div>
     </div>
+</div>
+<!-- ---------------------END OF SEARCH BAR------------------------ -->
+<div class="row center-text how-it-works">
+    <h1>How coboo works</h1>
 
+    <div class="col-4">
+        <svg width="34.531px" height="34.531px">
+            <use xlink:href="#pen"></use>
+        </svg>
+        <h2>Tell us</h2>
+
+        <p>
+            This helps us choose<br/>
+            the institutes and courses
+        </p>
+    </div>
+    <div class="col-4">
+        <svg width="34.531px" height="34.531px">
+            <use xlink:href="#bookmark"></use>
+        </svg>
+        <h2>Book order</h2>
+
+        <p>
+            Select from the list of institutes<br/>
+            and books you require
+        </p>
+    </div>
+    <div class="col-4">
+        <svg width="34.531px" height="34.531px">
+            <use xlink:href="#contacts"></use>
+        </svg>
+        <svg width="54.717px" height="34.531px">
+            <use xlink:href="#truck"></use>
+        </svg>
+        <h2>books at doorstep</h2>
+
+        <p>
+            your order is on the way.<br/>
+            Sit back and relax.
+        </p>
+    </div>
 </div>

@@ -49,7 +49,6 @@ class CreateOrdersTable extends Migration {
             $table->string('payment_mode', 255);
             $table->string('gateway_payment_id', 255);
             $table->float('net_amount_debit');
-            $table->string('payment_mode', 255);
 
             $table->string('status', 50);
 

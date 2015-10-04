@@ -77,6 +77,7 @@ class SearchController extends BaseController
     public function institutes(){
 
         $key = Input::get('keyword');
+        $city = Input::get('city');
         $cityId = Input::get('c');          // city id
 
         if(isset($key)){
@@ -86,10 +87,12 @@ class SearchController extends BaseController
             else
                 $institutes = Institute::where('name','like', '%'. $key . '%')->with('location')->get();
 
+            $city = str_replace("-", " / ", $city);
+
             if(isset($institutes) && count($institutes)>0)
-                return View::make('institute.institutes')->with('institutes', $institutes);
+                return View::make('institute.institutes')->with('institutes', $institutes)->with('city', $city);
             else
-                return View::make('institute.institutes');
+                return View::make('institute.institutes')->with('city', $city);
         }
     }
 }
