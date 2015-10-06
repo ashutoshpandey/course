@@ -45,4 +45,5 @@
     <span style="visibility: hidden" id='root' rel="{{$root}}"></span>
 </footer>
 
+@include('includes.login')
 @include('includes.common_js_bottom')

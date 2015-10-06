@@ -6,10 +6,7 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-    {{HTML::style(asset("/public/css/site/fonts.css"))}}
-    {{HTML::style(asset("/public/css/site/framework.css"))}}
-    {{HTML::style(asset("/public/css/site/style.css"))}}
-    {{HTML::style(asset("/public/css/jquery-ui.css"))}}
+    @include('includes.common_css')
 
     @include('includes.common_js_top')
 </head>
