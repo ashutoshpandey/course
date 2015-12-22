@@ -1,7 +1,7 @@
 var root;
 
 $(function(){
-    root = $('#root').attr('rel');
+    root = $('#root').attr('rel') + "/";
 
     getBag();
 });
@@ -26,38 +26,48 @@ function getBag(){
     });
 }
 
-function initPopup(source){
+function ajaxCall(url, type, data, callback){
 
-    var appendthis =  ("<div class='modal-overlay js-modal-close'></div>");
+    if(data==null || data==undefined) {
 
-    $(source).click(function(e) {
-        e.preventDefault();
-        $("body").append(appendthis);
-        $(".modal-overlay").fadeTo(500, 0.7);
-        //$(".js-modalbox").fadeIn(500);
-        var modalBox = $(this).attr('data-modal-id');
-        $('#'+modalBox).fadeIn($(this).data());
-    });
+        if(callback==null || callback==undefined) {
+            $.ajax({
+                url: root + url,
+                type: type,
+                success: function (result) {
+                }
+            });
+        }
+        else{
+            $.ajax({
+                url: url,
+                type: type,
+                success: function (result) {
+                    callback(result);
+                }
+            });
+        }
+    }
+    else{
 
+        if(callback==null || callback==undefined) {
 
-    $(".js-modal-close, .modal-overlay").click(function() {
-        $(".modal-box, .modal-overlay").fadeOut(500, function() {
-            $(".modal-overlay").remove();
-        });
-    });
-
-    $(window).resize(function() {
-        $(".modal-box").css({
-            top: ($(window).height() - $(".modal-box").outerHeight()) / 2,
-            left: ($(window).width() - $(".modal-box").outerWidth()) / 2
-        });
-    });
-
-    $(window).resize();
-}
-
-function closePopup(){
-    $(".modal-box, .modal-overlay").fadeOut(500, function() {
-        $(".modal-overlay").remove();
-    });
+            $.ajax({
+                url: url,
+                type: type,
+                data: data,
+                success: function (result) {
+                }
+            });
+        }
+        else{
+            $.ajax({
+                url: url,
+                type: type,
+                success: function (result) {
+                    callback(result);
+                }
+            });
+        }
+    }
 }

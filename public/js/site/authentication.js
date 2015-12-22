@@ -1,20 +1,3 @@
-function isValidUser(){
-
-    var data = $('.frmuserlogin').serialize();
-
-    ajaxCall('authenticate/isvaliduser', 'post', data, userLoginResult);
-}
-
-function userLoginResult(result){
-
-    if(result.indexOf('correct')>-1){
-        ;
-    }
-    else{
-        $('.frmuserlogin').find('.message').html('Invalid email or password');
-    }
-}
-
 function isValidAdmin(){
 
     var data = $('.frmadminlogin').serialize();

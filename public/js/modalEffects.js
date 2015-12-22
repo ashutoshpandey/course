@@ -32,6 +32,10 @@ var ModalEffects = (function() {
 			}
 
 			el.addEventListener( 'click', function( ev ) {
+				$('.frmuserlogin').find('.message').html('');
+				$('.frmuserlogin').find("input[type='email']").val('');
+				$('.frmuserlogin').find("input[type='password']").val('');
+
 				classie.add( modal, 'md-show' );
 				overlay.removeEventListener( 'click', removeModalHandler );
 				overlay.addEventListener( 'click', removeModalHandler );
@@ -43,11 +47,12 @@ var ModalEffects = (function() {
 				}
 			});
 
-			close.addEventListener( 'click', function( ev ) {
-				ev.stopPropagation();
-				removeModalHandler();
-			});
-
+			if(close!=undefined) {
+				close.addEventListener('click', function (ev) {
+					ev.stopPropagation();
+					removeModalHandler();
+				});
+			}
 		} );
 
 	}

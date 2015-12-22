@@ -6,11 +6,9 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-    {{HTML::style(asset("/public/css/site/fonts.css"))}}
-    {{HTML::style(asset("/public/css/site/framework.css"))}}
-    {{HTML::style(asset("/public/css/site/style.css"))}}
+    @include('includes.common_css')
+
     {{HTML::style(asset("/public/css/site/institutes.css"))}}
-    {{HTML::style(asset("/public/css/jquery-ui.css"))}}
 
     @include('includes.common_js_top')
 </head>
@@ -71,7 +69,9 @@
                     @endforeach
                 </div>
                 @else
-                    No institutes found
+                    @if($status=="search")
+                        No institutes found
+                    @endif
                 @endif
             </div>
             <div class="col-1 sm-hide">&nbsp;</div>

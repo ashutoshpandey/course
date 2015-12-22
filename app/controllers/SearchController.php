@@ -90,9 +90,11 @@ class SearchController extends BaseController
             $city = str_replace("-", " / ", $city);
 
             if(isset($institutes) && count($institutes)>0)
-                return View::make('institute.institutes')->with('institutes', $institutes)->with('city', $city);
+                return View::make('institute.institutes')->with('institutes', $institutes)->with('city', $city)->with('status', 'search');
             else
-                return View::make('institute.institutes')->with('city', $city);
+                return View::make('institute.institutes')->with('city', $city)->with('status', 'search');
         }
+        else
+            return View::make('institute.institutes')->with('city', '')->with('status', 'direct');
     }
 }

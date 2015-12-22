@@ -35,6 +35,30 @@ perspective effects (not including the modals and the overlay).
 	-moz-transform: translateX(-50%) translateY(-50%);
 	-ms-transform: translateX(-50%) translateY(-50%);
 	transform: translateX(-50%) translateY(-50%);
+	font: 15px/20px AcademicM54;
+}
+
+.md-modal input[type='email'], .md-modal input[type='password']{
+	height: auto !important;
+	padding: 7px !important;
+}
+.md-modal input[type='button']{
+	height: auto !important;
+	border: 1px solid #2196F3;
+	color: #fff;
+	padding: 10px;
+	border-top-right-radius: 2px;
+	border-bottom-right-radius: 2px;
+	cursor: pointer;
+	background: #2196F3;
+	display: inline;
+	height: 44px;
+	font: 16px AcademicM54;
+}
+.md-modal .message{
+	font: 14px AcademicM54;
+	font-weight: normal;
+	color: #ff4628;
 }
 
 .md-show {
@@ -75,10 +99,10 @@ perspective effects (not including the modals and the overlay).
 	margin: 0;
 	padding: 0.2em;
 	text-align: center;
-	font-size: 1.6em;
-	font-weight: 300;
 	background: #1976D2;
 	border-radius: 3px 3px 0 0;
+	font: 18px/30px AcademicM54;
+	color: #fff;
 }
 
 .md-content > div {
