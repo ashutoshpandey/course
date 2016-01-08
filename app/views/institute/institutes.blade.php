@@ -58,12 +58,7 @@
                             <p class="address">{{$institute->address}}</p>
                         </div>
                         <div class="related-links col-4">
-                            <button class="view-course">View course</button>
-                            <a href="https://facebook.com/sharer?url" class="share">
-                                <svg width="50px" height="15.151px">
-                                    <use xlink:href="#facebook_colored"></use>
-                                </svg>
-                            </a>
+                            <a href="{{$root}}/courses/{{$institute->id}}" class="view-course">View courses</a>
                         </div>
                     </div>
                     @endforeach
@@ -78,21 +73,6 @@
             <div class="col-3 trending">
                 <h2>TREANDING</h2>
                 <div class="row institutes">
-                    <p class="block-title">SCHOOLS</p>
-
-                    <div class="institute row">
-                        <div class="institute-logo">
-                            {{HTML::image("public/images/institute-logo.jpg", "", array("class"=>"img-responsive"))}}
-                        </div>
-                        <div class="institute-details row">
-                            <p class="name">DELHI PUBLIC SCHOOL </p>
-                            <p class="type">INTERMEDIATE</p>
-                            <p class="address">STREET NO 2  PITAMPURA DELHI INDIA </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row institutes">
-                    <p class="block-title">COURSE</p>
                     <div class="institute row">
                         <div class="institute-logo">
                             {{HTML::image("public/images/course-default.jpg", "", array("class"=>"img-responsive"))}}

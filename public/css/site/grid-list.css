@@ -124,3 +124,26 @@ ul {
         border: none;
     }
 }
+
+.course-list{
+    padding-top: 100px;
+}
+
+.course-list h3{
+    font: 20px AcademicM54;
+}
+
+.course-list h4{
+    font: 17px AcademicM54;
+}
+
+.course-list a{
+    font: 17px AcademicM54;
+    color: #0072b1;
+}
+.course-list a:hover{
+    color: #cc1814;
+}
+.course-list h3 span{
+    color: #cc1814;
+}

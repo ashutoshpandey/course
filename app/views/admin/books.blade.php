@@ -56,6 +56,10 @@
                             <div class='form-data'>
                                 <input type='text' name='name'/>
                             </div>
+                            <div class='form-label'>Publication</div>
+                            <div class='form-data'>
+                                <input type='text' name='publication'/>
+                            </div>
                             <div class='clear'></div>
                         </div>
                         <div class='form-row'>

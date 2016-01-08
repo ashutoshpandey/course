@@ -11,6 +11,7 @@
     {{HTML::style(asset("/public/css/site/home.css"))}}
     {{HTML::style(asset("/public/css/site/institutes.css"))}}
     {{HTML::style(asset("/public/css/site/grid-list.css"))}}
+    {{HTML::style(asset("/public/css/site/course-list.css"))}}
 
     @include('includes.common_js_top')
 </head>
@@ -25,9 +26,9 @@
 
         <div class="container course-list">
 
-            <h3>Showing courses for: {{$institute->name}}</h3>
+            <h3>Showing courses for: <span>{{$institute->name}}</span></h3>
 
-            @if(isset($courses))
+            @if($found)
 
             <div class="grid-info row">
                 <div class="col-md-8">
@@ -48,12 +49,6 @@
 
                     </ul>
 
-                    {{--<div id="popup_div">--}}
-                        {{--Test the dialog--}}
-                        {{--<br/>--}}
-                        {{--<button id="btnClose">Close</button>--}}
-                    {{--</div>--}}
-
                     <div id='page_navigation'></div>
                     <input type='hidden' id='current_page'/>
                     <input type='hidden' id='show_per_page'/>
@@ -61,7 +56,11 @@
             </div>
 
             @else
-                <h2>No courses found</h2>
+                <h4>No courses found</h4>
+
+                <br/>
+
+                <a href="{{$root}}/institutes">Back</a>
             @endif
 
         </div>

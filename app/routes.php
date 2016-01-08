@@ -52,6 +52,12 @@ Route::get('/edit-course', 'CourseController@edit');
 Route::post('/update-course', 'CourseController@update');
 Route::post('/save-course', 'CourseController@save');
 
+Route::get('/get-books/{id}', 'BookController@getBooks');
+Route::get('/remove-book/{id}', 'BookController@remove');
+Route::get('/edit-book', 'BookController@edit');
+Route::post('/update-book', 'BookController@update');
+Route::post('/save-book', 'BookController@save');
+
 Route::get('/remove-product/{id}', 'ProductController@remove');
 Route::get('/edit-product', 'ProductController@edit');
 Route::post('/update-product', 'ProductController@update');
@@ -92,6 +98,7 @@ Route::get('/resolve-complaint/{id}', 'ComplaintController@resolve');
 Route::get('/admin-section', 'AdminController@adminSection');
 Route::get('/admin-institutes', 'AdminController@institutes');
 Route::get('/admin-courses/{id}', 'AdminController@courses');
+Route::get('/admin-books/{id}', 'AdminController@books');
 Route::get('/admin-products/{id}', 'AdminController@products');
 Route::get('/admin-orders', 'AdminController@orders');
 Route::get('/admin-couriers', 'AdminController@couriers');
@@ -102,6 +109,7 @@ Route::get('/admin-locations', 'AdminController@locations');
 Route::get('/admin-list-institutes/{status}/{page}', 'AdminController@listInstitutes');
 Route::get('/admin-list-orders/{status}/{page}', 'AdminController@listOrders');
 Route::get('/admin-list-courses/{status}/{page}', 'AdminController@listCourses');
+Route::get('/admin-list-books/{status}/{page}', 'AdminController@listBooks');
 Route::get('/admin-list-products/{status}/{page}', 'AdminController@listProducts');
 Route::get('/admin-list-couriers/{status}/{page}', 'AdminController@listCouriers');
 Route::get('/admin-list-software-users/{status}/{page}', 'AdminController@listSoftwareUsers');
@@ -110,6 +118,7 @@ Route::get('/admin-list-locations/{status}/{page}', 'AdminController@listLocatio
 
 Route::get('/admin-view-institute/{id}', 'AdminController@viewInstitute');
 Route::get('/admin-view-course/{id}', 'AdminController@viewCourse');
+Route::get('/admin-view-book/{id}', 'AdminController@viewBook');
 Route::get('/admin-view-product/{id}', 'AdminController@viewProduct');
 Route::get('/admin-view-courier/{id}', 'AdminController@viewCourier');
 Route::get('/admin-view-software-user/{id}', 'AdminController@viewSoftwareUser');

@@ -266,22 +266,25 @@ footer a.mailid svg, footer a.telephone-no svg {
 .institute .institute-details p {
     margin: 0;
     color: #727272;
+    font-size: 16px;
 }
 
 .institute .institute-details p.name {
     color: #1976D2;
+    font-size: 20px;
 }
 .institute .related-links{
     text-align: right;
 }
-.institute .related-links .view-course {
+.institute .view-course {
     background: #1976d2 none repeat scroll 0 0;
     border: medium none;
     border-radius: 2px;
     color: #fff;
-    font: 9px AcademicM54;
-    height: 16px;
-    width: 80px;
+    font: 15px AcademicM54;
+    width: 150px;
+    text-align: center;
+    padding: 5px 10px;
 }
 
 .institute .related-links .share {
@@ -357,5 +360,7 @@ footer a.mailid svg, footer a.telephone-no svg {
 
 .search-location{
     margin: 20px auto 20px;
-    font-size: 20px;
+    font: 20px AcademicM54;
+    font-weight: normal;
+    color: #555;
 }

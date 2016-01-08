@@ -21,7 +21,7 @@ class CourseController extends BaseController
                 if(isset($courses) && count($courses)>0)
                     return View::make('course.list')->with('found', true)->with('courses', $courses)->with('institute', $institute);
                 else
-                    return View::make('course.list')->with('found', false);
+                    return View::make('course.list')->with('found', false)->with('institute', $institute);
             }
             else
                 return Redirect::to('/');
