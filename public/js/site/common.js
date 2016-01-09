@@ -9,16 +9,16 @@ $(function(){
 function getBag(){
 
     $.ajax({
-        url: root + '/get-bag',
+        url: root + 'get-bag',
         type: 'get',
         dataType: 'json',
         success: function(result){
-            if(result!=undefined && result.message!=undefined && result.message.indexOf('found')>-1){
+            if(result!=undefined) {
 
-                if(result.count!=undefined)
-                    $('.bag').html(result.count).show();
-                else
-                    $('.bag').hide();
+                if (result.message.indexOf('found') > -1)
+                    $('.bag').html("[" + result.count + "] items").show();
+                else if (result.message.indexOf('empty') > -1)
+                    $('.bag').html("[0] items").show();
             }
             else
                 $('.bag').hide();
@@ -64,6 +64,7 @@ function ajaxCall(url, type, data, callback){
             $.ajax({
                 url: url,
                 type: type,
+                data: data,
                 success: function (result) {
                     callback(result);
                 }

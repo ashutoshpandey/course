@@ -21,7 +21,7 @@
 
     <section class='content'>
 
-        <div class="container course-list">
+        <div class="container cart">
 
             @if($found)
 
@@ -68,7 +68,7 @@
 
                 <br/>
 
-                <a href="{{$root}}">Go to home</a>
+                <a class="go-to-home" href="{{$root}}">Go to home</a>
             @endif
 
         </div>

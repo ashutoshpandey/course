@@ -2,6 +2,13 @@
     list-style-type: none;
 }
 
+.cart{
+    padding-top: 90px;
+}
+.cart h3{
+    font: 20px AcademicM54;
+}
+
 .original-price{
     text-decoration: line-through;
 }
@@ -10,7 +17,7 @@
     cursor: pointer;
 }
 .remove-bag-item:hover{
-    color: red;
+    color: #ff5132;
 }
 .discounted-price{
     color: dodgerblue;
@@ -53,4 +60,12 @@
 .zui-table-horizontal tbody td {
     border-left: none;
     border-right: none;
+}
+
+.go-to-home{
+    font: 15px AcademicM54;
+    color: #56a3ff;
+}
+.go-to-home:hover{
+    color: #ff5132;
 }

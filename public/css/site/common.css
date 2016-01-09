@@ -18,7 +18,6 @@ input:-webkit-autofill {
     color: red;
     padding: 20px 12px;
     float: right;
-    display: none;
     text-decoration: none;
     font-size: 14px;
     line-height: 12px;

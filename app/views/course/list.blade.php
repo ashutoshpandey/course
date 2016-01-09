@@ -11,7 +11,7 @@
     {{HTML::style(asset("/public/css/site/home.css"))}}
     {{HTML::style(asset("/public/css/site/institutes.css"))}}
     {{HTML::style(asset("/public/css/site/grid-list.css"))}}
-    {{HTML::style(asset("/public/css/site/course-list.css"))}}
+    {{HTML::style(asset("/public/css/site/courses.css"))}}
 
     @include('includes.common_js_top')
 </head>

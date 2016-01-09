@@ -37,9 +37,9 @@
                                 <div class='form-data'>
                                     <input type='text' name='name' value='{{$book->name}}'/>
                                 </div>
-                                <div class='form-label'>Publish Date</div>
+                                <div class='form-label'>Publication</div>
                                 <div class='form-data'>
-                                    <input type='text' name='publish_date' value='{{date('m/d/Y', strtotime($book->publish_date))}}'/>
+                                    <input type='text' name='publication' value='{{$book->publication}}'/>
                                 </div>
                                 <div class='clear'></div>
                             </div>

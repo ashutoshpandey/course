@@ -1,4 +1,5 @@
 $(function(){
+    $("input[name='btn-create']").click(createBook);
 
     $('a[href="#tab-edit"]').hide();
     $('#tab-edit').hide();
@@ -55,7 +56,7 @@ function showGrid(data){
                 <tr> \
                     <th data-column-id="id" data-type="numeric">ID</th> \
                     <th data-column-id="name">Name</th> \
-                    <th data-column-id="author">Author</th> \
+                    <th data-column-id="description">Description</th> \
                     <th data-formatter="link">Action</th> \
                 </tr> \
             </thead> \
@@ -68,7 +69,7 @@ function showGrid(data){
             str = str + '<tr> \
                     <td>' + book.id + '</td> \
                     <td>' + book.name + '</td> \
-                    <td>' + book.author + '</td> \
+                    <td>' + book.description + '</td> \
                     <td></td> \
                 </tr>';
         }
@@ -76,40 +77,39 @@ function showGrid(data){
         str = str + '</tbody> \
         </table>';
 
-    $('#book-list').html(str);
+        $('#book-list').html(str);
 
-    $("#grid-basic").bootgrid({
-        formatters: {
-            'link': function(column, row)
-            {
-                var str = '<a target="_blank" href="' + root + '/admin-view-book/' + row.id + '">View</a>';
-                str = str + '&nbsp;&nbsp; <a class="remove" href="#" rel="' + row.id + '">Remove</a>';
+        $("#grid-basic").bootgrid({
+            formatters: {
+                'link': function(column, row)
+                {
+                    var str = '<a target="_blank" href="' + root + 'admin-view-book/' + row.id + '">View</a>';
+                    str = str + '&nbsp;&nbsp; <a class="remove" href="#" rel="' + row.id + '">Remove</a>';
 
-                return str;
+                    return str;
+                }
             }
-        }
-    }).on("loaded.rs.jquery.bootgrid", function()
-        {
-            $(".remove").click(function(){
-                var id = $(this).attr("rel");
+        }).on("loaded.rs.jquery.bootgrid", function()
+            {
+                $(".remove").click(function(){
+                    var id = $(this).attr("rel");
 
-                if(!confirm("Are you sure to remove this book?"))
-                    return;
+                    if(!confirm("Are you sure to remove this book?"))
+                        return;
 
-                $.getJSON(root + '/remove-book/' + id,
-                    function(result){
-                        if(result.message.indexOf('done')>-1)
-                            listBooks(1);
-                        else if(result.message.indexOf('not logged')>-1)
-                            window.location.replace(root);
-                        else
-                            alert("Server returned error : " + result);
-                    }
-                );
+                    $.getJSON(root + '/remove-book/' + id,
+                        function(result){
+                            if(result.message.indexOf('done')>-1)
+                                listBooks(1);
+                            else if(result.message.indexOf('not logged')>-1)
+                                window.location.replace(root);
+                            else
+                                alert("Server returned error : " + result);
+                        }
+                    );
+                });
             });
-        });
     }
     else
         $('#book-list').html('No books found');
-
 }

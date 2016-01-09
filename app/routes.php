@@ -21,7 +21,7 @@ Route::any('/institutes', 'SearchController@institutes');
 Route::get('/institute/{id}', 'SearchController@home');
 Route::get('/courses/{institute_id}', 'CourseController@courses');
 Route::get('/course/{id}', 'CourseController@course');
-Route::get('/products/{course_id}', 'ProductController@products');
+Route::get('/products/{course_id}', 'BookController@books');
 Route::post('/get-course-products/{subjects?}', 'ProductController@getProducts');
 Route::get('/product/{id}', 'ProductController@product');
 
@@ -109,7 +109,7 @@ Route::get('/admin-locations', 'AdminController@locations');
 Route::get('/admin-list-institutes/{status}/{page}', 'AdminController@listInstitutes');
 Route::get('/admin-list-orders/{status}/{page}', 'AdminController@listOrders');
 Route::get('/admin-list-courses/{status}/{page}', 'AdminController@listCourses');
-Route::get('/admin-list-books/{status}/{page}', 'AdminController@listBooks');
+Route::get('/admin-list-books/{status}/{page}', 'BookController@listBooks');
 Route::get('/admin-list-products/{status}/{page}', 'AdminController@listProducts');
 Route::get('/admin-list-couriers/{status}/{page}', 'AdminController@listCouriers');
 Route::get('/admin-list-software-users/{status}/{page}', 'AdminController@listSoftwareUsers');

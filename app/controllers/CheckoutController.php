@@ -4,6 +4,16 @@ class CheckoutController extends BaseController
 {
     function __construct(){
         View::share('root', URL::to('/'));
+
+        $user_id = Session::get('user_id');
+        if(isset($user_id)){
+            $name = Session::get('name');
+
+            View::share('name', $name);
+            View::share('logged', true);
+        }
+        else
+            View::share('logged', false);
     }
 
     public function login(){

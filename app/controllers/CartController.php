@@ -4,16 +4,32 @@ class CartController extends BaseController
 {
     function __construct(){
         View::share('root', URL::to('/'));
+
+        $user_id = Session::get('user_id');
+        if(isset($user_id)){
+            $name = Session::get('name');
+
+            View::share('name', $name);
+            View::share('logged', true);
+        }
+        else
+            View::share('logged', false);
     }
 
-    public function addToBag($productId, $quantity=1){
+    public function addToBag($bookId, $quantity=1){
 
         $cart = Session::get('cart');
 
         if(isset($cart)){
             foreach($cart as $cartItem){
-                if($productId===$cartItem['productId']) {
-                    echo json_encode(array('message' => 'duplicate'));
+                if(isset($cartItem['bookId'])) {
+                    if ($bookId === $cartItem['bookId']) {
+                        echo json_encode(array('message' => 'duplicate'));
+                        return;
+                    }
+                }
+                else{
+                    echo json_encode(array('message' => 'invalid'));
                     return;
                 }
             }
@@ -21,13 +37,13 @@ class CartController extends BaseController
         else
             $cart = array();
 
-        $product = Product::find($productId);
+        $book = Book::find($bookId);
 
-        if(isset($product)) {
+        if(isset($book)) {
 
             $uniqueId = date('Ymdhis');
 
-            $cart[] = array('id' => $uniqueId, 'productId' => $productId, 'quantity' => $quantity, 'name' => $product->name, 'price' => $product->price, 'discounted_price' => $product->discounted_price, 'type' => $product->product_type);
+            $cart[] = array('id' => $uniqueId, 'bookId' => $bookId, 'quantity' => $quantity, 'name' => $book->name, 'price' => $book->price, 'discounted_price' => $book->discounted_price);
 
             Session::put('cart', $cart);
 

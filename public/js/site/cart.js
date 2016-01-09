@@ -8,7 +8,7 @@ $(document).ready(function () {
 
     $(".checkout").click(function(){
         $.ajax({
-            url: root + '/save-order/',
+            url: root + 'save-order/',
             type: 'get',
             dataType: 'json',
             success: function(result){
@@ -25,7 +25,7 @@ $(document).ready(function () {
 
 function removeFromBag(id, obj){
     $.ajax({
-        url: root + '/remove-from-bag/' + id,
+        url: root + 'remove-from-bag/' + id,
         type: 'get',
         dataType: 'json',
         success: function(result){
@@ -38,21 +38,21 @@ function removeFromBag(id, obj){
 
                     if (result.count == 0) {
                         $('.bag').hide();
-                        $(".course-list").html('');
+                        $(".cart").html('');
 
                         var str = "<br/>";
                         str += "<h3>Your bag is empty</h3>";
                         str += "<br/>";
                         str += "<a href='{{$root}}'>Go to home</a>"
 
-                        $(".course-list").append(str);
+                        $(".cart").append(str);
                     }
                     else
                         $('.bag').html(result.count).show();
                 }
                 else{
                     $('.bag').hide();
-                    $(".course-list").html('');
+                    $(".cart").html('');
 
                     var str = "<br/>";
                     str += "<h3>Your bag is empty</h3>";
@@ -68,7 +68,7 @@ function removeFromBag(id, obj){
 
 function payment(){
     $.ajax({
-        url: root + '/save-order',
+        url: root + 'save-order',
         type: 'get',
         dataType: 'json',
         success: function(result){

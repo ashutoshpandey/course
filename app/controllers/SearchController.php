@@ -5,6 +5,25 @@ class SearchController extends BaseController
     function __construct()
     {
         View::share('root', URL::to('/'));
+
+        $admin_id = Session::get('admin_id');
+        if(isset($admin_id)){
+            $name = Session::get('name');
+
+            View::share('name', $name);
+
+            return;
+        }
+
+        $user_id = Session::get('user_id');
+        if(isset($user_id)){
+            $name = Session::get('name');
+
+            View::share('name', $name);
+            View::share('logged', true);
+        }
+        else
+            View::share('logged', false);
     }
 
     public function searchCities($key)

@@ -207,29 +207,6 @@ class AdminController extends BaseController
             return Redirect::to('/');
     }
 
-    public function listBooks($status, $page){
-
-        $adminId = Session::get('admin_id');
-        if(!isset($adminId))
-            return json_encode(array('message'=>'not logged'));
-
-        $course_id = Session::get('course_id');
-
-        if(isset($course_id)){
-
-            $books = Book::where('course_id','=', $course_id)->where('status','=',$status)->get();
-
-            if(isset($books) && count($books)>0){
-
-                return json_encode(array('message'=>'found', 'books' => $books->toArray()));
-            }
-            else
-                return json_encode(array('message'=>'empty'));
-        }
-        else
-            return json_encode(array('message'=>'invalid'));
-    }
-
     public function viewOrder($id){
 
         $adminId = Session::get('admin_id');

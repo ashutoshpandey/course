@@ -10,7 +10,7 @@ $(function () {
         if(location.length==0 && institute.length==0)
             return;
 
-        $("#form").attr('action', root + '/institutes');
+        $("#form").attr('action', root + 'institutes');
         $("#form").submit();
     });
 

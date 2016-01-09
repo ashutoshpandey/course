@@ -1,17 +1,18 @@
 <header>
     <div class="container h-center">
         <div class="row">
-            <div class="col-10 h-center f-none">
+            <div class="col-12 h-center f-none">
                 <div class="logo pull-left">
                     <a href='{{$root}}'><svg width='22' height='24'><use xlink:href="#logo"></use></svg> COBOO</a>
                 </div>
                 <div class="pull-right profile">
-                    <?php $logged=true; if($logged){ ?>
+                    <?php if(!$logged){ ?>
                         <a href="#" class="md-trigger" data-modal="modal-1">Login here<svg width="28" height="28" ><use xlink:href="#user"></use></svg></a>
                     <?php }else{ ?>
-                        <a href="{{$root}}/bag" class="bag">0</a>
+                        Hi <?php echo $name;?> &nbsp; <a href="{{$root}}/bag" class="bag"></a> &nbsp; <a href="{{$root}}/logout">Logout</a>
                     <?php } ?>
                 </div>
+                <div class="clear"></div>
             </div>
         </div>
     </div>

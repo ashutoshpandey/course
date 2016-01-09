@@ -5,6 +5,25 @@ class BookController extends BaseController
     function __construct()
     {
         View::share('root', URL::to('/'));
+
+        $admin_id = Session::get('admin_id');
+        if(isset($admin_id)){
+            $name = Session::get('name');
+
+            View::share('name', $name);
+
+            return;
+        }
+
+        $user_id = Session::get('user_id');
+        if(isset($user_id)){
+            $name = Session::get('name');
+
+            View::share('name', $name);
+            View::share('logged', true);
+        }
+        else
+            View::share('logged', false);
     }
 
     public function books($id){
@@ -49,6 +68,15 @@ class BookController extends BaseController
         if(!isset($courseId))
             return json_encode(array('message' => 'invalid'));
 
+        $picture_1 = Input::get('picture_1');
+        $picture_2 = Input::get('picture_2');
+
+        if(!isset($picture_1))
+            $picture_1 = "";
+
+        if(!isset($picture_2))
+            $picture_2 = "";
+
         $book = new Book();
 
         $book->course_id = $courseId;
@@ -59,8 +87,8 @@ class BookController extends BaseController
         $book->price = Input::get('price');
         $book->discounted_price = Input::get('discounted_price');
         $book->book_type = Input::get('book_type');
-        $book->picture_1 = Input::get('picture_1');
-        $book->picture_2 = Input::get('picture_2');
+        $book->picture_1 = $picture_1;
+        $book->picture_2 = $picture_2;
 
         $book->status = 'active';
         $book->created_at = date('Y-m-d h:i:s');
@@ -174,6 +202,29 @@ class BookController extends BaseController
             $books = Book::where('course_id', $id)->get();
 
             if(isset($books)){
+
+                return json_encode(array('message'=>'found', 'books' => $books->toArray()));
+            }
+            else
+                return json_encode(array('message'=>'empty'));
+        }
+        else
+            return json_encode(array('message'=>'invalid'));
+    }
+
+    public function listBooks($status, $page){
+
+        $adminId = Session::get('admin_id');
+        if(!isset($adminId))
+            return json_encode(array('message'=>'not logged'));
+
+        $course_id = Session::get('course_id');
+
+        if(isset($course_id)){
+
+            $books = Book::where('course_id', $course_id)->where('status', $status)->get();
+
+            if(isset($books) && count($books)>0){
 
                 return json_encode(array('message'=>'found', 'books' => $books->toArray()));
             }

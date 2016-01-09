@@ -9,7 +9,9 @@
     @include('includes.common_css')
 
     {{HTML::style(asset("/public/css/site/grid-list.css"))}}
-    {{HTML::style(asset("/public/css/site/products.css"))}}
+    {{HTML::style(asset("/public/css/site/books.css"))}}
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
 
     @include('includes.common_js_top')
 </head>
@@ -24,7 +26,7 @@
 
         <div class="container">
 
-            <h3>Showing courses for: {{$course->institute->name}} -> {{$course->name}}</h3>
+            <h3>Showing courses for: {{$course->name}}</h3>
             <br/><br/>
 
             @if($found)
@@ -44,26 +46,26 @@
                     </div>
                 </div>
 
-                <div class="col-md-10 product-list" rel="{{$course->id}}">
+                <div class="col-md-10 book-list" rel="{{$course->id}}">
 
-                    <label><input type="checkbox" name="select-all"/> Select all products</label> <br/>
+                    <span class="select-all">Select all books</span> <br/>
 
                     <ul id="content">
 
-                        @foreach($products as $product)
+                        @foreach($books as $book)
 
                         <li class="data">
                             <div class="name-date">
-                                <span class="name">{{$product->name}}</span>
+                                <span class="name">{{$book->name}}</span>
                                 <br/>
-                                {{$currency}} {{$product->price}}
+                                <i class="fa fa-inr"></i> <span class="price">{{$book->price}}</span>
                                 <br/>
-                                By <b>{{$product->author}}</b> <br/><br/>
-<!--                                <label><input type="checkbox" name="pick-product" value="{{$product->id}}"/> Pick this product </label>-->
-                                @if($product->added=='y')
-                                    <span class="added-to-bag" rel="{{$product->id}}">In bag</span>
+                                By <span class="author">{{$book->author}}</span> <br/><br/>
+<!--                                <label><input type="checkbox" name="pick-book" value="{{$book->id}}"/> Pick this book </label>-->
+                                @if($book->added=='y')
+                                    <span class="added-to-bag" rel="{{$book->id}}">In bag</span>
                                 @else
-                                    <span class="add-to-bag" rel="{{$product->id}}">Add to bag</span>
+                                    <span class="add-to-bag" rel="{{$book->id}}">Add to bag</span>
                                 @endif
                             </div>
                         </li>
@@ -85,7 +87,7 @@
             </div>
 
             @else
-                <h2>No products found</h2>
+                <h2>No books found</h2>
             @endif
 
         </div>
@@ -96,7 +98,7 @@
 <!-- ./wrapper -->
 
 @include('includes.footer')
-{{HTML::script(asset("/public/js/site/products.js"))}}
+{{HTML::script(asset("/public/js/site/books.js"))}}
 
 </body>
 </html>

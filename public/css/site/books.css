@@ -1,0 +1,41 @@
+*{
+    font-family: AcademicM54;
+}
+
+.name{
+    font: 17px AcademicM54;
+}
+
+.author{
+    font: 14px AcademicM54;
+}
+
+.price{
+    font: 14px AcademicM54;
+    color: #333333;
+    letter-spacing: 1px;
+}
+
+.add-to-bag{
+    color: #2196F3;
+    cursor: pointer;
+}
+.add-to-bag:hover{
+    color: #ff5132;
+}
+
+.added-to-bag{
+    color: #ff5132;
+}
+
+.select-all{
+    background: #2196F3;
+    color: #fff;
+    cursor: pointer;
+    padding: 8px 15px;
+    border-radius: 4px;
+}
+.select-all:hover{
+    background-color: #ff5132;
+}
+

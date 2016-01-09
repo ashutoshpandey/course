@@ -1,5 +1,11 @@
 $(document).ready(function () {
 
+    $(".add-to-bag").on('click', function(){
+        var id = $(this).attr("rel");
+
+        addToBag(id, $(this));
+    });
+
     $("#grid").click(function () {
 
         $(".data").addClass("show1");
@@ -13,13 +19,7 @@ $(document).ready(function () {
 
     $("input[name='subject']").click(getData);
 
-    $(".add-to-bag").click(function(){
-        var id = $(this).attr("rel");
-
-        addToBag(id, $(this));
-    });
-
-//    $("input[name='select-all']").click(selectAll);
+    $(".select-all").click(selectAll);
 });
 
 function getData(){
@@ -38,7 +38,7 @@ function getData(){
     else
         subjectString = '';
 
-    var url = root + '/get-course-products';
+    var url = root + 'get-course-products';
 
     $.ajax({
         url: url,
@@ -79,16 +79,6 @@ function getData(){
                     str += "</ul>";
 
                     $(".product-list").html(str);
-
-//                    $("input[name='select-all']").unbind('click');
-//                    $("input[name='select-all']").click(selectAll);
-
-                    $(".add-to-bag").unbind('click');
-                    $(".add-to-bag").click(function(){
-                        var id = $(this).attr("rel");
-
-                        addToBag(id, $(this));
-                    });
                 }
             }
             else{
@@ -100,16 +90,16 @@ function getData(){
 
 function addToBag(id, obj){
     $.ajax({
-        url: root + '/add-to-bag/' + id + '/1',
+        url: root + 'add-to-bag/' + id + '/1',
         type: 'get',
         dataType: 'json',
         success: function(result){
 
             if(result!=undefined && result.message!=undefined && (result.message.indexOf('done')>-1 || result.message.indexOf('duplicate')>-1)){
-                $(obj).html('In bag');
+                //$(obj).html('In bag');
                 $('.bag').html(result.count).show();
-                $(obj).removeClass('add-to-bag');
-                $(obj).addClass('added-to-bag');
+                //$(obj).removeClass('add-to-bag');
+                //$(obj).addClass('added-to-bag');
             }
         }
     });
@@ -117,10 +107,5 @@ function addToBag(id, obj){
 
 
 function selectAll(){
-
-    if($(this).is(':checked'))
-        $("input[name='pick-product']").prop('checked', true);
-    else
-        $("input[name='pick-product']").prop('checked', false);
 }
 
