@@ -8,8 +8,8 @@
                 <div class="pull-right profile">
                     <?php if(!$logged){ ?>
                         <a href="#" class="md-trigger" data-modal="modal-1">Login here<svg width="28" height="28" ><use xlink:href="#user"></use></svg></a>
-                    <?php }else{ ?>
-                        Hi <?php echo $name;?> &nbsp; <a href="{{$root}}/bag" class="bag"></a> &nbsp; <a href="{{$root}}/logout">Logout</a>
+                    <?php } else{ ?>
+                        Hi <?php echo $name;?> &nbsp; <a href="{{$root}}/bag" class="bag" title="Cart"></a> &nbsp;<a href="{{$root}}/orders" class="cart" title="My Orders">My Orders</a> &nbsp; <a href="{{$root}}/logout">Logout</a>
                     <?php } ?>
                 </div>
                 <div class="clear"></div>

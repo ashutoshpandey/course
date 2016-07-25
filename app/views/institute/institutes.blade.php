@@ -35,6 +35,7 @@
                             </div>
                             <div class="col-3">
                                 <button type="submit"><span></span>Search</button>
+                                <input type="hidden" id="search-city" name="c"/>
                             </div>
                         </form>
 

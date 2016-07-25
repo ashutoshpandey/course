@@ -50,7 +50,7 @@
             </div>
             <div id='tab-create'>
                 <div id='form-container'>
-                    <form target="ifr" id='form-create-book' enctype="multipart/form-data" method="post" action="{{$root}}/save-book" onsubmit="return createBook()">
+                     <form target="ifr" id='form-create-book' enctype="multipart/form-data" method="post" action="{{$root}}/save-book" onsubmit="return createBook()">
                         <div class='form-row'>
                             <div class='form-label'>Name</div>
                             <div class='form-data'>

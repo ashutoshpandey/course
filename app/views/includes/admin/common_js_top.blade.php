@@ -1,5 +1,6 @@
 {{HTML::script(asset("/public/js/jquery-1.10.2.js"))}}
 {{HTML::script(asset("/public/js/moderniz.2.8.1.js"))}}
+{{HTML::script(asset("/public/js/bootstrap.min.js"))}}
 {{HTML::script(asset("/public/js/jquery.bootgrid.min.js"))}}
 {{HTML::script(asset("/public/js/site/common.js"))}}
 {{HTML::script(asset("/public/js/site/admin/admin.js"))}}

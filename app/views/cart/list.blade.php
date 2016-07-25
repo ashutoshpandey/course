@@ -25,41 +25,59 @@
 
             @if($found)
 
-            <h3>Showing your bag</h3>
+                <h3>Showing your bag</h3>
 
-            <div class="grid-info row">
-                <div class="col-md-8">
+                <div class="grid-info row">
+                    <div class="col-md-8">
 
-                    <table class="zui-table zui-table-zebra zui-table-horizontal">
-                        <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Price</th>
-                            <th>&nbsp;</th>
-                        </tr>
-                        </thead>
-                        <tbody>
+                        <table class="zui-table zui-table-zebra zui-table-horizontal">
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Qty</th>
+                                <th>&nbsp;</th>
+                            </tr>
+                            </thead>
+                            <tbody>
 
-                        @foreach($cart as $cartItem)
+                            @foreach($cart as $cartItem)
 
-                        <tr>
-                            <td>{{$cartItem['name']}}</td>
-                            <td><span class="discounted-price">{{$cartItem['discounted_price']}}</span> <span class="original-price">{{$cartItem['price']}}</span></td>
-                            <td><span class="remove-bag-item" rel="{{$cartItem['id']}}">Remove</span></td>
-                        </tr>
+                                <?php
+                                if(isset($cartItem['bookId']) && !empty($cartItem['bookId'])){
+                                    $id=$cartItem['bookId'];
+                                }elseif(isset($cartItem['accessoryId']) && !empty($cartItem['accessoryId'])){
+                                    $id=$cartItem['accessoryId'];
+                                }else{
+                                    $id='';
+                                }
+                                ?>
+                                <tr>
+                                    <td>{{$cartItem['name']}}</td>
+                                    <td><span class="discounted-price">{{$cartItem['discounted_price']}}</span> <span
+                                                class="original-price">{{$cartItem['price']}}</span></td>
+                                    <td>
+                                        <input type="text" maxlength="2" name="quantity"
+                                               id="quantity_{{$id}}" value="{{$cartItem['quantity']}}"
+                                               size="1" onfocus="saveQty(this,'{{$id}}')">
+                                        <span class="save-bag-qty hidden" id="save-bag-qty_{{$id}}"
+                                              onclick="updateQty({{$id}})">save</span>
+                                    </td>
+                                    <td><span class="remove-bag-item" rel="{{$cartItem['id']}}">Remove</span></td>
+                                </tr>
 
-                        @endforeach
+                            @endforeach
 
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
 
-                    <br/><br/>
+                        <br/><br/>
 
-                    <div>
-                        <span class='payment'>Payment</span>
+                        <div>
+                            <span class='payment'>Payment</span>
+                        </div>
                     </div>
                 </div>
-            </div>
 
             @else
                 <br/>

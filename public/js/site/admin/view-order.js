@@ -1,30 +1,33 @@
-$(function(){
+$(function () {
 
-    initPopup($("input[name='btn-update-order']"));
+    //initPopup($("input[name='btn-update-order']"));
+    $("input[name='btn-update-order']").click(function () {
+        $("#popup").show();
+    });
+
 
     $("#grid-items").bootgrid({
         formatters: {
-            'link': function(column, row)
-            {
+            'link': function (column, row) {
                 var str = '<a target="_blank" href="' + root + '/admin-view-order/' + row.id + '">View</a>';
 
                 return str;
             },
-            'check': function(column, row){
+            'check': function (column, row) {
                 return '<input type="checkbox" name="check-item" value="' + row.id + '"/>';
             }
         }
     });
 
-    $("input[name='check-select-all']").click(function(){
+    $("input[name='check-select-all']").click(function () {
 
-        if($(this).prop('checked'))
+        if ($(this).prop('checked'))
             $("input[name='check-item']").prop('checked', true);
         else
             $("input[name='check-item']").prop('checked', false);
     });
 
-    $("input[name='btn-set-courier']").click(function(){
+    $("input[name='btn-set-courier']").click(function () {
 
         $("#message-courier").html("");
 
@@ -32,16 +35,16 @@ $(function(){
         var courier = $("select[name='courier']").val();
         var ids = Array();
 
-        $("input[name='check-item']").each(function(){
+        $("input[name='check-item']").each(function () {
 
-            if($(this).prop('checked'))
+            if ($(this).prop('checked'))
                 ids.push($(this).val());
         });
 
         var data = 'docket=' + docket + '&courier=' + courier;
-        if(ids.length>0)
+        if (ids.length > 0)
             data = data + '&ids=' + ids.join();
-        else{
+        else {
             $("#message-courier").html("No item selected");
             return;
         }
@@ -51,26 +54,28 @@ $(function(){
             data: data,
             type: 'post',
             dataType: 'json',
-            success: function(result){
+            success: function (result) {
 
-                if(result!=undefined && result.message!=undefined){
+                if (result != undefined && result.message != undefined) {
 
-                    if(result.message.indexOf('done')>-1){
+                    if (result.message.indexOf('done') > -1) {
                         $("input[name='docket']").val('');
                         $("#message-courier").html("");
 
                         $("input[name='check-item']").prop('checked', false);
 
-                        closePopup();
+                      //  closePopup();
+                        window.location.replace(root + '/admin-orders');
                     }
-                    else{
+                    else {
                         $("#message-courier").html("Server returned invalid");
                     }
                 }
-                else{
+                else {
                     $("#message-courier").html("Server returned error");
                 }
             }
         });
     });
+
 });

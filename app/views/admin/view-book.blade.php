@@ -31,7 +31,8 @@
             <div class='tab-container'>
                 <div id='tab-create'>
                     <div id='form-container'>
-                        <form id='form-update-book'>
+
+                            <form target="ifr" id='form-update-book' enctype="multipart/form-data" method="post" action="{{$root}}/update-book" onsubmit="return updateBook()">
                             <div class='form-row'>
                                 <div class='form-label'>Name</div>
                                 <div class='form-data'>
@@ -79,13 +80,28 @@
                                 <div class='clear'></div>
                             </div>
                             <div class='form-row'>
+                                <div class='form-label'>Picture 1</div>
+                                <div class='form-data'>
+                                    <input type='file' name='picture_1'/>
+                                </div>
+                                <div class='clear'></div>
+                            </div>
+                            <div class='form-row'>
+                                <div class='form-label'>Picture 2</div>
+                                <div class='form-data'>
+                                    <input type='file' name='picture_2'/>
+                                </div>
+                                <div class='clear'></div>
+                            </div>
+                            <div class='form-row'>
                                 <div class='form-label'>&nbsp;</div>
                                 <div class='form-data'>
-                                    <input type='button' name='btn-update' value="Update Book" class='half'/> <span class='message'></span>
+                                    <input type='submit' name='btn-update' value="Update Book" class='half'/> <span class='message'></span>
                                 </div>
                                 <div class='clear'></div>
                             </div>
                         </form>
+                        <iframe name="ifr" id="ifr" style="visibility: hidden; height: 1px; width: 1px"></iframe>
                     </div>
                 </div>
             </div>

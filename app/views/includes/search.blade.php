@@ -1,3 +1,4 @@
+
 <div class="row">
     <div class="search-bar col-8 f-none h-center">
         <div class="row">

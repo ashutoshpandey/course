@@ -1,6 +1,8 @@
+/*
 *{
     font-family: AcademicM54;
 }
+*/
 
 .name{
     font: 17px AcademicM54;
@@ -19,13 +21,26 @@
 .add-to-bag{
     color: #2196F3;
     cursor: pointer;
+    font-family: AcademicM54;
 }
 .add-to-bag:hover{
     color: #ff5132;
+    font-family: AcademicM54;
 }
 
 .added-to-bag{
     color: #ff5132;
+    font-family: AcademicM54;
+}
+
+.add-to-cart{
+    color: #2196F3;
+    cursor: pointer;
+    font-family: AcademicM54;
+}
+.add-to-cart:hover{
+    color: #ff5132;
+    font-family: AcademicM54;
 }
 
 .select-all{
@@ -34,8 +49,25 @@
     cursor: pointer;
     padding: 8px 15px;
     border-radius: 4px;
+    font-family: AcademicM54;
 }
 .select-all:hover{
     background-color: #ff5132;
+    font-family: AcademicM54;
 }
 
+.hidden{
+    display: none;
+}
+.add-all-to-bag{
+    background: #2196F3;
+    color: #fff;
+    cursor: pointer;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-family: AcademicM54;
+}
+.add-all-to-bag:hover{
+    background-color: #ff5132;
+    font-family: AcademicM54;
+}

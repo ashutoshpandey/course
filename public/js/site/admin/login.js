@@ -18,7 +18,7 @@ function doLogin(){
                 if(result.message.indexOf('wrong')>-1)
                     $('.message').html('Invalid username or password');
                 else if(result.message.indexOf('correct')>-1)
-                    window.location.replace(root + '/admin-section');
+                    window.location.replace(root + 'admin-section');
                 else
                     $('.message').html('Server returned error : ' + result.message);
             }

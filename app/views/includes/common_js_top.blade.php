@@ -1,4 +1,6 @@
 {{HTML::script(asset("/public/js/jquery-1.10.2.js"))}}
+{{HTML::script(asset("/public/js/bootstrap.min.js"))}}
+{{HTML::script(asset("/public/js/moderniz.2.8.1.js"))}}
 {{HTML::script(asset("/public/js/site/common.js"))}}
 {{HTML::script(asset("/public/js/site/login.js"))}}
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->

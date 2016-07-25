@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -18,10 +19,7 @@
 <body class="skin-blue sidebar-mini">
 <div class="wrapper">
 
-    <header class="main-header">
         @include('includes.header')
-    </header>
-
     <section class='content'>
 
         <div class="container course-list">
@@ -33,7 +31,6 @@
             <div class="grid-info row">
                 <div class="col-md-8">
                     <ul id="content">
-
                         @foreach($courses as $course)
 
                         <li class="data">
@@ -42,6 +39,7 @@
                             </div>
                             <div class="add-map">
                                 <span class="add">{{$course->description}}<br/>	<a target="_blank" href="{{$root}}/products/{{$course->id}}">View Books</a> </span>
+                                <br/>	<a target="_blank" href="{{$root}}/accessory/{{$course->id}}">View Accessories</a>
                             </div>
                         </li>
 

@@ -1,33 +1,33 @@
-$(function(){
+$(function () {
 
     listOrders(1);
 });
 
-function listOrders(page){
+function listOrders(page) {
 
     var status = 'pending';
 
     $.getJSON(
         root + '/admin-list-orders/' + status + '/' + page,
-        function(result){
+        function (result) {
 
-            if(result.message.indexOf('not logged')>-1)
+            if (result.message.indexOf('not logged') > -1)
                 window.location.replace(root);
-            else{
+            else {
                 showGrid(result);
             }
         }
     );
 }
-function showGrid(data){
+function showGrid(data) {
 
-    if(data!=undefined && data.orders!=undefined && data.orders.length>0){
+    if (data != undefined && data.orders != undefined && data.orders.length > 0) {
 
         var str = '';
 
         str = str + '<table id="grid-basic" class="table table-condensed table-hover table-striped"> \
             <thead> \
-                <tr> \
+                <tr>\
                     <th data-column-id="id" data-type="numeric">ID</th> \
                     <th data-column-id="customer_id">Customer id</th> \
                     <th data-column-id="name">Customer name</th> \
@@ -39,7 +39,7 @@ function showGrid(data){
             </thead> \
             <tbody>';
 
-        for(var i =0;i<data.orders.length;i++){
+        for (var i = 0; i < data.orders.length; i++) {
 
             var order = data.orders[i];
 
@@ -61,13 +61,33 @@ function showGrid(data){
 
         $("#grid-basic").bootgrid({
             formatters: {
-                'link': function(column, row)
-                {
-                    var str = '<a target="_blank" href="' + root + '/admin-view-order/' + row.id + '">View</a>';
-
+                'link': function (column, row) {
+                    var str = '<a target="_blank" href="' + root + 'admin-view-order/' + row.id + '" title="View"><span class="fa fa-th"></span></a>';
+                    str += '&nbsp;&nbsp;<a target="_blank" href="' + root + 'admin-generate-invoice/' + row.id + '" title="Generate Invoice"><span class="fa fa-file-pdf-o    "></span></a>';
+                    // str+= '&nbsp;&nbsp;<a target="_blank" href="' + root + 'admin-send-invoice/' + row.id + '">Send Invoice</a>';
+                    str = str + '&nbsp;&nbsp; <a class="send-invoice" href="#" rel="' + row.id + '" title="Send Invoice"><span class="fa fa-envelope"></span></a>';
                     return str;
                 }
             }
+        }).on("loaded.rs.jquery.bootgrid", function () {
+            $(".send-invoice").click(function () {
+                $('.message').html("Sending Mail");
+                var id = $(this).attr("rel");
+
+                $.getJSON(root + 'admin-send-invoice/' + id,
+                    function (result) {
+                        if (result.message.indexOf('done') > -1) {
+                            alert('Mail Send Successfully');
+                            $('.message').html("");
+                        }
+                        else if (result.message.indexOf('not logged') > -1)
+                            window.location.replace(root);
+                        else
+                            alert("Server returned error : " + result);
+                    }
+                );
+            });
+            $('.message').html("");
         });
     }
     else

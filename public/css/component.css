@@ -5,6 +5,9 @@ Styles for the html/body for special modal where we want 3d effects
 Note that we need a container wrapping all content on the page for the 
 perspective effects (not including the modals and the overlay).
 */
+.product-list{
+	padding-top: 20px;
+}
 .md-perspective,
 .md-perspective body {
 	height: 100%;
@@ -41,6 +44,7 @@ perspective effects (not including the modals and the overlay).
 .md-modal input[type='email'], .md-modal input[type='password']{
 	height: auto !important;
 	padding: 7px !important;
+	font-family: sans-serif;
 }
 .md-modal input[type='button']{
 	height: auto !important;

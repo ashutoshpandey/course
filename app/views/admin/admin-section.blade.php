@@ -6,7 +6,7 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-    @include('includes.common_css')
+    @include('includes.admin.common_css')
 
     {{HTML::style(asset("/public/css/AdminLTE.css"))}}
     {{HTML::style(asset("/public/css/admin-skins/_all-skins.min.css"))}}
@@ -18,7 +18,7 @@
 
 <header class="main-header">
 <!-- Logo -->
-<a href="index2.html" class="logo">
+<a href="{{$root}}/admin-section" class="logo">
     <!-- mini logo for sidebar mini 50x50 pixels -->
     <span class="logo-mini"><b>A</b>LT</span>
     <!-- logo for regular state and mobile devices -->
@@ -62,8 +62,7 @@
     <!-- Main content -->
     <section class="content">
         <!-- Small boxes (Stat box) -->
-
-        <div class="col-lg-3 col-xs-6">
+        <div class="col-lg-3 col-md-3 col-xs-6">
             <!-- small box -->
             <div class="small-box bg-aqua">
                 <div class="inner">
@@ -77,7 +76,7 @@
             </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
+        <div class="col-lg-3 col-md-3 col-xs-6">
             <!-- small box -->
             <div class="small-box bg-green">
                 <div class="inner">
@@ -91,7 +90,7 @@
             </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
+        <div class="col-lg-3 col-md-3 col-xs-6">
             <!-- small box -->
             <div class="small-box bg-yellow">
                 <div class="inner">
@@ -105,7 +104,7 @@
             </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
+        <div class="col-lg-3 col-md-3 col-xs-6">
             <!-- small box -->
             <div class="small-box bg-yellow">
                 <div class="inner">
@@ -119,6 +118,7 @@
             </div>
         </div>
         <div class='clear'></div>
+
     </section><!-- /.content -->
 
 </div><!-- /.content-wrapper -->

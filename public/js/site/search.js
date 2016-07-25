@@ -21,7 +21,7 @@ $(function () {
         source: function (request, response) {
             $.ajax({
                 type: 'GET',
-                url: root + '/search-cities/' + request.term,
+                url: root + 'search-cities/' + request.term,
                 dataType: "json",
                 success: function (data) {
 

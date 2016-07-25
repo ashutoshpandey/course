@@ -1,3 +1,4 @@
+{{--
 <div id="popup" class="modal-box">
     <header>
         <a href="#" class="js-modal-close close">x</a>
@@ -23,3 +24,4 @@
         <a href="#" class="js-modal-close">Close</a>
     </footer>
 </div>
+--}}

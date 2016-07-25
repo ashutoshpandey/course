@@ -69,3 +69,20 @@
 .go-to-home:hover{
     color: #ff5132;
 }
+
+input[type="text"]{
+    width: auto;
+    text-align: center;
+}
+
+.save-bag-qty{
+    color: dodgerblue;
+    cursor: pointer;
+}
+.save-bag-qty:hover{
+    color: #ff5132;
+}
+
+.hidden{
+    display: none;
+}

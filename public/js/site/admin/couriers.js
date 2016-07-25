@@ -98,9 +98,8 @@ function showGrid(data){
         formatters: {
             'link': function(column, row)
             {
-                var str = '<a target="_blank" href="' + root + '/admin-view-courier/' + row.id + '">View</a>';
+                var str = '<a target="_blank" href="' + root + 'admin-view-courier/' + row.id + '">View</a>';
                 str = str + '&nbsp;&nbsp; <a class="remove" href="#" rel="' + row.id + '">Remove</a>';
-                str = str + '&nbsp;&nbsp; <a href="' + root + '/admin-courses/' + row.id + '">Courses</a>';
 
                 return str;
             }

@@ -14,7 +14,7 @@ function createBook(){
         $("#ifr").load(function(){
             $('.message').html('Book created successfully');
 
-            $('#form-container').find('input[type="text"], input[type="date"], textarea').val('');
+            $('#form-container').find('input[type="text"], input[type="date"],input[type="file"] ,textarea').val('');
 
             listBooks(1);
         });
@@ -56,7 +56,7 @@ function showGrid(data){
                 <tr> \
                     <th data-column-id="id" data-type="numeric">ID</th> \
                     <th data-column-id="name">Name</th> \
-                    <th data-column-id="description">Description</th> \
+                    <th data-column-id="description">Subject</th> \
                     <th data-formatter="link">Action</th> \
                 </tr> \
             </thead> \
@@ -69,7 +69,7 @@ function showGrid(data){
             str = str + '<tr> \
                     <td>' + book.id + '</td> \
                     <td>' + book.name + '</td> \
-                    <td>' + book.description + '</td> \
+                    <td>' + book.subject + '</td> \
                     <td></td> \
                 </tr>';
         }

@@ -2,53 +2,53 @@
 
 class CheckoutController extends BaseController
 {
-    function __construct(){
+    function __construct()
+    {
         View::share('root', URL::to('/'));
 
         $user_id = Session::get('user_id');
-        if(isset($user_id)){
+        if (isset($user_id)) {
             $name = Session::get('name');
 
             View::share('name', $name);
             View::share('logged', true);
-        }
-        else
+        } else
             View::share('logged', false);
     }
 
-    public function login(){
+    public function login()
+    {
 
         $orderId = Session::get('order_id');
 
-        if(isset($orderId)){
+        if (isset($orderId)) {
 
             $order = Order::find($orderId);
 
-            if(isset($order)){
+            if (isset($order)) {
 
                 $userId = Session::get('user_id');
 
-                if(isset($userId))
+                if (isset($userId))
                     return Redirect::to('/checkout-address');
                 else
                     return View::make('checkout.login')->with('order', $order);
-            }
-            else
+            } else
                 return Redirect::to('/');
-        }
-        else
+        } else
             return Redirect::to('/');
     }
 
-    public function guest(){
+    public function guest()
+    {
 
         $orderId = Session::get('order_id');
 
-        if(isset($orderId)){
+        if (isset($orderId)) {
 
             $order = Order::find($orderId);
 
-            if(isset($order)) {
+            if (isset($order)) {
 
                 $email = Input::get('email');
 
@@ -57,55 +57,54 @@ class CheckoutController extends BaseController
 
                 $order->save();
 
-                return json_encode(array('message'=>'done'));
-            }
-            else
-                return json_encode(array('message'=>'session'));
-        }
-        else
-            return json_encode(array('message'=>'session'));
+                return json_encode(array('message' => 'done'));
+            } else
+                return json_encode(array('message' => 'session'));
+        } else
+            return json_encode(array('message' => 'session'));
     }
 
-    public function address(){
+    public function address()
+    {
 
         $orderId = Session::get('order_id');
 
-        if(isset($orderId)){
+        if (isset($orderId)) {
 
             $order = Order::find($orderId);
 
-            if(isset($order)) {
+            if (isset($order)) {
 
                 $userId = Session::get('user_id');
 
-                if(isset($user))
+                if (isset($user))
                     $user = User::find($userId)->with('UserAddress');
 
-                if(isset($user))
+                if (isset($user))
                     return View::make('checkout.address')->with('order', $order)->with('user', $user);
                 else
                     return View::make('checkout.address')->with('order', $order);
-            }
-            else
+            } else
                 return Redirect::to('/');
-        }
-        else
+        } else
             return Redirect::to('/');
     }
 
-    public function updateAddress(){
+    public function updateAddress()
+    {
 
         $orderId = Session::get('order_id');
 
-        if(isset($orderId)){
+        if (isset($orderId)) {
 
             $order = Order::find($orderId);
 
-            if(isset($order)) {
+            if (isset($order)) {
 
                 $billingSame = Input::get('chk-billing-same');
 
                 $order->shipping_name = Input::get('shipping-name');
+                $order->email = Input::get('shipping-email');
                 $order->shipping_address = Input::get('shipping-address');
                 $order->shipping_city = Input::get('shipping-city');
                 $order->shipping_state = Input::get('shipping-state');
@@ -115,8 +114,9 @@ class CheckoutController extends BaseController
                 $order->shipping_contact_number_1 = Input::get('shipping-contact-number-1');
                 $order->shipping_contact_number_2 = Input::get('shipping-contact-number-2');
 
-                if(isset($billingSame) && $billingSame=="yes"){
+                if (isset($billingSame) && $billingSame == "yes") {
                     $order->billing_name = Input::get('shipping-name');
+                    $order->email = Input::get('shipping-email');
                     $order->billing_address = Input::get('shipping-address');
                     $order->billing_city = Input::get('shipping-city');
                     $order->billing_state = Input::get('shipping-state');
@@ -125,9 +125,9 @@ class CheckoutController extends BaseController
                     $order->billing_land_mark = Input::get('shipping-land-mark');
                     $order->billing_contact_number_1 = Input::get('shipping-contact-number-1');
                     $order->billing_contact_number_2 = Input::get('shipping-contact-number-2');
-                }
-                else {
+                } else {
                     $order->billing_name = Input::get('billing-name');
+                    $order->email = Input::get('shipping-email');
                     $order->billing_address = Input::get('billing-address');
                     $order->billing_city = Input::get('billing-city');
                     $order->billing_state = Input::get('billing-state');
@@ -140,32 +140,31 @@ class CheckoutController extends BaseController
 
                 $order->save();
 
-                return json_encode(array('message'=>'done'));
-            }
-            else
-                return json_encode(array('message'=>'session'));
-        }
-        else
-            return json_encode(array('message'=>'session'));
+                return json_encode(array('message' => 'done'));
+            } else
+                return json_encode(array('message' => 'session'));
+        } else
+            return json_encode(array('message' => 'session'));
     }
 
-    public function payment(){
+    public function payment()
+    {
 
         $orderId = Session::get('order_id');
 
-        if(isset($orderId)){
+        if (isset($orderId)) {
 
             $order = Order::with('orderItems')->find($orderId);
 
-            if(isset($order)) {
+            if (isset($order)) {
 
                 $product_array = array();
 
-                foreach($order->orderItems as $orderItem){
+                foreach ($order->orderItems as $orderItem) {
 
                     $product = Product::find($orderItem->product_id);
 
-                    if(isset($product)) {
+                    if (isset($product)) {
                         $product_array[] = array(
                             "name" => $product->name,
                             "value" => $product->discounted_price,
@@ -182,13 +181,11 @@ class CheckoutController extends BaseController
                 $order->save();
 
                 return View::make('checkout.payment')->with('order', $order)
-                                                     ->with('product_json', json_encode($product_array))
-                                                     ->with('transactionId', $transactionId);
-            }
-            else
+                    ->with('product_json', json_encode($product_array))
+                    ->with('transactionId', $transactionId);
+            } else
                 return Redirect::to('/');
-        }
-        else
+        } else
             return Redirect::to('/');
     }
 
@@ -196,11 +193,11 @@ class CheckoutController extends BaseController
     {
         $orderId = Session::get('order_id');
 
-        if(isset($orderId)) {
+        if (isset($orderId)) {
 
             $order = Order::find($orderId);
 
-            if(isset($order)) {
+            if (isset($order)) {
                 $email = Input::get('email');
                 $password = Input::get('password');
 
@@ -220,56 +217,72 @@ class CheckoutController extends BaseController
 
                     return json_encode(array('message' => 'correct'));
                 }
-            }
-            else
+            } else
                 return json_encode(array('message' => 'invalid'));
-        }
-        else
+        } else
             return json_encode(array('message' => 'invalid'));
     }
 
-    public function transactionSuccess(){
+    public function transactionSuccess()
+    {
 
         $transactionId = Session::get('transactionId');
 
-        if($transactionId){
+        if ($transactionId) {
 
             $status = Input::get('status');
 
-            if($status=='success'){
+            if ($status == 'success') {
                 $payment_mode = Input::get('mode');
                 $gateway_payment_id = Input::get('mihpayid');
                 $net_amount_debit = Input::get('net_amount_debit');
 
                 $order = Order::where('transaction_id', $transactionId)->first();
 
-                if(isset($order)){
+                if (isset($order)) {
                     $order->payment_mode = $payment_mode;
                     $order->gateway_payment_id = $gateway_payment_id;
                     $order->net_amount_debit = $net_amount_debit;
 
                     $order->save();
 
-                    return View::make('checkout.transaction-success')->with('order', $order);
-                }
-                else
+                    $order_id = $order->id;
+
+
+                    $mail = SendMailController::userInvoiceMail($order_id);
+                    if ($mail) {
+                        $order = Order::find($order_id);
+                        $orderItems = OrderItem::where('order_id', $order_id)->get();
+                        return View::make('checkout.transaction-success')->with('order', $order)->with('orderItems',$orderItems);
+                    }
+
+                } else
                     return Redirect::to('/transaction-failure');
-            }
-            else
+            } else
                 return Redirect::to('/transaction-failure');
-        }
-        else
+        } else
             return Redirect::to('/');
     }
 
-    public function transactionFailure(){
+    public function transactionFailure()
+    {
 
         $transactionId = Session::get('transactionId');
 
-        if($transactionId){
+        if ($transactionId) {
             return View::make('checkout.transaction-failure');
-        }
-        else
+        } else
+            return Redirect::to('/');
+    }
+
+    public function transactionCancelled()
+    {
+
+        $transactionId = Session::get('transactionId');
+
+        if ($transactionId) {
+            return View::make('checkout.transaction-failure');
+        } else
             return Redirect::to('/');
     }
 }

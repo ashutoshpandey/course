@@ -48,17 +48,13 @@
                                 <div class='form-data'>
                                     <textarea name='address'>{{$courier->address}}</textarea>
                                 </div>
-                                <div class='form-label'>City</div>
+                                <div class='form-label'>Landmark</div>
                                 <div class='form-data'>
-                                    <input type='text' name='city' value='{{$courier->city}}'/>
+                                    <textarea name='land_mark'>{{$courier->land_mark}}</textarea>
                                 </div>
                                 <div class='clear'></div>
                             </div>
                             <div class='form-row'>
-                                <div class='form-label'>State</div>
-                                <div class='form-data'>
-                                    <input type='text' name='state' value='{{$courier->state}}'/>
-                                </div>
                                 <div class='form-label'>Country</div>
                                 <div class='form-data'>
                                     <select name="country">
@@ -314,17 +310,66 @@
                                         $("select[name='country']").val("{{$courier->country}}");
                                     </script>
                                 </div>
+                                <div class='form-label'>State</div>
+                                <div class='form-data'>
+                                    <select name="state" onchange="loadCities()">
+                                        <option>Andaman and Nicobar Islands</option>
+                                        <option>Andhra Pradesh</option>
+                                        <option>Arunachal Pradesh</option>
+                                        <option>Assam</option>
+                                        <option>Bihar</option>
+                                        <option>Chandigarh</option>
+                                        <option>Chhattisgarh</option>
+                                        <option>Dadar and Nagar Haveli</option>
+                                        <option>Daman and Diu</option>
+                                        <option>Delhi</option>
+                                        <option>Goa</option>
+                                        <option>Gujarat</option>
+                                        <option>Haryana</option>
+                                        <option>Himachal Pradesh</option>
+                                        <option>Jammu and Kashmir</option>
+                                        <option>Jharkhand</option>
+                                        <option>Karnataka</option>
+                                        <option>Kerala</option>
+                                        <option>Lakshadeep</option>
+                                        <option>Madya Pradesh</option>
+                                        <option>Maharashtra</option>
+                                        <option>Manipur</option>
+                                        <option>Meghalaya</option>
+                                        <option>Mizoram</option>
+                                        <option>Nagaland</option>
+                                        <option>Orissa</option>
+                                        <option>Pondicherry</option>
+                                        <option>Punjab</option>
+                                        <option>Rajasthan</option>
+                                        <option>Sikkim</option>
+                                        <option>Tamil Nadu</option>
+                                        <option>Tripura</option>
+                                        <option>Uttaranchal</option>
+                                        <option>Uttar Pradesh</option>
+                                        <option>West Bengal</option>
+                                    </select>
+                                    <script type="text/javascript">
+                                        $("select[name='state']").val("{{$location->state}}");
+                                    </script>
+                                </div>
+
                                 <div class='clear'></div>
                             </div>
                             <div class='form-row'>
+                                <div class='form-label'>City</div>
+                                <div class='form-data'>
+                                    <select name="city">
+                                        @if(isset($location->city)):
+                                        <option value="{{$location->id }}"> {{$location->city}} </option>
+                                        @endif:
+                                    </select>
+                                </div>
                                 <div class='form-label'>Zip</div>
                                 <div class='form-data'>
                                     <input type='text' name='zip' value='{{$courier->zip}}'/>
                                 </div>
-                                <div class='form-label'>Landmark</div>
-                                <div class='form-data'>
-                                    <input type='text' name='land_mark' value='{{$courier->land_mark}}'/>
-                                </div>
+
                                 <div class='clear'></div>
                             </div>
                             <div class='form-row'>
@@ -341,14 +386,14 @@
                             <div class='form-row'>
                                 <div class='form-label'>Email</div>
                                 <div class='form-data'>
-                                    <input type='text' name='email' class='half' value='{{$courier->email}}'/>
+                                    <input type='text' name='email'  value='{{$courier->email}}'/>
                                 </div>
                                 <div class='clear'></div>
                             </div>
                             <div class='form-row'>
                                 <div class='form-label'>&nbsp;</div>
                                 <div class='form-data'>
-                                    <input type='button' name='btn-update' value="Update Institute" class='half'/> <span class='message'></span>
+                                    <input type='button' name='btn-update' value="Update Courier" class='half'/> <span class='message'></span>
                                 </div>
                                 <div class='clear'></div>
                             </div>

@@ -10,6 +10,7 @@
 
     {{HTML::style(asset("/public/css/AdminLTE.css"))}}
     {{HTML::style(asset("/public/css/admin-skins/_all-skins.min.css"))}}
+    {{HTML::style(asset("/public/css/popup.css"))}}
 
     @include('includes.admin.common_js_top')
 </head>
@@ -102,7 +103,6 @@
                                 </div>
 
                             </div>
-
                             <div class='clear'></div>
                         </form>
                     </div>
@@ -115,8 +115,7 @@
                             <br/><br/>
                             <label><input type="checkbox" name="check-select-all"/> Select All</label>
 
-                            &nbsp;&nbsp; <input type="button" name="btn-update-order" value="Update Order" data-modal-id="popup"/>
-
+                            &nbsp;&nbsp; <input type="button" name="btn-update-order"  value="Update Order" />
                             <table id="grid-items" class="table table-condensed table-hover table-striped">
                                 <thead>
                                 <tr>
@@ -162,8 +161,34 @@
 </div>
 <!-- ./wrapper -->
 
+<div class="popup-wrapper pop" id="popup" style="z-index: 999999999;">
+    <div class="popup-container">
+        <br><br>
+        <center>
+            <p>Enter docket number</p>
+            <input type="text" name="docket"/>
+
+            <p>Choose courier</p>
+            <select name="courier">
+                @if(isset($couriers))
+
+                    @foreach($couriers as $courier)
+                        <option value="{{$courier->id}}">{{$courier->name}}</option>
+                    @endforeach
+                @endif
+            </select>
+            <br/><br/>
+            <input type="button" class="btn btn-info" name="btn-set-courier" value=" Update "/> &nbsp; <span id="message-courier" class="message"></span>
+
+            <a class="close " href="">X</a>
+        </center>
+    </div>
+
+</div>
+
 @include('includes/common_js_bottom')
-@include('includes/admin/order-popup')
+{{--@include('includes/admin/order-popup')--}}
 {{HTML::script(asset("/public/js/site/admin/view-order.js"))}}
+
 </body>
 </html>

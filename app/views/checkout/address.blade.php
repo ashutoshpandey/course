@@ -22,160 +22,171 @@
     <section class='content'>
 
         <div class="container">
+            <div class="row" style="margin-top: 80px">
 
-        <h3>Shipping Address</h3>
 
-        <form id="form-address" action="{{$root}}/checkout-payment" method="post">
+                <h3>Shipping Address</h3>
 
-            <div class='form-row'>
-                <div class='form-label'>Name</div>
-                <div class='form-data'>
-                    <input type='email' name='shipping-name'/>
-                </div>
-                <div class='clear'></div>
-            </div>
+                <form id="form-address" action="{{$root}}/checkout-payment" method="post">
 
-            <div class='form-row'>
-                <div class='form-label'>Address</div>
-                <div class='form-data'>
-                    <textarea rows="5" name="shipping-address"></textarea>
-                </div>
-                <div class='clear'></div>
-            </div>
-
-            <div class='form-row'>
-                <div class='form-label'>City</div>
-                <div class='form-data'>
-                    <input type='email' name='shipping-city'/>
-                </div>
-                <div class='clear'></div>
-            </div>
-
-            <div class='form-row'>
-                <div class='form-label'>State</div>
-                <div class='form-data'>
-                    <input type='email' name='shipping-state'/>
-                </div>
-                <div class='clear'></div>
-            </div>
-
-            <div class='form-row'>
-                <div class='form-label'>Pin code</div>
-                <div class='form-data'>
-                    <input type='email' name='shipping-zip'/>
-                </div>
-                <div class='clear'></div>
-            </div>
-
-            <div class='form-row'>
-                <div class='form-label'>Land mark</div>
-                <div class='form-data'>
-                    <input type='email' name='shipping-land-mark'/>
-                </div>
-                <div class='clear'></div>
-            </div>
-
-            <div class='form-row'>
-                <div class='form-label'>Contact number 1</div>
-                <div class='form-data'>
-                    <input type='email' name='shipping-contact-number-1'/>
-                </div>
-                <div class='clear'></div>
-            </div>
-
-            <div class='form-row'>
-                <div class='form-label'>Contact number 2</div>
-                <div class='form-data'>
-                    <input type='email' name='shipping-contact-number-2'/>
-                </div>
-                <div class='clear'></div>
-            </div>
-
-            <div class='form-row'>
-                <div class='form-label'>&nbsp;</div>
-                <div class='form-data'>
-                    <label><input type="checkbox" name="chk-billing-same" checked="checked" value="yes"/> Billing address is same as shipping address</label>
-                </div>
-                <div class='clear'></div>
-            </div>
-
-            <div id="billing-container">
-
-                <div class='form-row'>
-                    <div class='form-label'>Name</div>
-                    <div class='form-data'>
-                        <input type='email' name='billing-name'/>
+                    <div class='form-row'>
+                        <div class='form-label'>Name</div>
+                        <div class='form-data'>
+                            <input type='email' name='shipping-name'/>
+                        </div>
+                        <div class='clear'></div>
                     </div>
-                    <div class='clear'></div>
-                </div>
 
-                <div class='form-row'>
-                    <div class='form-label'>Address</div>
-                    <div class='form-data'>
-                        <textarea rows="5" name="billing-address"></textarea>
+                    <div class='form-row'>
+                        <div class='form-label'>Email</div>
+                        <div class='form-data'>
+                            <input type='email' name='shipping-email'/>
+                        </div>
+                        <div class='clear'></div>
                     </div>
-                    <div class='clear'></div>
-                </div>
 
-                <div class='form-row'>
-                    <div class='form-label'>City</div>
-                    <div class='form-data'>
-                        <input type='email' name='billing-city'/>
+                    <div class='form-row'>
+                        <div class='form-label'>Address</div>
+                        <div class='form-data'>
+                            <textarea rows="5" name="shipping-address"></textarea>
+                        </div>
+                        <div class='clear'></div>
                     </div>
-                    <div class='clear'></div>
-                </div>
 
-                <div class='form-row'>
-                    <div class='form-label'>State</div>
-                    <div class='form-data'>
-                        <input type='email' name='billing-state'/>
+                    <div class='form-row'>
+                        <div class='form-label'>City</div>
+                        <div class='form-data'>
+                            <input type='email' name='shipping-city'/>
+                        </div>
+                        <div class='clear'></div>
                     </div>
-                    <div class='clear'></div>
-                </div>
 
-                <div class='form-row'>
-                    <div class='form-label'>Pin code</div>
-                    <div class='form-data'>
-                        <input type='email' name='billing-zip'/>
+                    <div class='form-row'>
+                        <div class='form-label'>State</div>
+                        <div class='form-data'>
+                            <input type='email' name='shipping-state'/>
+                        </div>
+                        <div class='clear'></div>
                     </div>
-                    <div class='clear'></div>
-                </div>
 
-                <div class='form-row'>
-                    <div class='form-label'>Land mark</div>
-                    <div class='form-data'>
-                        <input type='email' name='billing-land-mark'/>
+                    <div class='form-row'>
+                        <div class='form-label'>Pin code</div>
+                        <div class='form-data'>
+                            <input type='email' name='shipping-zip'/>
+                        </div>
+                        <div class='clear'></div>
                     </div>
-                    <div class='clear'></div>
-                </div>
 
-                <div class='form-row'>
-                    <div class='form-label'>Contact number 1</div>
-                    <div class='form-data'>
-                        <input type='email' name='billing-contact-number-1'/>
+                    <div class='form-row'>
+                        <div class='form-label'>Land mark</div>
+                        <div class='form-data'>
+                            <input type='email' name='shipping-land-mark'/>
+                        </div>
+                        <div class='clear'></div>
                     </div>
-                    <div class='clear'></div>
-                </div>
 
-                <div class='form-row'>
-                    <div class='form-label'>Contact number 2</div>
-                    <div class='form-data'>
-                        <input type='email' name='billing-contact-number-2'/>
+                    <div class='form-row'>
+                        <div class='form-label'>Contact number 1</div>
+                        <div class='form-data'>
+                            <input type='email' name='shipping-contact-number-1'/>
+                        </div>
+                        <div class='clear'></div>
                     </div>
-                    <div class='clear'></div>
-                </div>
 
+                    <div class='form-row'>
+                        <div class='form-label'>Contact number 2</div>
+                        <div class='form-data'>
+                            <input type='email' name='shipping-contact-number-2'/>
+                        </div>
+                        <div class='clear'></div>
+                    </div>
+
+                    <div class='form-row'>
+                        <div class='form-label'>&nbsp;</div>
+                        <div class='form-data'>
+                            <label><input type="checkbox" name="chk-billing-same" checked="checked" value="yes"/>
+                                Billing address is same as shipping address</label>
+                        </div>
+                        <div class='clear'></div>
+                    </div>
+
+                    <div id="billing-container">
+
+                        <div class='form-row'>
+                            <div class='form-label'>Name</div>
+                            <div class='form-data'>
+                                <input type='email' name='billing-name'/>
+                            </div>
+                            <div class='clear'></div>
+                        </div>
+
+                        <div class='form-row'>
+                            <div class='form-label'>Address</div>
+                            <div class='form-data'>
+                                <textarea rows="5" name="billing-address"></textarea>
+                            </div>
+                            <div class='clear'></div>
+                        </div>
+
+                        <div class='form-row'>
+                            <div class='form-label'>City</div>
+                            <div class='form-data'>
+                                <input type='email' name='billing-city'/>
+                            </div>
+                            <div class='clear'></div>
+                        </div>
+
+                        <div class='form-row'>
+                            <div class='form-label'>State</div>
+                            <div class='form-data'>
+                                <input type='email' name='billing-state'/>
+                            </div>
+                            <div class='clear'></div>
+                        </div>
+
+                        <div class='form-row'>
+                            <div class='form-label'>Pin code</div>
+                            <div class='form-data'>
+                                <input type='email' name='billing-zip'/>
+                            </div>
+                            <div class='clear'></div>
+                        </div>
+
+                        <div class='form-row'>
+                            <div class='form-label'>Land mark</div>
+                            <div class='form-data'>
+                                <input type='email' name='billing-land-mark'/>
+                            </div>
+                            <div class='clear'></div>
+                        </div>
+
+                        <div class='form-row'>
+                            <div class='form-label'>Contact number 1</div>
+                            <div class='form-data'>
+                                <input type='email' name='billing-contact-number-1'/>
+                            </div>
+                            <div class='clear'></div>
+                        </div>
+
+                        <div class='form-row'>
+                            <div class='form-label'>Contact number 2</div>
+                            <div class='form-data'>
+                                <input type='email' name='billing-contact-number-2'/>
+                            </div>
+                            <div class='clear'></div>
+                        </div>
+
+                    </div>
+
+                    <div class='form-row'>
+                        <div class='form-label'>&nbsp;</div>
+                        <div class='form-data'>
+                            <input type='button' name='btn-address' value="Continue"/>
+                        </div>
+                        <div class='clear'></div>
+                    </div>
+                </form>
             </div>
-
-            <div class='form-row'>
-                <div class='form-label'>&nbsp;</div>
-                <div class='form-data'>
-                    <input type='button' name='btn-address' value="Continue"/>
-                </div>
-                <div class='clear'></div>
-            </div>
-        </form>
-
         </div>
 
     </section>

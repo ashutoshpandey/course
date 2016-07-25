@@ -28,8 +28,9 @@ return array(
 	|
 	*/
 
-	'host' => 'smtp.mailgun.org',
+//	'host' => 'smtp.mailgun.org',
 
+	'host' => "smtp.gmail.com",
 	/*
 	|--------------------------------------------------------------------------
 	| SMTP Host Port
@@ -54,7 +55,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => null, 'name' => null),
+	'from' => array('address' => 'mayur.sonawaneintaj@gmail.com', 'name' => 'Coboo'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -80,7 +81,8 @@ return array(
 	|
 	*/
 
-	'username' => null,
+
+	'username' => "mayur.sonawaneintaj@gmail.com",
 
 	/*
 	|--------------------------------------------------------------------------
@@ -93,7 +95,7 @@ return array(
 	|
 	*/
 
-	'password' => null,
+	'password' => "optimus5",
 
 	/*
 	|--------------------------------------------------------------------------

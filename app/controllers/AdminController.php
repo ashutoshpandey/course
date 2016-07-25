@@ -2,7 +2,8 @@
 
 class AdminController extends BaseController
 {
-    function __construct(){
+    function __construct()
+    {
 
         $name = Session::get('name');
 
@@ -10,214 +11,213 @@ class AdminController extends BaseController
         View::share('name', $name);
     }
 
-    public function adminSection(){
+    public function adminSection()
+    {
 
         $adminId = Session::get('admin_id');
-        if(!isset($adminId))
+        if (!isset($adminId))
             return Redirect::to('/');
 
-        $orderCount = Order::where('status','=','pending')->count();
-        $userCount = User::where('status','=','active')->count();
-        $softwareUserCount = SoftwareUser::where('status','=','active')->count();
+        $orderCount = Order::where('status', '=', 'pending')->count();
+        $userCount = User::where('status', '=', 'active')->count();
+        $softwareUserCount = SoftwareUser::where('status', '=', 'active')->count();
         $complaintCount = Complaint::whereIn('status', array('Complaint', 'Problem'))->count();
 
         return View::make('admin.admin-section')
-                ->with('orderCount', $orderCount)
-                ->with('userCount', $userCount)
-                ->with('complaintCount', $complaintCount)
-                ->with('softwareUserCount', $softwareUserCount);
+            ->with('orderCount', $orderCount)
+            ->with('userCount', $userCount)
+            ->with('complaintCount', $complaintCount)
+            ->with('softwareUserCount', $softwareUserCount);
     }
 
-    public function institutes(){
+    public function institutes()
+    {
         $adminId = Session::get('admin_id');
-        if(!isset($adminId))
+        if (!isset($adminId))
             return Redirect::to('/');
 
         return View::make('admin.institutes');
     }
 
-    public function viewInstitute($id){
+    public function viewInstitute($id)
+    {
 
         $adminId = Session::get('admin_id');
-        if(!isset($adminId))
+        if (!isset($adminId))
             return Redirect::to('/');
 
-        if(isset($id)){
+        if (isset($id)) {
 
             $institute = Institute::find($id);
 
-            if(isset($institute)){
+            $location = Location::find($institute->location_id);
+
+            if (isset($institute)) {
 
                 Session::put('institute_id', $id);
 
-                return View::make('admin.view-institute')->with('institute', $institute);
-            }
-            else
+                return View::make('admin.view-institute')->with('institute', $institute)->with('location', $location);
+            } else
                 return Redirect::to('/');
-        }
-        else
+        } else
             return Redirect::to('/');
     }
 
-    public function listInstitutes($status, $page){
+    public function listInstitutes($status, $page)
+    {
 
         $adminId = Session::get('admin_id');
-        if(!isset($adminId))
-            return json_encode(array('message'=>'not logged'));
+        if (!isset($adminId))
+            return json_encode(array('message' => 'not logged'));
 
-        if(isset($status)){
+        if (isset($status)) {
 
-            $institutes = Institute::where('status','=', $status)->with('location')->get();
+            $institutes = Institute::where('status', '=', $status)->with('location')->get();
 
-            if(isset($institutes) && count($institutes)>0){
+            if (isset($institutes) && count($institutes) > 0) {
 
-                return json_encode(array('message'=>'found', 'institutes' => $institutes->toArray()));
-            }
-            else
-                return json_encode(array('message'=>'empty'));
-        }
-        else
-            return json_encode(array('message'=>'invalid'));
+                return json_encode(array('message' => 'found', 'institutes' => $institutes->toArray()));
+            } else
+                return json_encode(array('message' => 'empty'));
+        } else
+            return json_encode(array('message' => 'invalid'));
     }
 
-    public function courses($id){
+    public function courses($id)
+    {
 
         $adminId = Session::get('admin_id');
-        if(!isset($adminId))
+        if (!isset($adminId))
             return Redirect::to('/');
 
-        if(isset($id)){
+        if (isset($id)) {
 
             $institute = Institute::find($id);
 
-            if(isset($institute)){
+            if (isset($institute)) {
 
                 Session::put('institute_id', $id);
 
                 return View::make('admin.courses')->with('institute', $institute);
-            }
-            else
+            } else
                 return Redirect::to('/');
-        }
-        else
+        } else
             return Redirect::to('/');
     }
 
-    public function listCourses($status, $page){
+    public function listCourses($status, $page)
+    {
 
         $adminId = Session::get('admin_id');
-        if(!isset($adminId))
-            return json_encode(array('message'=>'not logged'));
+        if (!isset($adminId))
+            return json_encode(array('message' => 'not logged'));
 
         $institute_id = Session::get('institute_id');
 
-        if(isset($institute_id)){
+        if (isset($institute_id)) {
 
-            $courses = Course::where('institute_id','=', $institute_id)->where('status', '=', $status)->get();
+            $courses = Course::where('institute_id', '=', $institute_id)->where('status', '=', $status)->get();
 
-            if(isset($courses) && count($courses)>0){
+            if (isset($courses) && count($courses) > 0) {
 
-                return json_encode(array('message'=>'found', 'courses' => $courses->toArray()));
-            }
-            else
-                return json_encode(array('message'=>'empty'));
-        }
-        else
-            return json_encode(array('message'=>'invalid'));
+                return json_encode(array('message' => 'found', 'courses' => $courses->toArray()));
+            } else
+                return json_encode(array('message' => 'empty'));
+        } else
+            return json_encode(array('message' => 'invalid'));
     }
 
-    public function viewCourse($id){
+    public function viewCourse($id)
+    {
 
         $adminId = Session::get('admin_id');
-        if(!isset($adminId))
+        if (!isset($adminId))
             return Redirect::to('/');
 
-        if(isset($id)){
+        if (isset($id)) {
 
             $course = Course::find($id);
 
-            if(isset($course)){
+
+            if (isset($course)) {
 
                 Session::put('course_id', $id);
 
                 return View::make('admin.view-course')->with('course', $course);
-            }
-            else
+            } else
                 return Redirect::to('/');
-        }
-        else
+        } else
             return Redirect::to('/');
     }
 
-    public function books($id){
+    public function books($id)
+    {
 
         $adminId = Session::get('admin_id');
-        if(!isset($adminId))
+        if (!isset($adminId))
             return Redirect::to('/');
 
-        if(isset($id)){
+        if (isset($id)) {
 
             $course = Course::find($id);
 
-            if(isset($course)){
+            if (isset($course)) {
 
                 Session::put('course_id', $id);
 
                 $instituteId = Session::get('institute_id');
 
-                if(isset($instituteId)){
+                if (isset($instituteId)) {
 
                     $institute = Institute::find($instituteId);
 
-                    if(isset($institute))
+                    if (isset($institute))
                         return View::make('admin.books')->with('course', $course)->with('institute', $institute);
                     else
                         return Redirect::to('/');
-                }
-                else
+                } else
                     return Redirect::to('/');
-            }
-            else
+            } else
                 return Redirect::to('/');
-        }
-        else
+        } else
             return Redirect::to('/');
     }
 
-    public function viewBook($id){
+    public function viewBook($id)
+    {
 
         $adminId = Session::get('admin_id');
-        if(!isset($adminId))
+        if (!isset($adminId))
             return Redirect::to('/');
 
-        if(isset($id)){
+        if (isset($id)) {
 
-            $book = Book::find($id);
+//            $book = Book::find($id);
+            $book = Product::find($id);
 
-            if(isset($book)){
+            if (isset($book)) {
 
                 Session::put('book_id', $id);
 
                 return View::make('admin.view-book')->with('book', $book);
-            }
-            else
+            } else
                 return Redirect::to('/');
-        }
-        else
+        } else
             return Redirect::to('/');
     }
 
-    public function viewOrder($id){
+    public function viewOrder($id)
+    {
 
         $adminId = Session::get('admin_id');
-        if(!isset($adminId))
+        if (!isset($adminId))
             return Redirect::to('/');
 
-        if(isset($id)){
+        if (isset($id)) {
 
             $order = Order::find($id);
 
-            if(isset($order)){
+            if (isset($order)) {
 
                 Session::put('order_id', $id);
 
@@ -225,41 +225,41 @@ class AdminController extends BaseController
                 $couriers = Courier::where('status', 'active')->get();
 
                 return View::make('admin.view-order')->with('order', $order)->with('orderItems', $orderItems)->with('couriers', $couriers);
-            }
-            else
+            } else
                 return Redirect::to('/');
-        }
-        else
+        } else
             return Redirect::to('/');
     }
 
-    public function orders(){
+    public function orders()
+    {
 
         $adminId = Session::get('admin_id');
-        if(!isset($adminId))
+        if (!isset($adminId))
             return Redirect::to('/');
 
         return View::make('admin.orders');
     }
 
-    public function updateCourier(){
+    public function updateCourier()
+    {
         $ids = Input::get('ids');
         $docket = Input::get('docket');
         $courier = Input::get('courier');
 
-        if(isset($ids) && isset($docket) && isset($courier)){
+        if (isset($ids) && isset($docket) && isset($courier)) {
 
             $orderId = Session::get('order_id');
 
-            if(isset($orderId)){
+            if (isset($orderId)) {
 
                 $order = Order::find($orderId);
 
-                if(isset($order)){
+                if (isset($order)) {
 
                     $arIds = explode(',', $ids);
 
-                    if(isset($arIds) && count($arIds)>0){
+                    if (isset($arIds) && count($arIds) > 0) {
 
                         $orderDispatch = new OrderDispatch();
 
@@ -270,10 +270,10 @@ class AdminController extends BaseController
 
                         $orderDispatch->save();
 
-                        foreach($arIds as $id){
+                        foreach ($arIds as $id) {
 
                             $orderItem = OrderItem::find($id);
-                            if(isset($orderItem)){
+                            if (isset($orderItem)) {
 
                                 $orderDispatchItem = new OrderDispatchItem();
 
@@ -282,182 +282,177 @@ class AdminController extends BaseController
                                 $orderDispatchItem->status = 'active';
 
                                 $orderDispatchItem->save();
-
                                 $orderItem->status = 'shipped';
                                 $orderItem->save();
-                            }
-                            else
-                                return json_encode(array('message'=>'done'));
+                            } else
+                                return json_encode(array('message' => 'done'));
                         }
 
-                        return json_encode(array('message'=>'done'));
-                    }
-                    else
-                        return json_encode(array('message'=>'done'));
+                        return json_encode(array('message' => 'done'));
+                    } else
+                        return json_encode(array('message' => 'done'));
+                } else {
+                    return json_encode(array('message' => 'invalid'));
                 }
-                else{
-                    return json_encode(array('message'=>'invalid'));
-                }
-            }
-            else
-                return json_encode(array('message'=>'invalid'));
+            } else
+                return json_encode(array('message' => 'invalid'));
         }
     }
 
-    public function listOrders($status, $page){
+    public function listOrders($status, $page)
+    {
 
         $adminId = Session::get('admin_id');
-        if(!isset($adminId))
-            return json_encode(array('message'=>'not logged'));
+        if (!isset($adminId))
+            return json_encode(array('message' => 'not logged'));
 
-        if(isset($status)){
+        if (isset($status)) {
 
-            $orders = Order::with('user')->where('status','=', $status)->get();
+            $orders = Order::with('user')->where('status', '=', $status)->get();
 
-            if(isset($orders) && count($orders)>0){
+            if (isset($orders) && count($orders) > 0) {
 
-                return json_encode(array('message'=>'found', 'orders' => $orders->toArray()));
-            }
-            else
-                return json_encode(array('message'=>'empty'));
-        }
-        else
-            return json_encode(array('message'=>'invalid'));
+                return json_encode(array('message' => 'found', 'orders' => $orders->toArray()));
+            } else
+                return json_encode(array('message' => 'empty'));
+        } else
+            return json_encode(array('message' => 'invalid'));
     }
 
-    public function couriers(){
+    public function couriers()
+    {
         $adminId = Session::get('admin_id');
-        if(!isset($adminId))
+        if (!isset($adminId))
             return Redirect::to('/');
 
         return View::make('admin.couriers');
     }
 
-    public function viewCourier($id){
+    public function viewCourier($id)
+    {
 
         $adminId = Session::get('admin_id');
-        if(!isset($adminId))
+        if (!isset($adminId))
             return Redirect::to('/');
 
-        if(isset($id)){
+        if (isset($id)) {
 
             $courier = Courier::find($id);
+            $location = Location::find($courier->location_id);
 
-            if(isset($courier)){
+            if (isset($courier)) {
 
                 Session::put('courier_id', $id);
 
-                return View::make('admin.view-courier')->with('courier', $courier);
-            }
-            else
+                return View::make('admin.view-courier')->with('courier', $courier)->with('location', $location);
+            } else
                 return Redirect::to('/');
-        }
-        else
+        } else
             return Redirect::to('/');
     }
 
-    public function listCouriers($status, $page){
+    public function listCouriers($status, $page)
+    {
 
         $adminId = Session::get('admin_id');
-        if(!isset($adminId))
-            return json_encode(array('message'=>'not logged'));
+        if (!isset($adminId))
+            return json_encode(array('message' => 'not logged'));
 
-        $couriers = Courier::where('status','=',$status)->get();
+        $couriers = Courier::where('status', '=', $status)->get();
 
-        if(isset($couriers) && count($couriers)>0){
+        if (isset($couriers) && count($couriers) > 0) {
 
-            return json_encode(array('message'=>'found', 'couriers' => $couriers->toArray()));
-        }
-        else
-            return json_encode(array('message'=>'empty'));
+            return json_encode(array('message' => 'found', 'couriers' => $couriers->toArray()));
+        } else
+            return json_encode(array('message' => 'empty'));
     }
 
-    public function softwareUsers(){
+    public function softwareUsers()
+    {
 
         $adminId = Session::get('admin_id');
-        if(!isset($adminId))
+        if (!isset($adminId))
             return Redirect::to('/');
 
         return View::make('admin.software-users');
     }
 
-    public function viewSoftwareUser($id){
+    public function viewSoftwareUser($id)
+    {
 
         $adminId = Session::get('admin_id');
-        if(!isset($adminId))
+        if (!isset($adminId))
             return Redirect::to('/');
 
-        if(isset($id)){
+        if (isset($id)) {
             $softwareUser = SoftwareUser::find($id);
 
-            if(isset($softwareUser)){
+            if (isset($softwareUser)) {
 
                 Session::put('software_user_id', $id);
 
-                if($softwareUser->gender=='male'){
+                if ($softwareUser->gender == 'male') {
                     $male_checked = 'checked="checked"';
                     $female_checked = '';
-                }
-                else{
+                } else {
                     $female_checked = 'checked="checked"';
                     $male_checked = '';
                 }
 
                 return View::make('admin.view-software-user')
-                                ->with('softwareUser', $softwareUser)
-                                ->with('male_checked', $male_checked)
-                                ->with('female_checked', $female_checked);
-            }
-            else
+                    ->with('softwareUser', $softwareUser)
+                    ->with('male_checked', $male_checked)
+                    ->with('female_checked', $female_checked);
+            } else
                 return Redirect::to('/');
-        }
-        else
+        } else
             return Redirect::to('/');
     }
 
-    public function listSoftwareUsers($status, $page){
+    public function listSoftwareUsers($status, $page)
+    {
 
         $adminId = Session::get('admin_id');
-        if(!isset($adminId))
-            return json_encode(array('message'=>'not logged'));
+        if (!isset($adminId))
+            return json_encode(array('message' => 'not logged'));
 
-        $softwareUsers = SoftwareUser::where('status','=',$status)->get();
+        $softwareUsers = SoftwareUser::where('status', '=', $status)->get();
 
-        if(isset($softwareUsers) && count($softwareUsers)>0){
+        if (isset($softwareUsers) && count($softwareUsers) > 0) {
 
-            return json_encode(array('message'=>'found', 'software_users' => $softwareUsers->toArray()));
-        }
-        else
-            return json_encode(array('message'=>'empty'));
+            return json_encode(array('message' => 'found', 'software_users' => $softwareUsers->toArray()));
+        } else
+            return json_encode(array('message' => 'empty'));
     }
 
-    public function users(){
+    public function users()
+    {
 
         $adminId = Session::get('admin_id');
-        if(!isset($adminId))
+        if (!isset($adminId))
             return Redirect::to('/');
 
         return View::make('admin.users');
     }
 
-    public function viewUser($id){
+    public function viewUser($id)
+    {
 
         $adminId = Session::get('admin_id');
-        if(!isset($adminId))
+        if (!isset($adminId))
             return Redirect::to('/');
 
-        if(isset($id)){
+        if (isset($id)) {
             $user = User::find($id);
 
-            if(isset($user)){
+            if (isset($user)) {
 
                 Session::put('user_id', $id);
 
-                if($user->gender=='male'){
+                if ($user->gender == 'male') {
                     $male_checked = 'checked="checked"';
                     $female_checked = '';
-                }
-                else{
+                } else {
                     $female_checked = 'checked="checked"';
                     $male_checked = '';
                 }
@@ -466,85 +461,84 @@ class AdminController extends BaseController
                     ->with('user', $user)
                     ->with('male_checked', $male_checked)
                     ->with('female_checked', $female_checked);
-            }
-            else
+            } else
                 return Redirect::to('/');
-        }
-        else
+        } else
             return Redirect::to('/');
     }
 
-    public function listUsers($status, $page){
+    public function listUsers($status, $page)
+    {
 
         $adminId = Session::get('admin_id');
-        if(!isset($adminId))
-            return json_encode(array('message'=>'not logged'));
+        if (!isset($adminId))
+            return json_encode(array('message' => 'not logged'));
 
-        $users = User::where('status','=',$status)->get();
+        $users = User::where('status', '=', $status)->get();
 
-        if(isset($users) && count($users)>0){
+        if (isset($users) && count($users) > 0) {
 
-            return json_encode(array('message'=>'found', 'users' => $users->toArray()));
-        }
-        else
-            return json_encode(array('message'=>'empty'));
+            return json_encode(array('message' => 'found', 'users' => $users->toArray()));
+        } else
+            return json_encode(array('message' => 'empty'));
     }
 
-    public function locations(){
+    public function locations()
+    {
 
         $adminId = Session::get('admin_id');
-        if(!isset($adminId))
+        if (!isset($adminId))
             return Redirect::to('/');
 
         return View::make('admin.locations');
     }
 
-    public function viewLocation($id){
+    public function viewLocation($id)
+    {
 
         $adminId = Session::get('admin_id');
-        if(!isset($adminId))
+        if (!isset($adminId))
             return Redirect::to('/');
 
-        if(isset($id)){
+        if (isset($id)) {
             $location = Location::find($id);
 
-            if(isset($location)){
+            if (isset($location)) {
 
                 Session::put('location_id', $id);
 
                 return View::make('admin.view-location')
                     ->with('location', $location);
-            }
-            else
+            } else
                 return Redirect::to('/');
-        }
-        else
+        } else
             return Redirect::to('/');
     }
 
-    public function listLocations($status, $page){
+    public function listLocations($status, $page)
+    {
 
         $adminId = Session::get('admin_id');
-        if(!isset($adminId))
-            return json_encode(array('message'=>'not logged'));
+        if (!isset($adminId))
+            return json_encode(array('message' => 'not logged'));
 
-        $locations = Location::where('status','=',$status)->get();
+        $locations = Location::where('status', '=', $status)->get();
 
-        if(isset($locations) && count($locations)>0){
+        if (isset($locations) && count($locations) > 0) {
 
-            return json_encode(array('message'=>'found', 'locations' => $locations->toArray()));
-        }
-        else
-            return json_encode(array('message'=>'empty'));
+            return json_encode(array('message' => 'found', 'locations' => $locations->toArray()));
+        } else
+            return json_encode(array('message' => 'empty'));
     }
 
-    public function getCities($state){
+    public function getCities($state)
+    {
 
         $adminId = Session::get('admin_id');
-        if(!isset($adminId))
-            return json_encode(array('message'=>'not logged'));
+        if (!isset($adminId))
+            return json_encode(array('message' => 'not logged'));
 
-        if(isset($state)) {
+        if (isset($state)) {
 
             $locations = Location::where('state', '=', $state)->where('status', '=', 'active')->get();
 
@@ -552,8 +546,43 @@ class AdminController extends BaseController
                 return json_encode(array('message' => 'found', 'locations' => $locations->toArray()));
             else
                 return json_encode(array('message' => 'empty'));
-        }
-        else
+        } else
             return json_encode(array('message' => 'invalid'));
     }
+
+
+//    18/07/16
+    public function accessories($id)
+    {
+
+        $adminId = Session::get('admin_id');
+        if (!isset($adminId))
+            return Redirect::to('/');
+
+        if (isset($id)) {
+
+            $course = Course::find($id);
+
+            if (isset($course)) {
+
+                Session::put('course_id', $id);
+
+                $instituteId = Session::get('institute_id');
+
+                if (isset($instituteId)) {
+
+                    $institute = Institute::find($instituteId);
+
+                    if (isset($institute))
+                        return View::make('admin.accessories')->with('course', $course)->with('institute', $institute);
+                    else
+                        return Redirect::to('/');
+                } else
+                    return Redirect::to('/');
+            } else
+                return Redirect::to('/');
+        } else
+            return Redirect::to('/');
+    }
+
 }

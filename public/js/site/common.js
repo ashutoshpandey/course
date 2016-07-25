@@ -16,9 +16,11 @@ function getBag(){
             if(result!=undefined) {
 
                 if (result.message.indexOf('found') > -1)
-                    $('.bag').html("[" + result.count + "] items").show();
+                    // $('.bag').html("[" + result.count + "] items").show();
+                    $('.bag').html("<span class='fa fa-shopping-cart'>["+result.count+"]</span>").show();
                 else if (result.message.indexOf('empty') > -1)
-                    $('.bag').html("[0] items").show();
+                    // $('.bag').html("[0] items").show();
+                    $('.bag').html("<span class='fa fa-shopping-cart'>["+0+"]</span>").show();
             }
             else
                 $('.bag').hide();

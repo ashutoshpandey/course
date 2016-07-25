@@ -57,7 +57,7 @@
 
         <!-- Main content -->
         <section class="content">
-
+             <div class="message"></div>
             <div id='order-list' class='list-container'></div>
 
         </section>

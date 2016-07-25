@@ -11,4 +11,12 @@ class OrderItem extends Eloquent{
     public function product(){
         return $this->belongsTo('Product', 'product_id');
     }
+
+    /*public function book(){
+        return $this->belongsTo('Book', 'book_id');
+    }
+
+    public function accessory(){
+        return $this->belongsTo('Accessory', 'accessory_id');
+    }*/
 }

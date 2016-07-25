@@ -57,7 +57,6 @@ function listLocations(page){
     );
 }
 function showGrid(data){
-
     if(data!=undefined && data.locations!=undefined && data.locations.length>0){
 
         var str = '';

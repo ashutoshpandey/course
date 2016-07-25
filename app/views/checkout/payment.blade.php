@@ -1,5 +1,5 @@
-<?php
 
+<?php
 // $hash_string = "$key|$txnid|$amount|$productinfo|$firstname|$email|||||||||||$SALT";
 // $hash_value = hash("sha512",$hash_string);
 
@@ -14,9 +14,12 @@ $PAYU_BASE_URL = "https://test.payu.in";
 
 $action = '';
 
-$surl = "http://medifyhealth.com/course/transaction-success";
+/*$surl = "http://medifyhealth.com/course/transaction-success";
 $furl = "http://medifyhealth.com/course/transaction-failure";
-$curl = "http://medifyhealth.com/course/transaction-cancelled";
+$curl = "http://medifyhealth.com/course/transaction-cancelled";*/
+$surl = "http://localhost/coboo/transaction-success";
+$furl = "http://localhost/coboo/transaction-failure";
+$curl = "http://localhost/coboo/transaction-cancelled";
 $service_provider = "";
 
 /*

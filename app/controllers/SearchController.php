@@ -5,16 +5,13 @@ class SearchController extends BaseController
     function __construct()
     {
         View::share('root', URL::to('/'));
-
         $admin_id = Session::get('admin_id');
         if(isset($admin_id)){
             $name = Session::get('name');
 
             View::share('name', $name);
-
             return;
         }
-
         $user_id = Session::get('user_id');
         if(isset($user_id)){
             $name = Session::get('name');
@@ -94,10 +91,10 @@ class SearchController extends BaseController
     }
 
     public function institutes(){
-
         $key = Input::get('keyword');
         $city = Input::get('city');
         $cityId = Input::get('c');          // city id
+
 
         if(isset($key)){
 
@@ -107,6 +104,7 @@ class SearchController extends BaseController
                 $institutes = Institute::where('name','like', '%'. $key . '%')->with('location')->get();
 
             $city = str_replace("-", " / ", $city);
+
 
             if(isset($institutes) && count($institutes)>0)
                 return View::make('institute.institutes')->with('institutes', $institutes)->with('city', $city)->with('status', 'search');

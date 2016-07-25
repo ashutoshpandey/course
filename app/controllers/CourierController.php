@@ -106,9 +106,10 @@ class CourierController extends BaseController
                 $courier->name = Input::get('name');
                 $courier->contact_person = Input::get('contact_person');
                 $courier->address = Input::get('address');
-                $courier->city = Input::get('city');
+                $courier->location_id = Input::get('city');
+                /*$courier->city = Input::get('city');
                 $courier->state = Input::get('state');
-                $courier->country = Input::get('country');
+                $courier->country = Input::get('country');*/
                 $courier->land_mark = Input::get('land_mark');
                 $courier->zip = Input::get('zip');
                 $courier->contact_number_1 = Input::get('contact_number_1');

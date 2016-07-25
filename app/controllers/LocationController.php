@@ -26,6 +26,7 @@ class LocationController extends BaseController
 
         $location->city = Input::get('city');
         $location->state = Input::get('state');
+        $location->pin = Input::get('pin');
         $location->country = 'India';
 
         $location->status = 'active';

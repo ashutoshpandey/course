@@ -16,7 +16,7 @@ class AuthenticationController extends BaseController
         $email = Input::get('email');
         $password = Input::get('password');
 
-        $user = User::where('email', '=', $email)
+        $user=User::where('email','=',$email)
             ->where('password','=',$password)->first();
 
         if(is_null($user))

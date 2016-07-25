@@ -25,7 +25,7 @@ Route::get('/products/{course_id}', 'BookController@books');
 Route::post('/get-course-products/{subjects?}', 'ProductController@getProducts');
 Route::get('/product/{id}', 'ProductController@product');
 
-Route::get('/add-to-bag/{id}/{quantity}', 'CartController@addToBag');
+Route::get('/add-to-bag/{id}/{quantity?}', 'CartController@addToBag');
 Route::get('/get-bag', 'CartController@getBag');
 Route::get('/bag', 'CartController@bag');
 Route::get('/remove-from-bag/{id}', 'CartController@removeFromBag');
@@ -38,6 +38,7 @@ Route::post('/checkout-update-address', 'CheckoutController@updateAddress');
 Route::get('/checkout-payment', 'CheckoutController@payment');
 Route::any('/transaction-success', 'CheckoutController@transactionSuccess');
 Route::any('/transaction-failure', 'CheckoutController@transactionFailure');
+Route::any('/transaction-cancelled', 'CheckoutController@transactionCancelled');
 
 Route::post('/is-valid-user', 'AuthenticationController@isValidUser');
 Route::post('/is-valid-checkout-user', 'CheckoutController@isValidUser');
@@ -153,3 +154,43 @@ Route::get('/remove-institute/{id}', 'InstituteController@remove');
 Route::get('/logout', 'AuthenticationController@logout');
 
 Route::get('/admin-get-cities/{state}', 'AdminController@getCities');
+
+
+//02/07/16
+Route::get('/add-all-to-bag/{id}', 'CartController@addAllToBag');
+
+//06/07/16  Pdf Generate urls
+
+Route::get('/admin-generate-invoice/{id}', 'PDFConrtoller@adminInvoice');
+
+
+//07/07/16 Invoice mail send urls
+
+/*Route::get('/admin-send-invoice', 'SendMailController@sendmail');*/
+Route::get('/admin-send-invoice/{id}', 'SendMailController@invoiceMail');
+Route::get('/admin-send-mail', 'SendMailController@adminSendMail');
+
+
+
+//11/07/16
+Route::get('/orders', 'OrderController@orders');
+Route::get('/view-order-item/{id}', 'OrderController@viewOrder');
+
+
+
+//14/07/16
+Route::get('/update-quantity', 'CartController@updateQuantity');
+
+
+
+
+//18/07/16
+//Course accessories
+Route::get('/admin-accessories/{id}', 'AdminController@accessories');
+Route::get('/admin-list-accessories/{status}/{page}', 'AccessoryController@listAccessories');
+Route::get('/remove-accessory/{id}', 'AccessoryController@remove');
+Route::post('/save-accessory', 'AccessoryController@save');
+Route::get('/admin-view-accessory/{id}', 'AccessoryController@viewAccessory');
+Route::post('/update-accessory', 'AccessoryController@update');
+Route::get('/accessory/{course_id}', 'AccessoryController@accessory');
+Route::get('/add-accessory-to-bag/{id}/{quantity?}', 'CartController@addAccessoryToBag');

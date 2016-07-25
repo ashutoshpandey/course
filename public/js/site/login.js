@@ -6,11 +6,10 @@ function isValidUser(){
 
     var data = $('.frmuserlogin').serialize();
 
-    ajaxCall('is-valid-user', 'post', data, userLoginResult);
+    ajaxCall(root+'is-valid-user', 'post', data,userLoginResult);
 }
 
 function userLoginResult(result){
-
     if(result.indexOf('correct')>-1)
         location.reload();
     else

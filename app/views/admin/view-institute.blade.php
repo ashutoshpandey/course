@@ -39,26 +39,23 @@
                                 </div>
                                 <div class='form-label'>Establish Date</div>
                                 <div class='form-data'>
-                                    <input type='text' name='establish_date' value='{{date('m/d/Y', strtotime($institute->establish_date))}}'/>
+                                    <input type='text' name='establish_date'
+                                           value='{{date('m/d/Y', strtotime($institute->establish_date))}}'/>
                                 </div>
                                 <div class='clear'></div>
                             </div>
                             <div class='form-row'>
                                 <div class='form-label'>Address</div>
                                 <div class='form-data'>
-                                    <textarea name='address'>{{$institute->contact_number_1}}</textarea>
+                                    <textarea name='address'>{{$institute->address}}</textarea>
                                 </div>
-                                <div class='form-label'>City</div>
+                                <div class='form-label'>Landmark</div>
                                 <div class='form-data'>
-                                    <input type='text' name='city' value='{{$institute->city}}'/>
+                                    <textarea name='land_mark'>{{$institute->land_mark}}</textarea>
                                 </div>
                                 <div class='clear'></div>
                             </div>
                             <div class='form-row'>
-                                <div class='form-label'>State</div>
-                                <div class='form-data'>
-                                    <input type='text' name='state' value='{{$institute->state}}'/>
-                                </div>
                                 <div class='form-label'>Country</div>
                                 <div class='form-data'>
                                     <select name="country">
@@ -311,44 +308,108 @@
                                         <option value="Zimbabwe">Zimbabwe</option>
                                     </select>
                                     <script type="text/javascript">
-                                        $("select[name='country']").val("{{$institute->country}}");
+                                        $("select[name='country']").val("{{$location->country}}");
                                     </script>
                                 </div>
+                                <div class='form-label'>State</div>
+                                {{--<div class='form-data'>
+                                    <input type='text' name='state' value='{{$location->state}}'/>
+                                </div>--}}
+                                <div class='form-data'>
+                                    <select name="state" onchange="loadCities()">
+                                        <option>Andaman and Nicobar Islands</option>
+                                        <option>Andhra Pradesh</option>
+                                        <option>Arunachal Pradesh</option>
+                                        <option>Assam</option>
+                                        <option>Bihar</option>
+                                        <option>Chandigarh</option>
+                                        <option>Chhattisgarh</option>
+                                        <option>Dadar and Nagar Haveli</option>
+                                        <option>Daman and Diu</option>
+                                        <option>Delhi</option>
+                                        <option>Goa</option>
+                                        <option>Gujarat</option>
+                                        <option>Haryana</option>
+                                        <option>Himachal Pradesh</option>
+                                        <option>Jammu and Kashmir</option>
+                                        <option>Jharkhand</option>
+                                        <option>Karnataka</option>
+                                        <option>Kerala</option>
+                                        <option>Lakshadeep</option>
+                                        <option>Madya Pradesh</option>
+                                        <option>Maharashtra</option>
+                                        <option>Manipur</option>
+                                        <option>Meghalaya</option>
+                                        <option>Mizoram</option>
+                                        <option>Nagaland</option>
+                                        <option>Orissa</option>
+                                        <option>Pondicherry</option>
+                                        <option>Punjab</option>
+                                        <option>Rajasthan</option>
+                                        <option>Sikkim</option>
+                                        <option>Tamil Nadu</option>
+                                        <option>Tripura</option>
+                                        <option>Uttaranchal</option>
+                                        <option>Uttar Pradesh</option>
+                                        <option>West Bengal</option>
+                                    </select>
+                                    <script type="text/javascript">
+                                        $("select[name='state']").val("{{$location->state}}");
+                                    </script>
+                                </div>
+
                                 <div class='clear'></div>
                             </div>
                             <div class='form-row'>
+                                <div class='form-label'>City</div>
+                                {{--<div class='form-data'>
+                                    <input type='text' name='city' value='{{$location->city}}'/>
+                                </div>--}}
+                                <div class='form-data'>
+                                    <select name="city">
+                                        @if(isset($location->city)):
+                                        <option value="{{$location->id }}"> {{$location->city}} </option>
+                                        @endif:
+                                    </select>
+                                </div>
                                 <div class='form-label'>Zip</div>
                                 <div class='form-data'>
                                     <input type='text' name='zip' value='{{$institute->zip}}'/>
                                 </div>
-                                <div class='form-label'>Landmark</div>
-                                <div class='form-data'>
-                                    <input type='text' name='land_mark' value='{{$institute->land_mark}}'/>
-                                </div>
+
                                 <div class='clear'></div>
                             </div>
                             <div class='form-row'>
                                 <div class='form-label'>Contact number 1</div>
                                 <div class='form-data'>
-                                    <input type='text' name='contact_number_1' value='{{$institute->contact_number_1}}'/>
+                                    <input type='text' name='contact_number_1'
+                                           value='{{$institute->contact_number_1}}'/>
                                 </div>
                                 <div class='form-label'>Contact number 2</div>
                                 <div class='form-data'>
-                                    <input type='text' name='contact_number_2' value='{{$institute->contact_number_2}}'/>
+                                    <input type='text' name='contact_number_2'
+                                           value='{{$institute->contact_number_2}}'/>
                                 </div>
                                 <div class='clear'></div>
                             </div>
                             <div class='form-row'>
+                                <div class='form-label'>Affiliation</div>
+                                <div class='form-data'>
+                                    <input type='text' name='affiliation' value='{{$institute->affiliation}}'/>
+                                </div>
                                 <div class='form-label'>Latitude / Longitude</div>
                                 <div class='form-data'>
-                                    <input type='text' name='latitude' class='half' value='{{$institute->latitude}}'/><input type='text' name='longitude' class='half' value='{{$institute->longitude}}'/>
+                                    <input type='text' name='latitude' class='' value='{{$institute->latitude}}' style="width:20%; min-width: 100px"/>&nbsp;  &nbsp;
+                                    <input type='text' name='longitude' class='' value='{{$institute->longitude}}' style="width:20%; min-width: 100px"/>
                                 </div>
+
                                 <div class='clear'></div>
                             </div>
                             <div class='form-row'>
                                 <div class='form-label'>&nbsp;</div>
                                 <div class='form-data'>
-                                    <input type='button' name='btn-update' value="Update Institute" class='half'/> <span class='message'></span>
+                                    <input type='button' name='btn-update' value="Update Institute" class='half'/> <span
+                                            class='message'></span>
                                 </div>
                                 <div class='clear'></div>
                             </div>

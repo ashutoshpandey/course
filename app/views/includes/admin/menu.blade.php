@@ -27,12 +27,12 @@
             <li class="users">
                 <a href="{{$root}}/admin-users">
                     <i class="fa fa-laptop"></i>
-                    <span>Users</span>
+                    <span>Customers</span>
                 </a>
             </li>
             <li class="software-users">
                 <a href="{{$root}}/admin-software-users">
-                    <i class="fa fa-edit"></i> <span>Software users</span>
+                    <i class="fa fa-edit"></i> <span>Users</span>
                 </a>
             </li>
             <li class="locations">
